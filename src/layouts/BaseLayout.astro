@@ -1,0 +1,36 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  /** JSON-LD string(s) já serializadas. O Link Flow injeta LocalBusiness/Service/Person aqui. */
+  jsonld?: string | string[];
+  /** rota canônica, ex: "/box-para-banheiro-bh/" */
+  canonicalPath?: string;
+}
+
+const { title, description, jsonld, canonicalPath = Astro.url.pathname } = Astro.props;
+const canonical = new URL(canonicalPath, Astro.site).href;
+const blocks = jsonld ? (Array.isArray(jsonld) ? jsonld : [jsonld]) : [];
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {blocks.map((b) => <script type="application/ld+json" set:html={b} />)}
+  </head>
+  <body>
+    <slot name="header" />
+    <main>
+      <slot />
+    </main>
+    <slot name="footer" />
+  </body>
+</html>

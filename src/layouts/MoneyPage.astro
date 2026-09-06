@@ -1,0 +1,27 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+export interface Props {
+  title: string;         // meta title (KW no início)
+  description: string;    // meta description (KW como frase)
+  jsonld?: string | string[];
+  canonicalPath?: string;
+}
+
+const { title, description, jsonld, canonicalPath } = Astro.props;
+---
+<BaseLayout title={title} description={description} jsonld={jsonld} canonicalPath={canonicalPath}>
+  <slot name="header" slot="header" />
+  <!--
+    O conteúdo da Money Page é injetado aqui pelo Link Flow (Fase 3).
+    Regras que o corpo DEVE respeitar (MODELO_ESCRITA / template site-fdf-seo-local):
+    - 1 único <h1> com a KW principal
+    - KW nas primeiras 100 palavras
+    - primeiro e último <h2> com a KW; FAQ é o último <h2>
+    - <h2> de "Regiões atendidas" obrigatório
+    - CTA específico repetido 3x (nunca genérico)
+    - NAP consistente com o projeto.md
+  -->
+  <slot />
+  <slot name="footer" slot="footer" />
+</BaseLayout>
