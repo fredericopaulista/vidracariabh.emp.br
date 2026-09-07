@@ -1,0 +1,62 @@
+---
+import MoneyPage from '../layouts/MoneyPage.astro';
+import hero from '../assets/img/hero-manutencao-box.jpg';
+
+const title = "Manutenção de Box de Banheiro em BH | Vidraçaria BH";
+const description = "Manutenção e conserto de box de banheiro em BH: troca de roldana, borracha, trilho e vidro. Box vazando ou saindo do trilho? Mande foto no WhatsApp.";
+const jsonld = [
+  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "serviceType": "Manutenção e conserto de box de banheiro", "name": "Manutenção de box de banheiro em BH: roldana, borracha, trilho e vidro", "description": "Manutenção e conserto de box de banheiro em BH: troca de roldana, borracha, trilho e vidro. Box vazando ou saindo do trilho? Mande foto no WhatsApp.", "provider": {"@type": "HomeAndConstructionBusiness", "name": "Vidraçaria BH", "telephone": "+55 31 99163-3453", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/manutencao-de-box-de-banheiro-bh/"}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://vidracariabh.emp.br/"}, {"@type": "ListItem", "position": 2, "name": "Manutenção de box de banheiro em BH", "item": "https://vidracariabh.emp.br/manutencao-de-box-de-banheiro-bh/"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Vocês vão hoje?", "acceptedAnswer": {"@type": "Answer", "text": "Depende da agenda do dia e do seu bairro. Box vazando entra como prioridade. Mande a foto no WhatsApp que a gente confirma a data mais próxima possível."}}, {"@type": "Question", "name": "Consertam box comprado de outra vidraçaria?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Avaliamos a peça e a fixação como estão e fazemos o conserto ou a troca. Você não precisa ter comprado com a gente."}}, {"@type": "Question", "name": "Dá para trocar só a roldana e manter o resto?", "acceptedAnswer": {"@type": "Answer", "text": "Na maioria dos casos, sim. Roldana e rolete são peças de desgaste e têm reposição. Se o trilho estiver amassado, aí entra também o realinhamento."}}, {"@type": "Question", "name": "Meu box está vazando água no chão. É a borracha?", "acceptedAnswer": {"@type": "Answer", "text": "Quase sempre é a borracha de vedação (aletas) ou a escovinha ressecada, às vezes o perfil inferior. Troca rápida. Se o vidro estiver desalinhado, ajustamos a folga."}}, {"@type": "Question", "name": "Vocês cobram a visita?", "acceptedAnswer": {"@type": "Answer", "text": "A visita para avaliar e orçar é combinada antes pelo WhatsApp. Se houver qualquer custo, ele é informado nesse momento, nunca depois."}}]})
+];
+---
+
+<MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/manutencao-de-box-de-banheiro-bh/">
+  <article class="money-page">
+    <nav class="crumbs"><a href="/">Início</a> › <span>Manutenção de box de banheiro em BH</span></nav>
+    <figure class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Vidraceiro fazendo manutenção de box de banheiro em BH — troca de roldana" loading="eager" /></figure>
+    <h1>Manutenção de box de banheiro em BH: roldana, borracha, trilho e vidro</h1>
+    <p>Box travando, vazando água no piso, saindo do trilho ou com a porta pesada? A manutenção de box de banheiro que a Vidraçaria BH faz resolve na visita, quando a peça está com a gente, ou com a peça encomendada e data marcada. Você manda uma foto pelo WhatsApp e já recebe a orientação. Atende a domicílio em Belo Horizonte e região.</p>
+    <p>Na maioria dos chamados de box não é troca de vidro — é ferragem gasta. E ferragem tem peça de reposição, o que custa bem menos que trocar o box inteiro.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Manda uma foto agora no WhatsApp (31) 99163-3453.</a></p>
+    <aside class="nap-top"><p><strong>Atendimento:</strong> Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p><p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p><p><strong>Contato:</strong> WhatsApp (31) 99163-3453</p></aside>
+    <h2>O que a manutenção de box de banheiro resolve?</h2>
+    <ul><li><strong>Box saindo do trilho</strong> ou descarrilando ao abrir — quase sempre é roldana ou rolete gasto.</li><li><strong>Porta do box pesada, raspando ou fazendo barulho</strong> — trilho sujo, roldana travada ou desalinhada.</li><li><strong>Box vazando água</strong> para fora — borracha de vedação, escovinha ou perfil inferior ressecados.</li><li><strong>Fecho ou puxador solto / quebrado</strong> — reaperto ou troca da peça.</li><li><strong>Trilho amassado ou perfil solto da parede</strong> — realinhamento e refixação.</li><li><strong>Vidro do box trincado ou lascado</strong> — troca do vidro, mantendo as ferragens quando servem.</li><li><strong>Box antigo com perfil enferrujado</strong> — avaliação de troca do kit.</li></ul>
+    <h2>Conserto ou troca? Como a gente avalia</h2>
+    <ul><li><strong>Ferragem (roldana, borracha, escovinha, fecho, puxador):</strong> tem peça de reposição. É conserto, rápido e barato.</li><li><strong>Trilho e perfil:</strong> dá para realinhar e refixar na maioria dos casos.</li><li><strong>Vidro temperado trincado:</strong> não conserta. Qualquer trinca compromete a peça — é troca do vidro.</li><li><strong>Kit todo enferrujado / vidro riscado:</strong> aí compensa trocar o box, porque a manutenção vira constante.</li></ul>
+    <p>Na visita a gente fala com clareza o que vale mais a pena.</p>
+    <h2>Peças que costumam ser trocadas</h2>
+    <p>Roldana e rolete, borracha de vedação (aletas), escovinha, perfil "U" inferior, kit de fecho, puxador, batente, silicone de vedação e, quando é o caso, o vidro temperado do box. Levamos as peças mais comuns na visita; peça específica é encomendada e a gente volta com data marcada.</p>
+    <h2>Como funciona o atendimento</h2>
+    <ol><li><strong>WhatsApp com foto.</strong> Manda a foto do box, o problema (vazando, travando, saindo do trilho) e o bairro. A gente responde no mesmo dia útil com orientação e faixa de valor.</li><li><strong>Visita.</strong> O vidraceiro vai com as ferramentas e as peças comuns.</li><li><strong>Conserto.</strong> Resolve na hora quando a peça está com a gente. Quando precisa encomendar, deixamos alinhado e voltamos com data.</li><li><strong>Teste na sua frente.</strong> Porta deslizando leve, box vedando, fecho funcionando.</li></ol>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Solicite a manutenção pelo WhatsApp (31) 99163-3453.</a></p>
+    <h2>Como o valor é calculado</h2>
+    <p>O orçamento considera a peça (ou peças) a trocar, a mão de obra e o deslocamento até o seu bairro, se houver. Conserto de ferragem é o serviço mais barato; troca de vidro do box entra no valor de vidro temperado sob medida. Você recebe o preço fechado antes de aprovar.</p>
+    <h2>Regiões atendidas</h2>
+    <p>A Vidraçaria BH faz manutenção de box a domicílio em toda Belo Horizonte — Centro, Savassi, Buritis, Pampulha, Barreiro, Venda Nova — e nas cidades vizinhas:</p>
+    <ul><li>Contagem</li><li>Betim</li><li>Nova Lima</li><li>Vespasiano</li><li>Lagoa Santa</li></ul>
+    <p>Não achou seu bairro? Chame no WhatsApp que confirmamos o atendimento na hora.</p>
+    <h2>Precisa de manutenção de box de banheiro em BH?</h2>
+    <p>Manda no WhatsApp uma foto do box e diga o que está acontecendo. A gente resolve o seu chamado de manutenção de box de banheiro em BH com a data mais próxima que a agenda permitir. Se você precisa de um box novo, veja a <a href="/box-para-banheiro-bh/">instalação de box para banheiro em BH</a>.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">WhatsApp: (31) 99163-3453.</a></p>
+    <h2>Perguntas frequentes</h2>
+    <h3>Vocês vão hoje?</h3>
+    <p>Depende da agenda do dia e do seu bairro. Box vazando entra como prioridade. Mande a foto no WhatsApp que a gente confirma a data mais próxima possível.</p>
+    <h3>Consertam box comprado de outra vidraçaria?</h3>
+    <p>Sim. Avaliamos a peça e a fixação como estão e fazemos o conserto ou a troca. Você não precisa ter comprado com a gente.</p>
+    <h3>Dá para trocar só a roldana e manter o resto?</h3>
+    <p>Na maioria dos casos, sim. Roldana e rolete são peças de desgaste e têm reposição. Se o trilho estiver amassado, aí entra também o realinhamento.</p>
+    <h3>Meu box está vazando água no chão. É a borracha?</h3>
+    <p>Quase sempre é a borracha de vedação (aletas) ou a escovinha ressecada, às vezes o perfil inferior. Troca rápida. Se o vidro estiver desalinhado, ajustamos a folga.</p>
+    <h3>Vocês cobram a visita?</h3>
+    <p>A visita para avaliar e orçar é combinada antes pelo WhatsApp. Se houver qualquer custo, ele é informado nesse momento, nunca depois.</p>
+    <footer class="nap-footer">
+      <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
+      <p>WhatsApp: <a href="https://wa.me/5531991633453">(31) 99163-3453</a></p>
+      <p>Atendimento: segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
+      <p>Área de atendimento: Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
+    </footer>
+  </article>
+</MoneyPage>
+
+

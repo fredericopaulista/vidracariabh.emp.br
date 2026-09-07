@@ -50,6 +50,12 @@ const regioes = [
   ['/vidracaria-em-vespasiano/', 'Vespasiano'],
   ['/vidracaria-em-lagoa-santa/', 'Lagoa Santa'],
 ];
+const manutencao = [
+  ['/vidraceiro-bh/', 'Vidraceiro (visão geral)'],
+  ['/manutencao-de-box-de-banheiro-bh/', 'Manutenção de box de banheiro'],
+  ['/manutencao-de-porta-de-vidro-bh/', 'Manutenção de porta de vidro'],
+  ['/manutencao-de-cortina-de-vidro-bh/', 'Manutenção de cortina de vidro'],
+];
 ---
 <!doctype html>
 <html lang="pt-BR">
@@ -136,6 +142,14 @@ const regioes = [
             </div>
           </details>
           <details class="menu">
+            <summary>Manutenção</summary>
+            <div class="menu-panel">
+              {manutencao.map(([href, label]) => (
+                <a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a>
+              ))}
+            </div>
+          </details>
+          <details class="menu">
             <summary>Regiões</summary>
             <div class="menu-panel">
               {regioes.map(([href, label]) => (
@@ -174,7 +188,9 @@ const regioes = [
           <ul>{servicos.map(([href, label]) => <li><a href={href}>{label}</a></li>)}</ul>
         </div>
         <div>
-          <p class="ft-title">Regiões</p>
+          <p class="ft-title">Manutenção</p>
+          <ul>{manutencao.map(([href, label]) => <li><a href={href}>{label}</a></li>)}</ul>
+          <p class="ft-title ft-title--gap">Regiões</p>
           <ul>{regioes.map(([href, label]) => <li><a href={href}>{label}</a></li>)}</ul>
           <p class="ft-title ft-title--gap">Institucional</p>
           <ul><li><a href="/blog/">Blog</a></li><li><a href="/sobre/">Sobre</a></li><li><a href="/contato/">Contato</a></li></ul>
@@ -413,6 +429,7 @@ const regioes = [
       .info-card a{ color:#eaf5f6; }
       .info-card .btn{ margin-top:.4rem; }
 
+      .section-more{ margin-top:1.4rem; } .section-more a{ font-weight:600; }
       .chips{ list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:.55rem; }
       .chips li a{ display:inline-block; padding:.55rem 1.1rem; border-radius:999px; background:#fff; border:1px solid var(--line); color:var(--brand-dark); text-decoration:none; font-weight:600; font-size:.92rem; box-shadow:var(--shadow-sm); }
       .chips li a:hover{ border-color:var(--brand); background:var(--brand-tint); }
