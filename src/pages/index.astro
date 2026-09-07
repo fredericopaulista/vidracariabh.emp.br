@@ -1,16 +1,359 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import MoneyPage from '../layouts/MoneyPage.astro';
+import hero from '../assets/img/hero-home.jpg';
 
-// Placeholder. A home definitiva sai da arquitetura aprovada na Fase 1 do Link Flow.
-const title = 'Vidraçaria BH — vidros e espelhos sob medida em Belo Horizonte e região';
+const title = 'Vidraçaria em Belo Horizonte | Vidraçaria BH';
 const description =
-  'Vidraçaria em Belo Horizonte com atendimento em Contagem, Betim, Nova Lima, Vespasiano e Lagoa Santa. Box para banheiro, fechamento de varanda, espelhos sob medida, guarda-corpo e cobertura de vidro.';
+  'Vidraçaria em Belo Horizonte e região: box para banheiro, cortina de vidro, espelhos sob medida, guarda-corpo e mais. Atendimento a domicílio. Peça seu orçamento!';
+const whatsapp = 'https://wa.me/5531991633453';
+
+const jsonld = [
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'HomeAndConstructionBusiness',
+    '@id': 'https://vidracariabh.emp.br/#business',
+    name: 'Vidraçaria BH',
+    description:
+      'Vidraçaria em Belo Horizonte e região metropolitana. Box para banheiro, cortina de vidro, fechamento de varanda, espelhos sob medida, guarda-corpo, cobertura de vidro e manutenção.',
+    url: 'https://vidracariabh.emp.br',
+    telephone: '+55 31 99163-3453',
+    priceRange: '$$',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Belo Horizonte',
+      addressRegion: 'MG',
+      postalCode: '30160-011',
+      addressCountry: 'BR',
+    },
+    areaServed: [
+      'Belo Horizonte',
+      'Contagem',
+      'Betim',
+      'Nova Lima',
+      'Vespasiano',
+      'Lagoa Santa',
+    ],
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: 'Saturday',
+        opens: '08:00',
+        closes: '12:00',
+      },
+    ],
+    sameAs: ['https://www.instagram.com/vidracariabh/'],
+  }),
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    url: 'https://vidracariabh.emp.br',
+    name: 'Vidraçaria BH',
+    inLanguage: 'pt-BR',
+  }),
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'A Vidraçaria BH atende o meu bairro?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Atendemos toda Belo Horizonte a domicílio, além de Contagem, Betim, Nova Lima, Vespasiano e Lagoa Santa. Se o seu endereço estiver fora dessa área, confirmamos pelo WhatsApp antes de agendar.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Vocês cobram a visita ou o orçamento?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'O orçamento é sem compromisso. A visita para medição é combinada no WhatsApp antes de marcar; qualquer custo, se houver, é informado nesse momento — nunca depois.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Em quanto tempo o serviço fica pronto?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Depende do tipo de vidro e da agenda, mas o prazo entra por escrito no orçamento, com data de entrega e de instalação. Vidro temperado costuma levar alguns dias porque é feito sob medida.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'O vidro tem garantia?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'O vidro temperado vem com certificado do fabricante quando o serviço exige, e a instalação tem garantia de mão de obra. As condições ficam registradas no orçamento aprovado.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Não sei qual vidro escolher. Vocês ajudam?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Sim. Na visita a gente indica o tipo de vidro conforme o uso, o peso que a peça vai receber e o quanto você quer de privacidade, sempre dentro do seu orçamento.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Dá para parcelar o serviço?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'As formas de pagamento entram no orçamento, incluindo as opções de parcelamento disponíveis no momento. Você aprova sabendo o valor de cada parcela.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Fazem serviço em prédio, com regra de horário?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Sim. Trabalhamos em apartamento e em área comum de condomínio. Antes da instalação, alinhamos com você o horário permitido pela administração e a forma de acesso para a equipe e para o vidro.',
+        },
+      },
+    ],
+  }),
+];
 ---
-<BaseLayout title={title} description={description}>
-  <h1>Vidraçaria BH</h1>
-  <p>
-    Site em construção. As páginas de serviço e o blog serão publicados pelo Link Flow
-    (<code>plataforma: astro</code>).
-  </p>
-  <p>Atendimento: Belo Horizonte, Contagem, Betim, Nova Lima, Vespasiano e Lagoa Santa.</p>
-</BaseLayout>
+
+<MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/">
+  <article class="money-page">
+    <figure class="hero">
+      <img
+        src={hero.src}
+        width={hero.width}
+        height={hero.height}
+        alt="Vidraçaria em Belo Horizonte — Vidraçaria BH: sacada envidraçada e vidros sob medida em apartamento de BH"
+        loading="eager"
+      />
+    </figure>
+
+    <h1>Vidraçaria em Belo Horizonte: vidros, box e espelhos sob medida</h1>
+
+    <p>
+      A <strong>Vidraçaria BH</strong> é uma vidraçaria em Belo Horizonte que atende a
+      domicílio em toda a capital e na região metropolitana. Trabalhamos com box para
+      banheiro, cortina de vidro, fechamento de varanda, espelhos sob medida, guarda-corpo,
+      cobertura de vidro e manutenção de peças já instaladas. Cada projeto começa com uma
+      medição no local, para que o vidro chegue no tamanho certo e a instalação seja rápida.
+    </p>
+    <p>
+      Não temos loja física. Isso reduz custo fixo, e esse custo a menos aparece no seu
+      orçamento. Você fala com a gente pelo WhatsApp, marca a visita técnica e recebe o
+      preço fechado antes de qualquer compromisso. Veja abaixo como funciona e o que a
+      Vidraçaria BH resolve.
+    </p>
+    <p class="cta">
+      <a class="btn" href={whatsapp}>Fale agora no WhatsApp (31) 99163-3453</a>
+      e solicite seu orçamento sem compromisso.
+    </p>
+
+    <aside class="nap-top">
+      <p><strong>Atendimento:</strong> Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
+      <p><strong>Horário:</strong> segunda a sexta, das 8h às 18h · sábado, das 8h às 12h</p>
+      <p><strong>Contato:</strong> WhatsApp <a href={whatsapp}>(31) 99163-3453</a></p>
+    </aside>
+
+    <h2>O que a Vidraçaria BH faz em Belo Horizonte?</h2>
+    <p>
+      A Vidraçaria BH cobre os serviços de vidraçaria em Belo Horizonte que uma casa, um
+      apartamento ou um comércio costumam precisar. Atende tanto quem está em obra ou
+      reforma e já quer o vidro no projeto quanto quem só precisa resolver um ponto — o box
+      que embaça, a sacada que fica sem uso no inverno, o espelho que nunca foi instalado.
+      A lista abaixo leva para a página de cada serviço, com detalhes de tipos de vidro,
+      prazo e cuidados de manutenção.
+    </p>
+    <ul>
+      <li><strong><a href="/box-para-banheiro-bh/">Box para banheiro</a></strong> — em vidro temperado, incolor, fumê ou canelado, de correr ou de abrir, com as ferragens certas para o seu espaço.</li>
+      <li><strong><a href="/cortina-de-vidro-bh/">Cortina de vidro</a></strong> — painéis de vidro que abrem e empilham na lateral, para fechar a varanda sem perder a vista.</li>
+      <li><strong>Fechamento de varanda</strong> — quando você quer o vidro fixo ou o sistema retrátil, com perfil de alumínio e vedação.</li>
+      <li><strong><a href="/espelho-sob-medida-bh/">Espelhos sob medida</a></strong> — comum, bisotado, lapidado, com LED, bronze ou fumê, para banheiro, sala, academia e loja.</li>
+      <li><strong>Guarda-corpo de vidro</strong> — para sacada, escada e mezanino, dentro da norma de segurança, com fixação por pinça, sistema ou torre.</li>
+      <li><strong>Cobertura de vidro</strong> — vidro temperado ou laminado sobre área gourmet, corredor e garagem, com estrutura e caimento para a água.</li>
+      <li><strong>Envidraçamento de sacada</strong> — sistemas deslizantes que fecham a sacada e podem ser abertos por inteiro.</li>
+      <li><strong>Porta de vidro</strong> — de correr, pivotante ou blindex, com fechadura, mola e puxador.</li>
+      <li><strong>Vidro temperado sob medida</strong> — para tampo de mesa, prateleira, nicho e divisória.</li>
+      <li><strong>Vidraceiro para manutenção</strong> — troca de vidro quebrado, regulagem de porta, ajuste de roldana e ferragem, reaperto e substituição de borracha.</li>
+    </ul>
+    <p>
+      Cada serviço é uma visita, uma medição e um orçamento. Você contrata só o que precisa.
+      Se o projeto junta duas coisas — por exemplo, fechar a varanda e trocar o box no mesmo
+      apartamento — a gente organiza as duas medições na mesma visita e entrega um orçamento
+      único.
+    </p>
+    <p>
+      Também fazemos o serviço de vidraceiro para quem já tem vidro instalado e só precisa de
+      conserto: vidro trincado, porta que raspa no chão, roldana gasta, borracha ressecada ou
+      fechadura que não fecha. Nesses casos, a visita costuma resolver na hora ou já sai com
+      a peça certa encomendada.
+    </p>
+
+    <h2>Tipos de vidro que trabalhamos</h2>
+    <p>
+      O vidro certo depende de onde ele vai, de quanto peso vai receber e de quanta
+      privacidade você quer. Esta é a referência rápida que usamos no orçamento:
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Tipo de vidro</th><th>Para que serve</th><th>Onde costuma entrar</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Temperado</td><td>Resistente a impacto e a calor; se quebra, vira grãos, não cacos</td><td>Box, porta, guarda-corpo, cobertura, tampo de mesa</td></tr>
+          <tr><td>Laminado</td><td>Duas lâminas com película no meio; se trinca, não cai</td><td>Cobertura, guarda-corpo, fachada, claraboia</td></tr>
+          <tr><td>Comum (float)</td><td>Mais barato, sem tratamento de segurança</td><td>Espelho, vidro de móvel, quadro</td></tr>
+          <tr><td>Fumê / bronze</td><td>Escurece o ambiente e dá privacidade</td><td>Box, porta, divisória, fachada</td></tr>
+          <tr><td>Jateado / acidato</td><td>Aspecto leitoso, deixa passar luz e não a imagem</td><td>Box, porta de escritório, divisória de banheiro</td></tr>
+          <tr><td>Canelado</td><td>Textura em relevo, decorativo e translúcido</td><td>Box, porta interna, painel</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Se você não sabe qual escolher, a gente indica na visita, considerando uso e orçamento.
+      Duas dúvidas aparecem quase sempre. A primeira é sobre segurança: em box, porta,
+      guarda-corpo e cobertura, a norma pede vidro de segurança (temperado ou laminado), e é
+      isso que usamos nesses pontos. A segunda é sobre espessura: quanto maior o vão e o
+      peso, mais grosso o vidro — um box costuma usar 8 mm, um guarda-corpo de sacada pode
+      pedir 10 mm ou vidro laminado. Tudo isso entra especificado no orçamento, então você
+      sabe exatamente o que está contratando.
+    </p>
+
+    <h2>Por que escolher a Vidraçaria BH</h2>
+    <p>
+      A Vidraçaria BH trabalha com foco em vidros sob medida para BH e região, sem
+      intermediário entre quem mede e quem instala. Quem vai à sua casa medir é quem
+      acompanha a instalação. Isso reduz erro de medida e retrabalho.
+    </p>
+    <ul>
+      <li><strong>Atendimento a domicílio</strong> em Belo Horizonte e nas cidades vizinhas, sem você precisar sair de casa.</li>
+      <li><strong>Medição técnica no local</strong> antes de cortar qualquer vidro — nada é feito "no olho".</li>
+      <li><strong>Prazo combinado por escrito</strong> no orçamento, com data de entrega e de instalação.</li>
+      <li><strong>Orçamento sem compromisso</strong> pelo WhatsApp, com preço fechado antes de fechar negócio.</li>
+      <li><strong>Vidro temperado com certificado</strong> do fabricante, quando o serviço exige.</li>
+      <li><strong>Atendimento de segunda a sábado</strong>, incluindo manutenção de peças que já estão instaladas.</li>
+    </ul>
+    <p>
+      Estamos há 7 anos atuando com vidraçaria em Belo Horizonte, com serviço para
+      residência, apartamento e comércio.
+    </p>
+    <p class="cta">
+      <a class="btn" href={whatsapp}>Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a>
+    </p>
+
+    <h2>Como funciona o orçamento</h2>
+    <p>O processo é o mesmo para qualquer serviço, do box ao guarda-corpo:</p>
+    <ol>
+      <li><strong>Contato pelo WhatsApp.</strong> Você manda uma mensagem com o serviço, uma foto do local e o bairro. Com a foto já damos uma primeira orientação e uma faixa de valor, para você decidir se quer seguir.</li>
+      <li><strong>Visita e medição.</strong> Marcamos um horário e vamos até você medir o vão, conferir onde a peça vai ser fixada, checar o nível da parede e do piso e alinhar o acabamento (cor da ferragem, tipo de puxador, sentido de abertura). Essa etapa evita a maior causa de retrabalho em vidraçaria, que é medida errada.</li>
+      <li><strong>Orçamento fechado.</strong> Você recebe o preço com o tipo e a espessura do vidro, as ferragens, o prazo de fabricação, a data de instalação e a forma de pagamento. Nada fica "a confirmar" depois.</li>
+      <li><strong>Agendamento.</strong> Aprovado o orçamento, o vidro é encomendado sob medida e marcamos a data de instalação. Em obra de condomínio, a gente ajuda com o aviso à administração e o horário permitido.</li>
+      <li><strong>Instalação e conferência.</strong> A equipe instala, testa a peça na sua frente — porta abrindo e fechando, box vedando, guarda-corpo firme — e explica como limpar e o que evitar para o vidro durar.</li>
+    </ol>
+    <p>Se algo sair diferente do combinado, a gente volta para ajustar sem custo de mão de obra.</p>
+
+    <h2>O que dizem nossos clientes</h2>
+    <p class="placeholder">
+      [DEPOIMENTOS — inserir de 2 a 4 avaliações reais de clientes de Belo Horizonte e
+      região, com o bairro ou a cidade de cada um. Enquanto não houver depoimentos
+      publicados, esta seção fica com esta observação visível.]
+    </p>
+    <p>
+      Você também pode ver as avaliações da Vidraçaria BH no Google:
+      <span class="placeholder">[LINK GOOGLE BUSINESS PROFILE]</span>.
+    </p>
+
+    <h2>Regiões atendidas em Belo Horizonte</h2>
+    <p>
+      A Vidraçaria BH atende a domicílio em toda Belo Horizonte — de bairros como Centro,
+      Savassi, Buritis, Pampulha, Barreiro, Venda Nova e Contorno até a região
+      metropolitana. Para as cidades vizinhas, temos página própria com detalhes de prazo e
+      cobertura:
+    </p>
+    <ul>
+      <li><strong><a href="/vidracaria-em-contagem/">Contagem</a></strong></li>
+      <li><strong><a href="/vidracaria-em-betim/">Betim</a></strong></li>
+      <li>Nova Lima</li>
+      <li>Vespasiano</li>
+      <li>Lagoa Santa</li>
+    </ul>
+    <p>
+      Nas cidades da região metropolitana, o atendimento segue o mesmo padrão da capital:
+      contato pelo WhatsApp, visita para medição e orçamento fechado. O que pode variar é a
+      data de agendamento, conforme a distância e a agenda da semana — e isso é informado
+      antes de você aprovar.
+    </p>
+    <p>
+      Não achou sua cidade ou seu bairro? Chame no WhatsApp que a gente confirma o
+      atendimento na hora.
+    </p>
+
+    <h2>Peça seu orçamento de vidraçaria em Belo Horizonte</h2>
+    <p>
+      Se você já sabe o que precisa — um box novo, a varanda fechada, o espelho da academia
+      — ou ainda está decidindo, a Vidraçaria BH faz a medição e passa o preço fechado.
+      Atendemos de segunda a sábado em Belo Horizonte e região.
+    </p>
+    <p class="cta">
+      <a class="btn" href={whatsapp}>WhatsApp: (31) 99163-3453</a>
+      Mande o serviço, uma foto do local e o seu bairro. Você recebe a orientação inicial e
+      uma faixa de valor no mesmo dia útil, e só marca a visita se quiser seguir com o
+      orçamento completo.
+    </p>
+
+    <h2>Perguntas frequentes</h2>
+
+    <h3>A Vidraçaria BH atende o meu bairro?</h3>
+    <p>Atendemos toda Belo Horizonte a domicílio, além de Contagem, Betim, Nova Lima, Vespasiano e Lagoa Santa. Se o seu endereço estiver fora dessa área, confirmamos pelo WhatsApp antes de agendar.</p>
+
+    <h3>Vocês cobram a visita ou o orçamento?</h3>
+    <p>O orçamento é sem compromisso. A visita para medição é combinada no WhatsApp antes de marcar; qualquer custo, se houver, é informado nesse momento — nunca depois.</p>
+
+    <h3>Em quanto tempo o serviço fica pronto?</h3>
+    <p>Depende do tipo de vidro e da agenda, mas o prazo entra por escrito no orçamento, com data de entrega e de instalação. Vidro temperado costuma levar alguns dias porque é feito sob medida.</p>
+
+    <h3>O vidro tem garantia?</h3>
+    <p>O vidro temperado vem com certificado do fabricante quando o serviço exige, e a instalação tem garantia de mão de obra. As condições ficam registradas no orçamento aprovado.</p>
+
+    <h3>Não sei qual vidro escolher. Vocês ajudam?</h3>
+    <p>Sim. Na visita a gente indica o tipo de vidro conforme o uso, o peso que a peça vai receber e o quanto você quer de privacidade, sempre dentro do seu orçamento.</p>
+
+    <h3>Dá para parcelar o serviço?</h3>
+    <p>As formas de pagamento entram no orçamento, incluindo as opções de parcelamento disponíveis no momento. Você aprova sabendo o valor de cada parcela.</p>
+
+    <h3>Fazem serviço em prédio, com regra de horário?</h3>
+    <p>Sim. Trabalhamos em apartamento e em área comum de condomínio. Antes da instalação, alinhamos com você o horário permitido pela administração e a forma de acesso para a equipe e para o vidro.</p>
+
+    <footer class="nap-footer">
+      <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
+      <p>WhatsApp: <a href={whatsapp}>(31) 99163-3453</a></p>
+      <p>Atendimento: segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
+      <p>Área de atendimento: Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
+    </footer>
+    <!-- Bloco "Endereço / mapa fixo" adaptado: negócio é SAB (atende a domicílio, sem loja). Rodapé usa localidade + CEP + área atendida em vez de endereço de rua e mapa de ponto. -->
+  </article>
+</MoneyPage>
+
+<style>
+  .money-page { max-width: 60rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; line-height: 1.65; }
+  .money-page h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.2; }
+  .money-page h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); margin-top: 2.5rem; }
+  .money-page h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+  .hero { margin: 0 0 1.5rem; }
+  .hero img { width: 100%; height: auto; border-radius: 12px; display: block; }
+  .nap-top, .nap-footer { background: color-mix(in srgb, currentColor 6%, transparent); border-radius: 10px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+  .nap-top p, .nap-footer p { margin: 0.3rem 0; }
+  .nap-footer { margin-top: 3rem; }
+  .cta { margin: 1.5rem 0; }
+  .btn { display: inline-block; background: #1a7f5a; color: #fff; padding: 0.7rem 1.15rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-right: 0.4rem; }
+  .btn:hover { background: #15694a; }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 0.6rem 0.75rem; text-align: left; vertical-align: top; }
+  th { background: color-mix(in srgb, currentColor 8%, transparent); }
+  .placeholder { color: #b91c1c; font-style: italic; }
+</style>

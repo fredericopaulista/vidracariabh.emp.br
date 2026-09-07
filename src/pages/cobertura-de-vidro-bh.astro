@@ -1,0 +1,88 @@
+---
+import MoneyPage from '../layouts/MoneyPage.astro';
+import hero from '../assets/img/hero-cobertura-vidro.jpg';
+
+const title = "Cobertura de Vidro em BH | Vidraçaria BH";
+const description = "Cobertura de vidro em BH para área gourmet, corredor e garagem: vidro laminado sobre estrutura metálica, com controle de calor. Medição no local. Peça seu orçamento.";
+const jsonld = [
+  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "serviceType": "Cobertura de vidro", "name": "Cobertura de vidro em BH para área gourmet, corredor e garagem", "description": "Cobertura de vidro em BH para área gourmet, corredor e garagem: vidro laminado sobre estrutura metálica, com controle de calor. Medição no local. Peça seu orçamento.", "provider": {"@type": "HomeAndConstructionBusiness", "name": "Vidraçaria BH", "telephone": "+55 31 99163-3453", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/cobertura-de-vidro-bh/"}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://vidracariabh.emp.br/"}, {"@type": "ListItem", "position": 2, "name": "Cobertura de vidro em BH", "item": "https://vidracariabh.emp.br/cobertura-de-vidro-bh/"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A cobertura de vidro pinga ou vaza?", "acceptedAnswer": {"@type": "Answer", "text": "Não, quando o caimento e a calha são bem feitos. É por isso que a medição confere o desnível disponível e o ponto de escoamento antes de fechar o orçamento."}}, {"@type": "Question", "name": "Aguenta granizo?", "acceptedAnswer": {"@type": "Answer", "text": "Vidro laminado aguenta impacto de granizo bem melhor que o comum: se uma lâmina trinca, a película segura os cacos. Após um temporal forte, vale conferir se há trinca para programar a troca."}}, {"@type": "Question", "name": "Não vai esquentar demais embaixo?", "acceptedAnswer": {"@type": "Answer", "text": "Vidro comum esquenta. Com vidro de controle solar ou película refletiva, o calor cai bastante. A gente indica a opção conforme a posição do sol no seu vão."}}, {"@type": "Question", "name": "Precisa de projeto e ART de engenheiro?", "acceptedAnswer": {"@type": "Answer", "text": "Coberturas pequenas em residência normalmente não. Coberturas grandes, com vão livre extenso ou em área comum de condomínio, podem exigir projeto e ART de engenheiro — nesse caso a gente orienta e trabalha junto com o profissional."}}, {"@type": "Question", "name": "Em quanto tempo fica pronto?", "acceptedAnswer": {"@type": "Answer", "text": "O prazo depende do tamanho, da estrutura e da agenda, e entra por escrito no orçamento. Vidro laminado sob medida costuma levar mais dias que o temperado comum."}}]})
+];
+---
+
+<MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/cobertura-de-vidro-bh/">
+  <article class="money-page">
+    <nav class="crumbs"><a href="/">Início</a> › <span>Cobertura de vidro em BH</span></nav>
+    <figure class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Cobertura de vidro laminado BH sobre área gourmet residencial, estrutura metálica" loading="eager" /></figure>
+    <h1>Cobertura de vidro em BH para área gourmet, corredor e garagem</h1>
+    <p>A cobertura de vidro em BH fecha um vão aberto — área gourmet, corredor lateral, entrada, garagem, poço de luz — com vidro sobre uma estrutura metálica, deixando a luz passar. A Vidraçaria BH mede o vão, calcula o caimento para a água, define o vidro e instala. Atende a domicílio em Belo Horizonte e região.</p>
+    <p>Cobertura de vidro é peça estrutural: o vidro fica na horizontal, sobre a sua cabeça, e a escolha do vidro e da estrutura segue critério de segurança.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Fale no WhatsApp (31) 99163-3453 e peça seu orçamento sem compromisso.</a></p>
+    <aside class="nap-top"><p><strong>Atendimento:</strong> Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p><p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p><p><strong>Contato:</strong> WhatsApp (31) 99163-3453</p></aside>
+    <h2>Como é feita uma cobertura de vidro BH?</h2>
+    <p>A cobertura de vidro em BH é montada em três partes:</p>
+    <ol><li><strong>Estrutura.</strong> Perfis de alumínio ou metalon fixados nas paredes ou em pilares, com uma leve inclinação (caimento) para a água escorrer para uma calha.</li><li><strong>Vidro.</strong> Chapas de vidro apoiadas e presas na estrutura, com bordas tratadas e vedação entre elas.</li><li><strong>Escoamento.</strong> Calha e rufo para levar a água da chuva para fora do vão, sem infiltrar na parede.</li></ol>
+    <p>O caimento e a calha são o que evita poça e goteira — por isso a medição confere o desnível disponível.</p>
+    <h2>Vidro temperado ou laminado na cobertura?</h2>
+    <p>Em cobertura, o indicado é <strong>vidro laminado</strong> (duas lâminas com película no meio). Se uma lâmina quebra — por granizo, galho ou impacto — os cacos ficam presos à película e não caem sobre quem está embaixo. O vidro temperado sozinho, se estilhaça, cai em grãos. Muitas vezes se usa <strong>temperado laminado</strong>: as duas lâminas são temperadas e ainda coladas, o que soma resistência e segurança.</p>
+    <h2>Controle de calor</h2>
+    <p>Cobertura de vidro sem cuidado esquenta o ambiente embaixo. As formas de reduzir isso:</p>
+    <ul><li><strong>Vidro de controle solar</strong>, que reflete parte do calor do sol.</li><li><strong>Vidro com película</strong> refletiva ou fumê aplicada.</li><li><strong>Vidro laminado com camada de proteção</strong> contra raios UV, que também protege móveis e piso do desbotamento.</li></ul>
+    <p>Na visita a gente indica a combinação conforme a orientação do vão (sol da manhã ou da tarde) e o uso.</p>
+    <h2>Onde instalar</h2>
+    <ul><li><strong>Área gourmet e churrasqueira</strong> — para usar o espaço na chuva sem fechar as laterais.</li><li><strong>Corredor lateral e passagem</strong> entre a casa e a edícula.</li><li><strong>Entrada e hall externo</strong> — proteção sobre a porta.</li><li><strong>Garagem</strong> — para carro e moto, quando não há laje.</li><li><strong>Poço de luz e vão entre construções</strong> — fecha a parte de cima mantendo a claridade.</li></ul>
+    <h2>Manutenção e limpeza</h2>
+    <ul><li><strong>Limpe o vidro e a calha</strong> pelo menos duas vezes por ano; folha acumulada na calha causa transbordamento.</li><li><strong>Confira a vedação entre as chapas</strong> uma vez por ano.</li><li><strong>Depois de temporal com granizo</strong>, olhe o vidro contra a luz para ver se há trinca; laminado trincado ainda segura, mas precisa de troca.</li></ul>
+    <h2>Por que fazer sua cobertura com a Vidraçaria BH</h2>
+    <p>A Vidraçaria BH está há 7 anos instalando vidros sob medida em Belo Horizonte. Quem mede é quem instala.</p>
+    <ul><li><strong>Medição técnica no local</strong>, com cálculo de caimento e de calha.</li><li><strong>Vidro laminado</strong> dimensionado para o vão.</li><li><strong>Orientação sobre controle de calor</strong> conforme a posição do sol.</li><li><strong>Prazo por escrito</strong> no orçamento.</li><li><strong>Atendimento a domicílio</strong> em BH e região, de segunda a sábado.</li></ul>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a></p>
+    <h2>Regiões atendidas</h2>
+    <p>A Vidraçaria BH atende a domicílio em toda Belo Horizonte — Centro, Savassi, Buritis, Pampulha, Barreiro, Venda Nova — e nas cidades vizinhas:</p>
+    <ul><li><a href="/vidracaria-em-contagem/">Contagem</a></li><li><a href="/vidracaria-em-betim/">Betim</a></li><li>Nova Lima</li><li>Vespasiano</li><li>Lagoa Santa</li></ul>
+    <p>Não achou seu bairro? Chame no WhatsApp que confirmamos o atendimento na hora.</p>
+    <h2>Peça o orçamento da cobertura de vidro em BH</h2>
+    <p>Manda no WhatsApp uma foto do vão, a medida aproximada (largura x profundidade) e para onde a água pode escoar. A gente dá uma primeira orientação e uma faixa de valor no mesmo dia útil. Se fizer sentido, marcamos a visita para medir e fechar o orçamento da sua cobertura de vidro em BH.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">WhatsApp: (31) 99163-3453.</a></p>
+    <h2>Perguntas frequentes</h2>
+    <h3>A cobertura de vidro pinga ou vaza?</h3>
+    <p>Não, quando o caimento e a calha são bem feitos. É por isso que a medição confere o desnível disponível e o ponto de escoamento antes de fechar o orçamento.</p>
+    <h3>Aguenta granizo?</h3>
+    <p>Vidro laminado aguenta impacto de granizo bem melhor que o comum: se uma lâmina trinca, a película segura os cacos. Após um temporal forte, vale conferir se há trinca para programar a troca.</p>
+    <h3>Não vai esquentar demais embaixo?</h3>
+    <p>Vidro comum esquenta. Com vidro de controle solar ou película refletiva, o calor cai bastante. A gente indica a opção conforme a posição do sol no seu vão.</p>
+    <h3>Precisa de projeto e ART de engenheiro?</h3>
+    <p>Coberturas pequenas em residência normalmente não. Coberturas grandes, com vão livre extenso ou em área comum de condomínio, podem exigir projeto e ART de engenheiro — nesse caso a gente orienta e trabalha junto com o profissional.</p>
+    <h3>Em quanto tempo fica pronto?</h3>
+    <p>O prazo depende do tamanho, da estrutura e da agenda, e entra por escrito no orçamento. Vidro laminado sob medida costuma levar mais dias que o temperado comum.</p>
+    <footer class="nap-footer">
+      <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
+      <p>WhatsApp: <a href="https://wa.me/5531991633453">(31) 99163-3453</a></p>
+      <p>Atendimento: segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
+      <p>Área de atendimento: Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
+    </footer>
+  </article>
+</MoneyPage>
+
+<style>
+  .money-page { max-width: 60rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; line-height: 1.65; }
+  .money-page h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.2; }
+  .money-page h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); margin-top: 2.5rem; }
+  .money-page h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+  .crumbs { font-size: 0.85rem; opacity: 0.75; margin-bottom: 1rem; }
+  .crumbs a { color: inherit; }
+  .hero { margin: 0 0 1.5rem; }
+  .hero img { width: 100%; height: auto; border-radius: 12px; display: block; }
+  .nap-top, .nap-footer { background: color-mix(in srgb, currentColor 6%, transparent); border-radius: 10px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+  .nap-top p, .nap-footer p { margin: 0.3rem 0; }
+  .nap-footer { margin-top: 3rem; }
+  .related { margin-top: 2.5rem; }
+  .cta { margin: 1.5rem 0; }
+  .btn { display: inline-block; background: #1a7f5a; color: #fff; padding: 0.7rem 1.15rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-right: 0.4rem; }
+  .btn:hover { background: #15694a; }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 0.6rem 0.75rem; text-align: left; vertical-align: top; }
+  th { background: color-mix(in srgb, currentColor 8%, transparent); }
+</style>

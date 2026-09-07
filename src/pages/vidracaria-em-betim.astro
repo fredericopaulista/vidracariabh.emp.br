@@ -1,0 +1,77 @@
+---
+import MoneyPage from '../layouts/MoneyPage.astro';
+import hero from '../assets/img/hero-regiao-betim.jpg';
+
+const title = "Vidraçaria em Betim | Vidraçaria BH";
+const description = "Vidraçaria em Betim a domicílio: box, cortina de vidro, espelhos sob medida, guarda-corpo, fachada e divisória para comércio e indústria. Peça seu orçamento.";
+const jsonld = [
+  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "serviceType": "Vidraçaria em Betim", "name": "Vidraçaria em Betim: vidros para casa, comércio e indústria", "description": "Vidraçaria em Betim a domicílio: box, cortina de vidro, espelhos sob medida, guarda-corpo, fachada e divisória para comércio e indústria. Peça seu orçamento.", "provider": {"@type": "HomeAndConstructionBusiness", "name": "Vidraçaria BH", "telephone": "+55 31 99163-3453", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/vidracaria-em-betim/"}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://vidracariabh.emp.br/"}, {"@type": "ListItem", "position": 2, "name": "Vidraçaria em Betim", "item": "https://vidracariabh.emp.br/vidracaria-em-betim/"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A Vidraçaria BH atende o meu bairro em Betim?", "acceptedAnswer": {"@type": "Answer", "text": "Atendemos toda Betim a domicílio. Endereços em área rural ou em distritos mais afastados são confirmados pelo WhatsApp antes de agendar."}}, {"@type": "Question", "name": "Vocês cobram deslocamento até Betim?", "acceptedAnswer": {"@type": "Answer", "text": "Pode haver um valor de deslocamento conforme a distância e o porte do serviço. Se houver, ele vem informado no orçamento, antes de você aprovar."}}, {"@type": "Question", "name": "Atendem indústria e galpão em Betim?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Fazemos fachada, pele de vidro, divisória, guarda-corpo e vitrine, além da troca de vidro em portaria e escritório."}}, {"@type": "Question", "name": "O prazo é diferente do de BH?", "acceptedAnswer": {"@type": "Answer", "text": "O prazo de fabricação do vidro é o mesmo. A data da visita depende da agenda da semana."}}, {"@type": "Question", "name": "Fazem só manutenção?", "acceptedAnswer": {"@type": "Answer", "text": "Fazemos. Troca de vidro quebrado, regulagem de porta e troca de ferragem são serviços de vidraceiro que atendemos em Betim."}}]})
+];
+---
+
+<MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/vidracaria-em-betim/">
+  <article class="money-page">
+    <nav class="crumbs"><a href="/">Início</a> › <span>Vidraçaria em Betim</span></nav>
+    <figure class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Vidraçaria em Betim — fachada de vidro de comércio na cidade" loading="eager" /></figure>
+    <h1>Vidraçaria em Betim: vidros para casa, comércio e indústria</h1>
+    <p>A Vidraçaria BH é uma vidraçaria em Betim que atende a domicílio, com medição no local e instalação em vidro temperado. Fazemos box para banheiro, cortina de vidro, fechamento de varanda, espelhos sob medida, guarda-corpo, cobertura, porta de vidro e manutenção. Em Betim, além do atendimento residencial, temos demanda de comércio e de indústria — fachada, divisória corporativa e vitrine.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Fale no WhatsApp (31) 99163-3453 e peça seu orçamento sem compromisso.</a></p>
+    <aside class="nap-top"><p><strong>Atendimento:</strong> Betim e toda a região metropolitana de BH</p><p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p><p><strong>Contato:</strong> WhatsApp (31) 99163-3453</p></aside>
+    <h2>O que a Vidraçaria BH faz em Betim?</h2>
+    <ul><li><strong><a href="/box-para-banheiro-bh/">Box para banheiro</a></strong> em vidro temperado.</li><li><strong><a href="/cortina-de-vidro-bh/">Cortina de vidro</a></strong> e <strong><a href="/fechamento-de-varanda-bh/">fechamento de varanda</a></strong>.</li><li><strong><a href="/espelho-sob-medida-bh/">Espelhos sob medida</a></strong> para banheiro, sala, academia e loja.</li><li><strong><a href="/guarda-corpo-de-vidro-bh/">Guarda-corpo de vidro</a></strong> para sacada, escada e mezanino.</li><li><strong><a href="/cobertura-de-vidro-bh/">Cobertura de vidro</a></strong> para área gourmet e garagem.</li><li><strong><a href="/porta-de-vidro-bh/">Porta de vidro</a></strong> de correr, pivotante e blindex.</li><li><strong>Fachada e divisória</strong> para comércio e escritório.</li><li><strong><a href="/vidraceiro-bh/">Vidraceiro</a></strong> para troca de vidro quebrado, regulagem e ferragem.</li></ul>
+    <h2>Bairros de Betim que atendemos</h2>
+    <p>Atendemos toda Betim a domicílio — Centro, Angola, Citrolândia, PTB, Jardim Teresópolis, Icaivera, São Caetano, Alterosas, Guanabara e demais bairros. Se o seu não estiver na lista, chame no WhatsApp que confirmamos na hora.</p>
+    <h2>Serviços mais pedidos em Betim</h2>
+    <p>Betim é um polo industrial e tem um comércio ativo no Centro e nos corredores de bairro. Junto com os serviços residenciais — <strong>box</strong>, <strong>espelho</strong> e <strong>fechamento de varanda</strong> —, atendemos bastante <strong>fachada de vidro</strong>, <strong>porta blindex</strong>, <strong>divisória corporativa</strong> e <strong>vitrine</strong> para loja, além de <strong>guarda-corpo</strong> em prédio novo. Para o comércio, também fazemos a manutenção: mola de porta, fechadura e troca de vidro.</p>
+    <h2>Como funciona o atendimento em Betim</h2>
+    <ol><li><strong>WhatsApp com foto.</strong> Você manda o serviço, a foto e o bairro. Retorno no mesmo dia útil com orientação e faixa de valor.</li><li><strong>Visita e medição.</strong> Marcamos o horário; a data é confirmada conforme a agenda da semana.</li><li><strong>Orçamento fechado</strong>, com vidro, ferragem, prazo e forma de pagamento.</li><li><strong>Instalação e teste</strong> na sua frente.</li></ol>
+    <h2>Por que escolher a Vidraçaria BH</h2>
+    <p>A Vidraçaria BH está há 7 anos instalando vidros sob medida em BH e região.</p>
+    <ul><li><strong>Medição técnica no local.</strong></li><li><strong>Vidro temperado</strong> com certificado do fabricante quando o serviço exige.</li><li><strong>Prazo por escrito</strong> no orçamento.</li><li><strong>Atende residência, comércio e indústria</strong> em Betim, de segunda a sábado.</li></ul>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a></p>
+    <h2>Peça o orçamento da sua vidraçaria em Betim</h2>
+    <p>Manda uma foto do local no WhatsApp, a medida aproximada e o bairro. A gente dá a orientação inicial e uma faixa de valor no mesmo dia útil. Se fizer sentido, marcamos a visita para medir e fechar o orçamento da sua vidraçaria em Betim.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">WhatsApp: (31) 99163-3453.</a></p>
+    <h2>Perguntas frequentes</h2>
+    <h3>A Vidraçaria BH atende o meu bairro em Betim?</h3>
+    <p>Atendemos toda Betim a domicílio. Endereços em área rural ou em distritos mais afastados são confirmados pelo WhatsApp antes de agendar.</p>
+    <h3>Vocês cobram deslocamento até Betim?</h3>
+    <p>Pode haver um valor de deslocamento conforme a distância e o porte do serviço. Se houver, ele vem informado no orçamento, antes de você aprovar.</p>
+    <h3>Atendem indústria e galpão em Betim?</h3>
+    <p>Sim. Fazemos fachada, pele de vidro, divisória, guarda-corpo e vitrine, além da troca de vidro em portaria e escritório.</p>
+    <h3>O prazo é diferente do de BH?</h3>
+    <p>O prazo de fabricação do vidro é o mesmo. A data da visita depende da agenda da semana.</p>
+    <h3>Fazem só manutenção?</h3>
+    <p>Fazemos. Troca de vidro quebrado, regulagem de porta e troca de ferragem são serviços de vidraceiro que atendemos em Betim.</p>
+    <footer class="nap-footer">
+      <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
+      <p>WhatsApp: <a href="https://wa.me/5531991633453">(31) 99163-3453</a></p>
+      <p>Atendimento: segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
+      <p>Área de atendimento: Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
+    </footer>
+  </article>
+</MoneyPage>
+
+<style>
+  .money-page { max-width: 60rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; line-height: 1.65; }
+  .money-page h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.2; }
+  .money-page h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); margin-top: 2.5rem; }
+  .money-page h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+  .crumbs { font-size: 0.85rem; opacity: 0.75; margin-bottom: 1rem; }
+  .crumbs a { color: inherit; }
+  .hero { margin: 0 0 1.5rem; }
+  .hero img { width: 100%; height: auto; border-radius: 12px; display: block; }
+  .nap-top, .nap-footer { background: color-mix(in srgb, currentColor 6%, transparent); border-radius: 10px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+  .nap-top p, .nap-footer p { margin: 0.3rem 0; }
+  .nap-footer { margin-top: 3rem; }
+  .related { margin-top: 2.5rem; }
+  .cta { margin: 1.5rem 0; }
+  .btn { display: inline-block; background: #1a7f5a; color: #fff; padding: 0.7rem 1.15rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-right: 0.4rem; }
+  .btn:hover { background: #15694a; }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 0.6rem 0.75rem; text-align: left; vertical-align: top; }
+  th { background: color-mix(in srgb, currentColor 8%, transparent); }
+</style>

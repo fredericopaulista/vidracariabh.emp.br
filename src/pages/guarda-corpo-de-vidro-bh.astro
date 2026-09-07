@@ -1,0 +1,85 @@
+---
+import MoneyPage from '../layouts/MoneyPage.astro';
+import hero from '../assets/img/hero-guarda-corpo.jpg';
+
+const title = "Guarda-Corpo de Vidro em BH | Vidraçaria BH";
+const description = "Guarda-corpo de vidro em BH para sacada, escada e mezanino, dentro da NBR 14718. Fixação por pinça, sistema ou torre. Medição no local. Peça seu orçamento.";
+const jsonld = [
+  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "serviceType": "Instalação de guarda-corpo de vidro", "name": "Guarda-corpo de vidro em BH para sacada, escada e mezanino", "description": "Guarda-corpo de vidro em BH para sacada, escada e mezanino, dentro da NBR 14718. Fixação por pinça, sistema ou torre. Medição no local. Peça seu orçamento.", "provider": {"@type": "HomeAndConstructionBusiness", "name": "Vidraçaria BH", "telephone": "+55 31 99163-3453", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/guarda-corpo-de-vidro-bh/"}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://vidracariabh.emp.br/"}, {"@type": "ListItem", "position": 2, "name": "Guarda-corpo de vidro em BH", "item": "https://vidracariabh.emp.br/guarda-corpo-de-vidro-bh/"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "O guarda-corpo de vidro é seguro?", "acceptedAnswer": {"@type": "Answer", "text": "É, quando feito na norma. Usa vidro laminado (que não cai se quebrar) e fixação dimensionada para a carga. Guarda-corpo fora da norma é que é inseguro."}}, {"@type": "Question", "name": "Precisa de corrimão junto com o vidro?", "acceptedAnswer": {"@type": "Answer", "text": "Em escada e rampa, sim, por uso e por norma. Em sacada, o guarda-corpo pode ser só de vidro (autoportante) se o vidro e a fixação forem dimensionados para isso."}}, {"@type": "Question", "name": "Qual norma vocês seguem?", "acceptedAnswer": {"@type": "Answer", "text": "A NBR 14718, que trata de guarda-corpos em edificações. Ela define altura, resistência e o tipo de vidro."}}, {"@type": "Question", "name": "Dá para instalar em obra já pronta?", "acceptedAnswer": {"@type": "Answer", "text": "Dá, na maioria dos casos com fixação por pinça ou por sistema sobre a laje. O embutido no piso é o único que costuma pedir preparo antes do contrapiso."}}, {"@type": "Question", "name": "Em quanto tempo fica pronto?", "acceptedAnswer": {"@type": "Answer", "text": "O prazo depende do vidro (laminado leva mais tempo), da fixação e da agenda, e entra por escrito no orçamento."}}]})
+];
+---
+
+<MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/guarda-corpo-de-vidro-bh/">
+  <article class="money-page">
+    <nav class="crumbs"><a href="/">Início</a> › <span>Guarda-corpo de vidro em BH</span></nav>
+    <figure class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Guarda-corpo de vidro BH em sacada de apartamento, vidro laminado com base de inox" loading="eager" /></figure>
+    <h1>Guarda-corpo de vidro em BH para sacada, escada e mezanino</h1>
+    <p>O guarda-corpo de vidro em BH é a proteção de vidro que fecha a beirada de uma sacada, de uma escada ou de um mezanino sem tapar a vista. A Vidraçaria BH mede o local, indica o tipo de fixação e o vidro que atendem à norma de segurança e instala. Atende a domicílio em Belo Horizonte e região.</p>
+    <p>Guarda-corpo não é item de acabamento: é peça de segurança, e a escolha do vidro e da fixação segue norma. Por isso a medição é técnica.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Fale no WhatsApp (31) 99163-3453 e peça seu orçamento sem compromisso.</a></p>
+    <aside class="nap-top"><p><strong>Atendimento:</strong> Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p><p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p><p><strong>Contato:</strong> WhatsApp (31) 99163-3453</p></aside>
+    <h2>O que é e quando o guarda-corpo de vidro BH é obrigatório?</h2>
+    <p>Sempre que há um desnível com risco de queda — sacada, terraço, escada, mezanino, vão de pé-direito duplo — a norma pede uma proteção de borda. A referência é a <strong>NBR 14718</strong>, que define altura mínima, resistência a empurrão e o tipo de vidro aceito. Um guarda-corpo de vidro fora da norma é um risco real e um problema em vistoria.</p>
+    <p>O guarda-corpo de vidro cumpre essa função deixando a área visualmente aberta, o que é o motivo de a maioria das pessoas escolherem vidro em vez de alvenaria ou grade.</p>
+    <h2>Tipos de fixação</h2>
+    <ul><li><strong>Pinça (spider).</strong> Peças de inox presas na laje ou na parede prendem o vidro em pontos. Visual leve, comum em sacada.</li><li><strong>Sistema (perfil em U embutido).</strong> Um perfil de alumínio ou inox corre por baixo do vidro e segura toda a base. Aspecto mais limpo, sem pinças aparentes.</li><li><strong>Torre / botão.</strong> Colunas de inox nas pontas com barra superior, o vidro entra entre as colunas. Usado em escada e rampa.</li><li><strong>Embutido no piso.</strong> O perfil fica escondido no contrapiso; só o vidro aparece saindo do chão. É o acabamento mais discreto e o que exige mais preparo na obra.</li></ul>
+    <h2>Guarda-corpo só de vidro, com inox ou com alumínio</h2>
+    <ul><li><strong>Só de vidro (autoportante).</strong> Sem corrimão nem coluna aparente; o vidro sustenta a carga. Exige vidro mais espesso e fixação robusta.</li><li><strong>Vidro com inox.</strong> Vidro + barra de apoio (corrimão) em inox. Combina a leveza do vidro com um ponto de mão.</li><li><strong>Vidro com alumínio.</strong> Estrutura de alumínio com preenchimento de vidro. Custo menor, muito usado em varanda de prédio.</li></ul>
+    <h2>Vidro e espessura</h2>
+    <p>Guarda-corpo pede <strong>vidro de segurança</strong>. Na maioria dos casos a norma exige <strong>vidro laminado</strong> (duas lâminas com película), porque se uma quebra a peça não cai. As composições comuns são 8+8 mm ou 10+10 mm laminado, definidas pela altura, pelo tipo de fixação e pela carga prevista. Em alguns sistemas com corrimão contínuo, aceita-se temperado. A definição vai no orçamento.</p>
+    <h2>Guarda-corpo de escada e de sacada panorâmica</h2>
+    <ul><li><strong>Escada.</strong> O guarda-corpo acompanha a inclinação; costuma vir com corrimão de inox por questão de uso e de norma.</li><li><strong>Sacada panorâmica.</strong> Vidro do piso à altura de norma, com o mínimo de estrutura aparente, para não cortar a vista. É o que mais exige vidro espesso e fixação precisa.</li></ul>
+    <h2>Por que instalar seu guarda-corpo com a Vidraçaria BH</h2>
+    <p>A Vidraçaria BH está há 7 anos instalando vidros sob medida em Belo Horizonte. Quem mede é quem instala.</p>
+    <ul><li><strong>Medição técnica no local</strong>, com conferência de fixação e de carga.</li><li><strong>Vidro laminado</strong> conforme a norma para cada situação.</li><li><strong>Fixação adequada</strong> ao ponto — pinça, sistema, torre ou embutido.</li><li><strong>Prazo por escrito</strong> no orçamento.</li><li><strong>Atendimento a domicílio</strong> em BH e região, de segunda a sábado.</li></ul>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a></p>
+    <h2>Regiões atendidas</h2>
+    <p>A Vidraçaria BH atende a domicílio em toda Belo Horizonte — Centro, Savassi, Buritis, Pampulha, Barreiro, Venda Nova — e nas cidades vizinhas:</p>
+    <ul><li><a href="/vidracaria-em-contagem/">Contagem</a></li><li><a href="/vidracaria-em-betim/">Betim</a></li><li>Nova Lima</li><li>Vespasiano</li><li>Lagoa Santa</li></ul>
+    <p>Não achou seu bairro? Chame no WhatsApp que confirmamos o atendimento na hora.</p>
+    <h2>Peça o orçamento do guarda-corpo de vidro em BH</h2>
+    <p>Manda no WhatsApp uma foto do local, a extensão aproximada (em metros) e onde vai o guarda-corpo (sacada, escada, mezanino). A gente indica a fixação e o vidro e passa uma faixa de valor no mesmo dia útil. Se fizer sentido, marcamos a visita para medir e fechar o orçamento do seu guarda-corpo de vidro em BH.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">WhatsApp: (31) 99163-3453.</a></p>
+    <h2>Perguntas frequentes</h2>
+    <h3>O guarda-corpo de vidro é seguro?</h3>
+    <p>É, quando feito na norma. Usa vidro laminado (que não cai se quebrar) e fixação dimensionada para a carga. Guarda-corpo fora da norma é que é inseguro.</p>
+    <h3>Precisa de corrimão junto com o vidro?</h3>
+    <p>Em escada e rampa, sim, por uso e por norma. Em sacada, o guarda-corpo pode ser só de vidro (autoportante) se o vidro e a fixação forem dimensionados para isso.</p>
+    <h3>Qual norma vocês seguem?</h3>
+    <p>A NBR 14718, que trata de guarda-corpos em edificações. Ela define altura, resistência e o tipo de vidro.</p>
+    <h3>Dá para instalar em obra já pronta?</h3>
+    <p>Dá, na maioria dos casos com fixação por pinça ou por sistema sobre a laje. O embutido no piso é o único que costuma pedir preparo antes do contrapiso.</p>
+    <h3>Em quanto tempo fica pronto?</h3>
+    <p>O prazo depende do vidro (laminado leva mais tempo), da fixação e da agenda, e entra por escrito no orçamento.</p>
+    <footer class="nap-footer">
+      <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
+      <p>WhatsApp: <a href="https://wa.me/5531991633453">(31) 99163-3453</a></p>
+      <p>Atendimento: segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
+      <p>Área de atendimento: Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
+    </footer>
+  </article>
+</MoneyPage>
+
+<style>
+  .money-page { max-width: 60rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; line-height: 1.65; }
+  .money-page h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.2; }
+  .money-page h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); margin-top: 2.5rem; }
+  .money-page h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+  .crumbs { font-size: 0.85rem; opacity: 0.75; margin-bottom: 1rem; }
+  .crumbs a { color: inherit; }
+  .hero { margin: 0 0 1.5rem; }
+  .hero img { width: 100%; height: auto; border-radius: 12px; display: block; }
+  .nap-top, .nap-footer { background: color-mix(in srgb, currentColor 6%, transparent); border-radius: 10px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+  .nap-top p, .nap-footer p { margin: 0.3rem 0; }
+  .nap-footer { margin-top: 3rem; }
+  .related { margin-top: 2.5rem; }
+  .cta { margin: 1.5rem 0; }
+  .btn { display: inline-block; background: #1a7f5a; color: #fff; padding: 0.7rem 1.15rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-right: 0.4rem; }
+  .btn:hover { background: #15694a; }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 0.6rem 0.75rem; text-align: left; vertical-align: top; }
+  th { background: color-mix(in srgb, currentColor 8%, transparent); }
+</style>

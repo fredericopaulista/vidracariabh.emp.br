@@ -1,0 +1,89 @@
+---
+import MoneyPage from '../layouts/MoneyPage.astro';
+import hero from '../assets/img/hero-vidro-temperado.jpg';
+
+const title = "Vidro Temperado em BH sob Medida | Vidraçaria BH";
+const description = "Vidro temperado em BH sob medida para box, porta, tampo, prateleira e cobertura. Medição, furos e recortes antes da têmpera. Peça seu orçamento no WhatsApp.";
+const jsonld = [
+  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "serviceType": "Fornecimento e instalação de vidro temperado sob medida", "name": "Vidro temperado em BH sob medida", "description": "Vidro temperado em BH sob medida para box, porta, tampo, prateleira e cobertura. Medição, furos e recortes antes da têmpera. Peça seu orçamento no WhatsApp.", "provider": {"@type": "HomeAndConstructionBusiness", "name": "Vidraçaria BH", "telephone": "+55 31 99163-3453", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/vidro-temperado-bh/"}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://vidracariabh.emp.br/"}, {"@type": "ListItem", "position": 2, "name": "Vidro temperado em BH", "item": "https://vidracariabh.emp.br/vidro-temperado-bh/"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Dá para cortar o vidro depois de temperado?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Todo corte, furo e recorte é feito antes da têmpera. Depois de pronto, o vidro não aceita mais nenhuma alteração — por isso a medição precisa estar certa."}}, {"@type": "Question", "name": "Em quanto tempo o vidro temperado fica pronto?", "acceptedAnswer": {"@type": "Answer", "text": "Depende da peça e da agenda da têmpera, e entra por escrito no orçamento. Em geral leva alguns dias entre a medição e a entrega."}}, {"@type": "Question", "name": "Vocês entregam e instalam, ou só vendem a peça?", "acceptedAnswer": {"@type": "Answer", "text": "Os dois. Você pode retirar a peça pronta ou contratar a instalação junto."}}, {"@type": "Question", "name": "Vidro temperado pode quebrar sozinho?", "acceptedAnswer": {"@type": "Answer", "text": "É raro, mas pode acontecer por uma imperfeição interna (inclusão de níquel-sulfeto) ou por uma batida antiga na borda. Por isso o cuidado com as quinas é importante."}}, {"@type": "Question", "name": "Qual espessura eu preciso?", "acceptedAnswer": {"@type": "Answer", "text": "Depende do tamanho, do peso e do uso. Mande a medida e o que a peça vai fazer que a gente indica — em geral 8 mm para box e porta, 10 mm para entrada e guarda-corpo."}}]})
+];
+---
+
+<MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/vidro-temperado-bh/">
+  <article class="money-page">
+    <nav class="crumbs"><a href="/">Início</a> › <span>Vidro temperado em BH</span></nav>
+    <figure class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Chapas de vidro temperado BH sob medida em bancada de vidraçaria, bordas lapidadas" loading="eager" /></figure>
+    <h1>Vidro temperado em BH sob medida</h1>
+    <p>A Vidraçaria BH fornece e instala vidro temperado em BH sob medida: box, porta, tampo de mesa, prateleira, divisória, guarda-corpo e cobertura. A gente mede no local, define espessura e acabamento, e entrega a peça no tamanho exato — porque vidro temperado não pode ser cortado depois de pronto. Atende a domicílio em Belo Horizonte e região.</p>
+    <p>Se você já sabe a medida e só precisa do vidro cortado e temperado, ou se quer a peça medida e instalada, os dois caminhos passam pelo mesmo pedido.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Fale no WhatsApp (31) 99163-3453 e peça seu orçamento sem compromisso.</a></p>
+    <aside class="nap-top"><p><strong>Atendimento:</strong> Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p><p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p><p><strong>Contato:</strong> WhatsApp (31) 99163-3453</p></aside>
+    <h2>O que é vidro temperado e onde usar em BH?</h2>
+    <p>Vidro temperado é vidro comum que passou por um forno a cerca de 700 °C e um resfriamento rápido. Esse choque térmico deixa o vidro várias vezes mais resistente a impacto e a variação de temperatura. Se ele quebra, se desmancha em grãos pequenos, não em cacos cortantes — por isso é chamado de vidro de segurança.</p>
+    <p>Onde o vidro temperado em BH costuma entrar:</p>
+    <ul><li><strong>Box de banheiro</strong> e <strong>portas de vidro</strong> (de correr, de abrir, blindex).</li><li><strong>Tampo de mesa</strong>, <strong>prateleira</strong> e <strong>nicho</strong>.</li><li><strong>Divisória</strong> de ambiente e de escritório.</li><li><strong>Guarda-corpo</strong> e <strong>cobertura</strong> (nesses casos, muitas vezes laminado + temperado).</li><li><strong>Fachada</strong> e <strong>vitrine</strong> de comércio.</li></ul>
+    <h2>Vidro temperado, comum ou laminado?</h2>
+    <div class="table-wrap"><table><thead><tr><th>Tipo</th><th>Resistência</th><th>Se quebra</th><th>Pode cortar depois?</th></tr></thead><tbody><tr><td>Comum (float)</td><td>Baixa</td><td>Cacos cortantes</td><td>Sim</td></tr><tr><td>Temperado</td><td>Alta a impacto e a calor</td><td>Grãos pequenos</td><td>Não</td></tr><tr><td>Laminado</td><td>Média; segura os cacos</td><td>Trinca e não cai</td><td>Não (as lâminas podem ser comuns ou temperadas)</td></tr></tbody></table></div>
+    <p>Para box, porta, guarda-corpo e tampo, a escolha é temperado. Para cobertura e alguns guarda-corpos, laminado (ou temperado laminado).</p>
+    <h2>Espessuras e o que cada uma aguenta</h2>
+    <ul><li><strong>6 mm</strong> — divisória leve, prateleira pequena, porta interna de baixo tráfego.</li><li><strong>8 mm</strong> — box de banheiro, porta de vidro comum, tampo de mesa.</li><li><strong>10 mm</strong> — porta de entrada, guarda-corpo com corrimão, vão largo.</li><li><strong>12 mm</strong> — guarda-corpo autoportante, fachada, vão muito grande.</li></ul>
+    <p>A espessura certa depende do tamanho da peça, do peso e do uso. A gente define isso na medição e coloca no orçamento.</p>
+    <h2>Vidro temperado sob medida: como funciona o pedido</h2>
+    <ol><li><strong>Medição ou gabarito.</strong> A gente vai medir, ou você envia as medidas exatas e um gabarito se a peça tiver formato irregular.</li><li><strong>Furos e recortes.</strong> Qualquer furo (para dobradiça, puxador, fechadura, tomada) ou recorte precisa ser feito <strong>antes</strong> da têmpera.</li><li><strong>Têmpera e acabamento.</strong> O vidro é cortado, lapidado nas bordas, furado e só então temperado.</li><li><strong>Entrega ou instalação.</strong> Você retira a peça pronta ou a gente instala.</li></ol>
+    <p>Depois de temperado, o vidro não aceita mais nenhum corte ou furo. Um furo fora do lugar significa refazer a peça.</p>
+    <h2>Cuidados com vidro temperado</h2>
+    <ul><li><strong>A borda é o ponto fraco.</strong> Uma batida forte no canto ou na quina pode trincar a peça inteira, mesmo tempos depois.</li><li><strong>Não force o vidro contra um apoio duro</strong> sem borracha ou calço.</li><li><strong>Limpe com pano macio e produto neutro</strong>, sem lâmina nem abrasivo.</li></ul>
+    <h2>Por que comprar seu vidro temperado com a Vidraçaria BH</h2>
+    <p>A Vidraçaria BH está há 7 anos trabalhando com vidro sob medida em Belo Horizonte.</p>
+    <ul><li><strong>Medição no local</strong> ou conferência do seu gabarito.</li><li><strong>Definição de espessura e acabamento</strong> conforme o uso.</li><li><strong>Furos e recortes</strong> planejados antes da têmpera.</li><li><strong>Prazo por escrito</strong> no orçamento.</li><li><strong>Entrega e instalação</strong> a domicílio em BH e região, de segunda a sábado.</li></ul>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a></p>
+    <h2>Regiões atendidas</h2>
+    <p>A Vidraçaria BH atende a domicílio em toda Belo Horizonte — Centro, Savassi, Buritis, Pampulha, Barreiro, Venda Nova — e nas cidades vizinhas:</p>
+    <ul><li><a href="/vidracaria-em-contagem/">Contagem</a></li><li><a href="/vidracaria-em-betim/">Betim</a></li><li>Nova Lima</li><li>Vespasiano</li><li>Lagoa Santa</li></ul>
+    <p>Não achou seu bairro? Chame no WhatsApp que confirmamos o atendimento na hora.</p>
+    <h2>Peça o orçamento do seu vidro temperado em BH</h2>
+    <p>Manda no WhatsApp o que você precisa (peça, uso), a medida aproximada e, se tiver, uma foto do local. A gente indica a espessura, o acabamento e passa uma faixa de valor no mesmo dia útil. Se fizer sentido, marcamos a medição e fechamos o orçamento do seu vidro temperado em BH.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">WhatsApp: (31) 99163-3453.</a></p>
+    <h2>Perguntas frequentes</h2>
+    <h3>Dá para cortar o vidro depois de temperado?</h3>
+    <p>Não. Todo corte, furo e recorte é feito antes da têmpera. Depois de pronto, o vidro não aceita mais nenhuma alteração — por isso a medição precisa estar certa.</p>
+    <h3>Em quanto tempo o vidro temperado fica pronto?</h3>
+    <p>Depende da peça e da agenda da têmpera, e entra por escrito no orçamento. Em geral leva alguns dias entre a medição e a entrega.</p>
+    <h3>Vocês entregam e instalam, ou só vendem a peça?</h3>
+    <p>Os dois. Você pode retirar a peça pronta ou contratar a instalação junto.</p>
+    <h3>Vidro temperado pode quebrar sozinho?</h3>
+    <p>É raro, mas pode acontecer por uma imperfeição interna (inclusão de níquel-sulfeto) ou por uma batida antiga na borda. Por isso o cuidado com as quinas é importante.</p>
+    <h3>Qual espessura eu preciso?</h3>
+    <p>Depende do tamanho, do peso e do uso. Mande a medida e o que a peça vai fazer que a gente indica — em geral 8 mm para box e porta, 10 mm para entrada e guarda-corpo.</p>
+    <footer class="nap-footer">
+      <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
+      <p>WhatsApp: <a href="https://wa.me/5531991633453">(31) 99163-3453</a></p>
+      <p>Atendimento: segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
+      <p>Área de atendimento: Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
+    </footer>
+  </article>
+</MoneyPage>
+
+<style>
+  .money-page { max-width: 60rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; line-height: 1.65; }
+  .money-page h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.2; }
+  .money-page h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); margin-top: 2.5rem; }
+  .money-page h3 { font-size: 1.05rem; margin-top: 1.5rem; }
+  .crumbs { font-size: 0.85rem; opacity: 0.75; margin-bottom: 1rem; }
+  .crumbs a { color: inherit; }
+  .hero { margin: 0 0 1.5rem; }
+  .hero img { width: 100%; height: auto; border-radius: 12px; display: block; }
+  .nap-top, .nap-footer { background: color-mix(in srgb, currentColor 6%, transparent); border-radius: 10px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+  .nap-top p, .nap-footer p { margin: 0.3rem 0; }
+  .nap-footer { margin-top: 3rem; }
+  .related { margin-top: 2.5rem; }
+  .cta { margin: 1.5rem 0; }
+  .btn { display: inline-block; background: #1a7f5a; color: #fff; padding: 0.7rem 1.15rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin-right: 0.4rem; }
+  .btn:hover { background: #15694a; }
+  .table-wrap { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: 0.95rem; }
+  th, td { border: 1px solid color-mix(in srgb, currentColor 20%, transparent); padding: 0.6rem 0.75rem; text-align: left; vertical-align: top; }
+  th { background: color-mix(in srgb, currentColor 8%, transparent); }
+</style>
