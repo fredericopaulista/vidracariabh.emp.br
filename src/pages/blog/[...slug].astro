@@ -34,6 +34,16 @@ const jsonld = JSON.stringify({
       Publicado em {d.pubDate.toLocaleDateString('pt-BR')}
       {d.updatedDate && d.updatedDate.getTime() !== d.pubDate.getTime() && ` · atualizado em ${d.updatedDate.toLocaleDateString('pt-BR')}`}
     </p>
+    {d.heroImage && (
+      <img
+        class="post-hero"
+        src={d.heroImage}
+        alt={d.heroAlt ?? d.title}
+        width="1200"
+        height="675"
+        loading="eager"
+      />
+    )}
     <div class="post-body">
       <Content />
     </div>

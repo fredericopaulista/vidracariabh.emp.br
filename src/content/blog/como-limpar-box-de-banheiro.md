@@ -6,7 +6,7 @@ updatedDate: 2026-09-06
 draft: true
 cluster: "Como limpar box de banheiro"
 moneyPage: "/box-para-banheiro-bh/"
-heroImage: "../assets/img/blog/como-limpar-box-de-banheiro.jpg"
+heroImage: "/blog/como-limpar-box-de-banheiro.jpg"
 heroAlt: "Mão passando pano em box de vidro limpo e transparente"
 kw_principal: "como limpar box de banheiro"
 ---

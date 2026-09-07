@@ -22,9 +22,21 @@ const description =
       {posts.map((post) => (
         <li>
           <a href={`/blog/${post.slug}/`}>
-            <h2>{post.data.title}</h2>
-            <p>{post.data.description}</p>
-            <span class="date">{post.data.pubDate.toLocaleDateString('pt-BR')}</span>
+            {post.data.heroImage && (
+              <img
+                class="post-card-img"
+                src={post.data.heroImage}
+                alt={post.data.heroAlt ?? post.data.title}
+                width="1200"
+                height="675"
+                loading="lazy"
+              />
+            )}
+            <div class="post-card-body">
+              <h2>{post.data.title}</h2>
+              <p>{post.data.description}</p>
+              <span class="date">{post.data.pubDate.toLocaleDateString('pt-BR')}</span>
+            </div>
           </a>
         </li>
       ))}
