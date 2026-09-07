@@ -2,9 +2,7 @@
 export interface Props {
   title: string;
   description: string;
-  /** JSON-LD string(s) já serializadas. O Link Flow injeta LocalBusiness/Service/Person aqui. */
   jsonld?: string | string[];
-  /** rota canônica, ex: "/box-para-banheiro-bh/" */
   canonicalPath?: string;
 }
 
@@ -42,52 +40,77 @@ const regioes = [
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    <meta name="theme-color" content="#0a4049" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="pt_BR" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     {blocks.map((b) => <script type="application/ld+json" set:html={b} />)}
   </head>
   <body>
+    <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+
     <header class="site-header">
-      <div class="wrap">
-        <a class="brand" href="/">Vidraçaria BH</a>
+      <div class="wrap hdr">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Vidraçaria <strong>BH</strong></span>
+        </a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+        <label for="nav-toggle" class="nav-burger" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </label>
+
         <nav class="site-nav" aria-label="Principal">
           <details class="menu">
             <summary>Serviços</summary>
-            <ul>
+            <div class="menu-panel">
               {servicos.map(([href, label]) => (
-                <li><a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a></li>
+                <a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a>
               ))}
-            </ul>
+            </div>
           </details>
           <details class="menu">
             <summary>Regiões</summary>
-            <ul>
+            <div class="menu-panel">
               {regioes.map(([href, label]) => (
-                <li><a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a></li>
+                <a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a>
               ))}
-            </ul>
+            </div>
           </details>
-          <a href="/blog/" aria-current={path.startsWith('/blog') ? 'page' : undefined}>Blog</a>
-          <a href="/sobre/" aria-current={path === '/sobre/' ? 'page' : undefined}>Sobre</a>
-          <a href="/contato/" aria-current={path === '/contato/' ? 'page' : undefined}>Contato</a>
+          <a class="nav-link" href="/blog/" aria-current={path.startsWith('/blog') ? 'page' : undefined}>Blog</a>
+          <a class="nav-link" href="/sobre/" aria-current={path === '/sobre/' ? 'page' : undefined}>Sobre</a>
+          <a class="nav-link" href="/contato/" aria-current={path === '/contato/' ? 'page' : undefined}>Contato</a>
+          <a class="wa-btn" href={wa}>WhatsApp</a>
         </nav>
-        <a class="wa-btn" href={wa}>WhatsApp</a>
       </div>
     </header>
 
-    <main>
+    <main id="conteudo">
       <slot />
     </main>
 
     <footer class="site-footer">
-      <div class="wrap cols">
-        <div>
-          <p class="ft-title">Vidraçaria BH</p>
-          <p>Vidro sob medida em Belo Horizonte e região, com equipe de instalação própria.</p>
-          <p>WhatsApp: <a href={wa}>(31) 99163-3453</a><br />E-mail: <a href="mailto:contato@vidracariabh.emp.br">contato@vidracariabh.emp.br</a></p>
-          <p>Seg a sex, 8h–18h · sáb, 8h–12h · CEP 30160-011 · Belo Horizonte/MG</p>
+      <div class="wrap ft-cols">
+        <div class="ft-about">
+          <a class="brand brand--footer" href="/">
+            <span class="brand-mark" aria-hidden="true"></span>
+            <span>Vidraçaria <strong>BH</strong></span>
+          </a>
+          <p>Vidro sob medida em Belo Horizonte e região, com equipe de instalação própria. Box, cortina de vidro, espelhos, guarda-corpo, cobertura, fachada e manutenção.</p>
+          <p class="ft-contact">
+            <a href={wa}>WhatsApp (31) 99163-3453</a><br />
+            <a href="mailto:contato@vidracariabh.emp.br">contato@vidracariabh.emp.br</a><br />
+            Seg a sex, 8h–18h · sáb, 8h–12h · Belo Horizonte/MG · CEP 30160-011
+          </p>
         </div>
         <div>
           <p class="ft-title">Serviços</p>
@@ -96,36 +119,180 @@ const regioes = [
         <div>
           <p class="ft-title">Regiões</p>
           <ul>{regioes.map(([href, label]) => <li><a href={href}>{label}</a></li>)}</ul>
-          <p class="ft-title" style="margin-top:1rem">Institucional</p>
+          <p class="ft-title ft-title--gap">Institucional</p>
           <ul><li><a href="/blog/">Blog</a></li><li><a href="/sobre/">Sobre</a></li><li><a href="/contato/">Contato</a></li></ul>
         </div>
       </div>
-      <p class="ft-bottom">© {new Date().getFullYear()} Vidraçaria BH · Belo Horizonte e região metropolitana</p>
+      <p class="ft-bottom">© {new Date().getFullYear()} Vidraçaria BH · Atendimento a domicílio em Belo Horizonte e região metropolitana</p>
     </footer>
 
+    <a class="fab" href={wa} aria-label="Falar no WhatsApp">
+      <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="currentColor"><path d="M12.04 2c-5.5 0-9.96 4.46-9.96 9.96 0 1.76.46 3.48 1.34 5L2 22l5.2-1.36a9.9 9.9 0 0 0 4.84 1.24h.01c5.5 0 9.96-4.46 9.96-9.96S17.54 2 12.04 2Zm0 18.2h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.09.81.83-3.01-.2-.31a8.24 8.24 0 0 1 12.8-10.2 8.16 8.16 0 0 1 2.4 5.82c0 4.54-3.7 8.24-8.24 8.24Zm4.52-6.17c-.25-.12-1.47-.72-1.7-.8-.23-.09-.4-.13-.56.13-.17.25-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.47-1.38-1.72-.14-.25-.02-.39.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.42l-.48-.01c-.16 0-.43.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.12.16 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+    </a>
+
     <style is:global>
-      .wrap { max-width: 64rem; margin: 0 auto; padding: 0 1.25rem; }
-      .site-header { border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent); position: sticky; top: 0; background: Canvas; z-index: 20; }
-      .site-header .wrap { display: flex; align-items: center; gap: 1rem; min-height: 60px; flex-wrap: wrap; }
-      .brand { font-weight: 700; font-size: 1.1rem; text-decoration: none; color: inherit; }
-      .site-nav { display: flex; align-items: center; gap: 1rem; margin-left: auto; flex-wrap: wrap; }
-      .site-nav > a { text-decoration: none; color: inherit; font-size: 0.95rem; }
-      .site-nav a[aria-current="page"] { font-weight: 700; }
-      .menu { position: relative; }
-      .menu > summary { cursor: pointer; list-style: none; font-size: 0.95rem; }
-      .menu > summary::-webkit-details-marker { display: none; }
-      .menu[open] > ul { display: block; }
-      .menu > ul { display: none; position: absolute; top: 1.8rem; left: 0; background: Canvas; border: 1px solid color-mix(in srgb, currentColor 20%, transparent); border-radius: 8px; padding: 0.5rem; min-width: 15rem; list-style: none; margin: 0; box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-      .menu > ul li a { display: block; padding: 0.4rem 0.6rem; text-decoration: none; color: inherit; border-radius: 6px; font-size: 0.95rem; }
-      .menu > ul li a:hover { background: color-mix(in srgb, currentColor 8%, transparent); }
-      .wa-btn { background: #1a7f5a; color: #fff; padding: 0.5rem 0.9rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-      .site-footer { margin-top: 4rem; border-top: 1px solid color-mix(in srgb, currentColor 15%, transparent); padding: 2rem 0 1rem; font-size: 0.9rem; }
-      .site-footer .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.5rem; }
-      .site-footer ul { list-style: none; padding: 0; margin: 0.4rem 0; }
-      .site-footer li { margin: 0.25rem 0; }
-      .site-footer a { color: inherit; }
-      .ft-title { font-weight: 700; margin: 0 0 0.3rem; }
-      .ft-bottom { text-align: center; opacity: 0.7; margin-top: 2rem; }
+      :root{
+        color-scheme: light;
+        --bg:#ffffff; --surface:#f3f7f8; --surface-2:#e9eff1;
+        --ink:#0c1519; --muted:#586b72; --line:#d8e1e3;
+        --brand:#0e5866; --brand-dark:#0a4049; --brand-tint:#e2f0f2;
+        --cta:#12a150; --cta-dark:#0d833f;
+        --accent:#e0a53c;
+        --radius:16px; --radius-sm:11px;
+        --shadow-sm:0 1px 2px rgba(10,45,52,.05), 0 4px 14px rgba(10,45,52,.06);
+        --shadow-md:0 12px 36px rgba(10,45,52,.14);
+        --maxw:66rem;
+        --f-body:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+        --f-head:'Space Grotesk','Inter',system-ui,sans-serif;
+      }
+      *,*::before,*::after{ box-sizing:border-box; }
+      html{ scroll-behavior:smooth; }
+      body{
+        margin:0; background:var(--bg); color:var(--ink);
+        font-family:var(--f-body); font-size:clamp(1rem,.97rem + .2vw,1.06rem);
+        line-height:1.7; -webkit-font-smoothing:antialiased;
+      }
+      img{ max-width:100%; height:auto; display:block; }
+      a{ color:var(--brand); text-underline-offset:2px; }
+      a:hover{ color:var(--brand-dark); }
+      .wrap{ max-width:var(--maxw); margin-inline:auto; padding-inline:1.25rem; }
+      .skip{ position:absolute; left:-999px; top:0; background:var(--brand-dark); color:#fff; padding:.6rem 1rem; border-radius:0 0 8px 0; z-index:100; }
+      .skip:focus{ left:0; }
+
+      /* ---------- header ---------- */
+      .site-header{ position:sticky; top:0; z-index:40; background:rgba(255,255,255,.92); backdrop-filter:saturate(180%) blur(8px); border-bottom:1px solid var(--line); }
+      .hdr{ display:flex; align-items:center; gap:1rem; min-height:64px; }
+      .brand{ display:inline-flex; align-items:center; gap:.55rem; font-family:var(--f-head); font-weight:600; font-size:1.15rem; color:var(--ink); text-decoration:none; letter-spacing:-.01em; }
+      .brand strong{ color:var(--brand); }
+      .brand-mark{ width:20px; height:20px; border-radius:5px; background:linear-gradient(135deg,var(--brand) 40%,#3fb0c0); box-shadow:inset 0 0 0 2px rgba(255,255,255,.55); transform:rotate(45deg); flex:none; }
+      .site-nav{ display:flex; align-items:center; gap:.35rem; margin-left:auto; }
+      .nav-link, .menu>summary{ font-size:.94rem; padding:.5rem .7rem; border-radius:9px; color:var(--ink); text-decoration:none; cursor:pointer; white-space:nowrap; }
+      .nav-link:hover, .menu>summary:hover{ background:var(--surface); }
+      .nav-link[aria-current="page"]{ color:var(--brand); font-weight:600; }
+      .menu{ position:relative; }
+      .menu>summary{ list-style:none; display:inline-flex; align-items:center; gap:.3rem; }
+      .menu>summary::-webkit-details-marker{ display:none; }
+      .menu>summary::after{ content:""; width:.42rem; height:.42rem; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg) translateY(-1px); opacity:.6; }
+      .menu[open]>summary{ background:var(--surface); }
+      .menu-panel{ position:absolute; right:0; top:calc(100% + .4rem); background:#fff; border:1px solid var(--line); border-radius:var(--radius-sm); box-shadow:var(--shadow-md); padding:.4rem; min-width:16rem; display:grid; }
+      .menu-panel a{ padding:.55rem .7rem; border-radius:8px; color:var(--ink); text-decoration:none; font-size:.94rem; }
+      .menu-panel a:hover{ background:var(--brand-tint); color:var(--brand-dark); }
+      .menu-panel a[aria-current="page"]{ color:var(--brand); font-weight:600; }
+      .wa-btn{ margin-left:.4rem; background:var(--cta); color:#fff; padding:.55rem 1rem; border-radius:999px; text-decoration:none; font-weight:600; font-size:.9rem; box-shadow:var(--shadow-sm); }
+      .wa-btn:hover{ background:var(--cta-dark); color:#fff; }
+      .nav-burger{ display:none; margin-left:auto; width:44px; height:44px; border-radius:10px; cursor:pointer; }
+      .nav-burger span{ display:block; height:2px; width:22px; margin:5px auto; background:var(--ink); border-radius:2px; transition:.2s; }
+
+      @media (max-width:860px){
+        .nav-burger{ display:block; }
+        .site-nav{ position:absolute; left:0; right:0; top:100%; flex-direction:column; align-items:stretch; gap:.15rem; background:#fff; border-bottom:1px solid var(--line); box-shadow:var(--shadow-md); padding:.6rem 1.25rem 1rem; max-height:0; overflow:hidden; visibility:hidden; }
+        .nav-toggle:checked ~ .site-nav{ max-height:80vh; overflow:auto; visibility:visible; padding-block:.8rem 1.1rem; }
+        .nav-toggle:checked ~ .nav-burger span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+        .nav-toggle:checked ~ .nav-burger span:nth-child(2){ opacity:0; }
+        .nav-toggle:checked ~ .nav-burger span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+        .nav-link, .menu>summary{ padding:.7rem .4rem; font-size:1rem; }
+        .menu-panel{ position:static; box-shadow:none; border:0; border-left:2px solid var(--line); border-radius:0; margin:.1rem 0 .3rem .5rem; padding:.1rem 0; min-width:0; }
+        .wa-btn{ margin:.5rem 0 0; text-align:center; }
+      }
+
+      /* ---------- generic page ---------- */
+      .money-page, .post, .bloglist, .nf{ max-width:var(--maxw); margin-inline:auto; padding:1.75rem 1.25rem 4rem; }
+      .post{ max-width:44rem; }
+      .crumbs{ font-size:.82rem; color:var(--muted); margin-bottom:1.1rem; }
+      .crumbs a{ color:var(--muted); text-decoration:none; }
+      .crumbs a:hover{ color:var(--brand); }
+
+      h1{ font-family:var(--f-head); font-weight:700; letter-spacing:-.02em; line-height:1.15; font-size:clamp(1.8rem,1.35rem + 2.1vw,2.7rem); margin:.2rem 0 .9rem; }
+      .money-page h2, .post-body h2{ font-family:var(--f-head); font-weight:600; letter-spacing:-.01em; font-size:clamp(1.3rem,1.15rem + .8vw,1.7rem); margin:2.8rem 0 .9rem; padding-bottom:.45rem; border-bottom:1px solid var(--line); }
+      .money-page h3, .post-body h3{ font-family:var(--f-head); font-weight:600; font-size:1.08rem; margin:1.7rem 0 .4rem; }
+      p{ margin:0 0 1rem; }
+      .money-page ul, .money-page ol, .post-body ul, .post-body ol{ margin:0 0 1.15rem; padding-left:1.3rem; }
+      .money-page li, .post-body li{ margin:.4rem 0; }
+      .money-page li::marker, .post-body li::marker{ color:var(--brand); }
+      strong{ font-weight:600; }
+
+      .hero{ margin:0 0 1.6rem; }
+      .hero img{ width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:var(--radius); box-shadow:var(--shadow-md); }
+      @media (max-width:560px){ .hero img{ aspect-ratio:4/3; } }
+
+      /* CTA */
+      .cta{ margin:1.6rem 0; color:var(--muted); font-size:.95rem; display:flex; flex-wrap:wrap; align-items:center; gap:.5rem .7rem; }
+      .btn{
+        display:inline-flex; align-items:center; gap:.5rem;
+        background:var(--cta); color:#fff; padding:.85rem 1.35rem; border-radius:999px;
+        text-decoration:none; font-weight:600; font-size:1rem; box-shadow:var(--shadow-sm);
+        transition:transform .12s ease, background .12s ease;
+      }
+      .btn::before{ content:""; width:9px; height:9px; border-radius:50%; background:#fff; opacity:.9; box-shadow:0 0 0 4px rgba(255,255,255,.28); }
+      .btn:hover{ background:var(--cta-dark); color:#fff; transform:translateY(-1px); }
+
+      /* NAP cards */
+      .nap-top, .nap-footer{ background:var(--brand-tint); border:1px solid #cfe6e9; border-left:4px solid var(--brand); border-radius:var(--radius-sm); padding:1.1rem 1.3rem; margin:1.6rem 0; }
+      .nap-footer{ margin-top:3.2rem; }
+      .nap-top p, .nap-footer p{ margin:.3rem 0; font-size:.95rem; }
+      .nap-top strong, .nap-footer strong{ color:var(--brand-dark); }
+      .nap-top a, .nap-footer a{ color:var(--brand-dark); font-weight:600; }
+
+      /* tables */
+      .table-wrap{ overflow-x:auto; margin:1.2rem 0; border:1px solid var(--line); border-radius:var(--radius-sm); }
+      table{ border-collapse:collapse; width:100%; font-size:.94rem; min-width:32rem; }
+      th, td{ padding:.7rem .85rem; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
+      thead th{ background:var(--surface); font-family:var(--f-head); font-weight:600; }
+      tbody tr:nth-child(even){ background:var(--surface); }
+      tbody tr:last-child td{ border-bottom:0; }
+
+      blockquote{ margin:1.4rem 0; padding:.9rem 1.2rem; background:var(--brand-tint); border-left:4px solid var(--brand); border-radius:var(--radius-sm); color:var(--brand-dark); }
+
+      .placeholder{ color:#b42318; font-style:italic; background:#fff4f2; border:1px dashed #f0b4a8; border-radius:8px; padding:.15rem .4rem; }
+
+      /* related */
+      .related{ margin-top:3rem; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:1.2rem 1.4rem; }
+      .related-title{ font-family:var(--f-head); font-weight:600; margin:0 0 .5rem; }
+      .related ul{ list-style:none; padding:0; margin:0; display:grid; gap:.35rem; }
+      .related li a{ display:inline-flex; align-items:center; gap:.45rem; text-decoration:none; color:var(--brand-dark); font-weight:500; }
+      .related li a::before{ content:"→"; color:var(--brand); }
+      .related li a:hover{ text-decoration:underline; }
+
+      /* blog list */
+      .bloglist > p{ color:var(--muted); max-width:44rem; }
+      .posts{ list-style:none; padding:0; margin:2rem 0 0; display:grid; gap:1rem; }
+      .posts li a{ display:block; padding:1.3rem 1.4rem; background:#fff; border:1px solid var(--line); border-radius:var(--radius); text-decoration:none; color:inherit; box-shadow:var(--shadow-sm); transition:border-color .15s, transform .12s; }
+      .posts li a:hover{ border-color:var(--brand); transform:translateY(-2px); }
+      .posts h2{ font-family:var(--f-head); font-weight:600; margin:0 0 .4rem; font-size:1.15rem; border:0; padding:0; }
+      .posts p{ margin:0 0 .6rem; color:var(--muted); font-size:.95rem; }
+      .date{ font-size:.78rem; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; }
+
+      /* blog post */
+      .post-meta{ font-size:.82rem; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-top:-.3rem; }
+      .post-body{ margin-top:1.6rem; }
+      .post-body :global(img){ border-radius:var(--radius); box-shadow:var(--shadow-sm); }
+      .post-cta{ margin:2.4rem 0 1rem; padding:1.3rem 1.4rem; background:var(--brand-tint); border:1px solid #cfe6e9; border-radius:var(--radius); color:var(--brand-dark); }
+
+      /* 404 */
+      .nf h2{ font-family:var(--f-head); font-size:1.2rem; margin-top:2rem; }
+      .nf ul{ padding-left:1.2rem; }
+
+      /* ---------- footer ---------- */
+      .site-footer{ margin-top:5rem; background:var(--brand-dark); color:#cfe1e4; font-size:.92rem; }
+      .site-footer a{ color:#eaf5f6; text-decoration:none; }
+      .site-footer a:hover{ color:#fff; text-decoration:underline; }
+      .ft-cols{ display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:2rem; padding-top:3rem; padding-bottom:1.5rem; }
+      .brand--footer{ color:#fff; margin-bottom:.6rem; }
+      .brand--footer strong{ color:#7fd0dc; }
+      .ft-about p{ margin:.5rem 0; max-width:34ch; color:#bcd6da; }
+      .ft-contact{ font-size:.88rem; }
+      .ft-title{ font-family:var(--f-head); font-weight:600; text-transform:uppercase; letter-spacing:.08em; font-size:.78rem; color:#8fb9bf; margin:0 0 .5rem; }
+      .ft-title--gap{ margin-top:1.2rem; }
+      .site-footer ul{ list-style:none; padding:0; margin:0; }
+      .site-footer li{ margin:.3rem 0; }
+      .ft-bottom{ text-align:center; color:#7fa3a9; border-top:1px solid rgba(255,255,255,.1); margin:0; padding:1.1rem 1.25rem; font-size:.82rem; }
+      @media (max-width:760px){ .ft-cols{ grid-template-columns:1fr 1fr; } .ft-about{ grid-column:1/-1; } }
+      @media (max-width:460px){ .ft-cols{ grid-template-columns:1fr; } }
+
+      /* floating whatsapp */
+      .fab{ position:fixed; right:16px; bottom:16px; z-index:35; width:54px; height:54px; border-radius:50%; background:var(--cta); color:#fff; display:grid; place-items:center; box-shadow:0 8px 24px rgba(10,45,52,.28); }
+      .fab:hover{ background:var(--cta-dark); color:#fff; }
+      @media (max-width:860px){ .fab{ width:50px; height:50px; right:14px; bottom:14px; } }
     </style>
   </body>
 </html>
