@@ -69,6 +69,7 @@ const regioes = [
               ))}
             </ul>
           </details>
+          <a href="/blog/" aria-current={path.startsWith('/blog') ? 'page' : undefined}>Blog</a>
           <a href="/sobre/" aria-current={path === '/sobre/' ? 'page' : undefined}>Sobre</a>
           <a href="/contato/" aria-current={path === '/contato/' ? 'page' : undefined}>Contato</a>
         </nav>
@@ -96,7 +97,7 @@ const regioes = [
           <p class="ft-title">Regiões</p>
           <ul>{regioes.map(([href, label]) => <li><a href={href}>{label}</a></li>)}</ul>
           <p class="ft-title" style="margin-top:1rem">Institucional</p>
-          <ul><li><a href="/sobre/">Sobre</a></li><li><a href="/contato/">Contato</a></li></ul>
+          <ul><li><a href="/blog/">Blog</a></li><li><a href="/sobre/">Sobre</a></li><li><a href="/contato/">Contato</a></li></ul>
         </div>
       </div>
       <p class="ft-bottom">© {new Date().getFullYear()} Vidraçaria BH · Belo Horizonte e região metropolitana</p>
