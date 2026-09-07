@@ -2,3 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://vidracariabh.emp.br/sitemap.xml
+
+# Para modelos de linguagem / assistentes de IA:
+# https://vidracariabh.emp.br/llms.txt
+# https://vidracariabh.emp.br/ai-summary
