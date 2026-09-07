@@ -1,0 +1,131 @@
+---
+import MoneyPage from '../layouts/MoneyPage.astro';
+
+const title = 'Contato | Vidraçaria BH — Belo Horizonte e região';
+const description =
+  'Fale com a Vidraçaria BH pelo WhatsApp (31) 99163-3453 ou por e-mail. Atendimento a domicílio em Belo Horizonte e região, de segunda a sábado.';
+const whatsapp = 'https://wa.me/5531991633453';
+const email = 'contato@vidracariabh.emp.br';
+const canonical = 'https://vidracariabh.emp.br/contato/';
+
+const jsonld = [
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    url: canonical,
+    name: 'Contato — Vidraçaria BH',
+    inLanguage: 'pt-BR',
+  }),
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'HomeAndConstructionBusiness',
+    '@id': 'https://vidracariabh.emp.br/#business',
+    name: 'Vidraçaria BH',
+    url: 'https://vidracariabh.emp.br',
+    telephone: '+55 31 99163-3453',
+    email: email,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Belo Horizonte',
+      addressRegion: 'MG',
+      postalCode: '30160-011',
+      addressCountry: 'BR',
+    },
+    areaServed: ['Belo Horizonte', 'Contagem', 'Betim', 'Nova Lima', 'Vespasiano', 'Lagoa Santa'],
+    openingHoursSpecification: [
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '18:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '08:00', closes: '12:00' },
+    ],
+    sameAs: ['https://www.instagram.com/vidracariabh/'],
+  }),
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://vidracariabh.emp.br/' },
+      { '@type': 'ListItem', position: 2, name: 'Contato', item: canonical },
+    ],
+  }),
+];
+---
+
+<MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/contato/">
+  <article class="money-page">
+    <nav class="crumbs"><a href="/">Início</a> › <span>Contato</span></nav>
+
+    <h1>Contato — Vidraçaria BH</h1>
+
+    <p>
+      A Vidraçaria BH atende a domicílio em Belo Horizonte e na região metropolitana. Não
+      temos loja física — o contato é pelo WhatsApp e por e-mail, e a visita para medir é
+      combinada antes.
+    </p>
+
+    <h2>WhatsApp</h2>
+    <p>
+      O jeito mais rápido de falar com a gente é pelo WhatsApp:
+      <a href={whatsapp}><strong>(31) 99163-3453</strong></a>.
+    </p>
+    <p>
+      Mande o serviço que você precisa, uma foto do local e o bairro. Com a foto, já damos
+      uma primeira orientação e uma faixa de valor, e você decide se quer marcar a visita. A
+      gente responde no mesmo dia útil, dentro do horário de atendimento.
+    </p>
+    <p class="cta"><a class="btn" href={whatsapp}>Abrir conversa no WhatsApp</a></p>
+
+    <h2>E-mail</h2>
+    <p>
+      Para orçamento de obra maior, documentação técnica ou pedido de condomínio, você
+      também pode escrever para <a href={`mailto:${email}`}><strong>{email}</strong></a>.
+      Anexe fotos e as medidas que tiver.
+    </p>
+
+    <h2>Horário de atendimento</h2>
+    <ul>
+      <li>Segunda a sexta: das 8h às 18h</li>
+      <li>Sábado: das 8h às 12h</li>
+      <li>Domingo: não atendemos; deixe a mensagem no WhatsApp que respondemos no próximo dia útil</li>
+    </ul>
+
+    <h2>Área de atendimento</h2>
+    <p>Atendemos a domicílio em toda Belo Horizonte e nas cidades da região metropolitana:</p>
+    <ul>
+      <li>Belo Horizonte</li>
+      <li><a href="/vidracaria-em-contagem/">Contagem</a></li>
+      <li><a href="/vidracaria-em-betim/">Betim</a></li>
+      <li><a href="/vidracaria-em-nova-lima/">Nova Lima</a></li>
+      <li><a href="/vidracaria-em-vespasiano/">Vespasiano</a></li>
+      <li><a href="/vidracaria-em-lagoa-santa/">Lagoa Santa</a></li>
+    </ul>
+    <p>Se o seu endereço estiver fora dessa área, confirme pelo WhatsApp antes de agendar.</p>
+
+    <h2>Como funciona o atendimento</h2>
+    <p>
+      O atendimento tem uma parte remota e uma parte presencial. A parte remota é o contato
+      pelo WhatsApp ou por e-mail, com foto e medidas, para a orientação inicial e a faixa de
+      valor. A parte presencial é a visita técnica: um profissional vai até o local, mede o
+      vão, confere a fixação e fecha o orçamento com prazo e forma de pagamento. Depois vêm a
+      fabricação sob medida e a instalação, com teste da peça na sua frente.
+    </p>
+
+    <footer class="nap-footer">
+      <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
+      <p>WhatsApp: <a href={whatsapp}>(31) 99163-3453</a> · E-mail: <a href={`mailto:${email}`}>{email}</a></p>
+      <p>Atendimento: segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
+      <p>Área de atendimento: Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
+    </footer>
+  </article>
+</MoneyPage>
+
+<style>
+  .money-page { max-width: 60rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; line-height: 1.65; }
+  .money-page h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.2; }
+  .money-page h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); margin-top: 2.5rem; }
+  .crumbs { font-size: 0.85rem; opacity: 0.75; margin-bottom: 1rem; }
+  .crumbs a { color: inherit; }
+  .nap-footer { background: color-mix(in srgb, currentColor 6%, transparent); border-radius: 10px; padding: 1rem 1.25rem; margin-top: 3rem; }
+  .nap-footer p { margin: 0.3rem 0; }
+  .cta { margin: 1.5rem 0; }
+  .btn { display: inline-block; background: #1a7f5a; color: #fff; padding: 0.7rem 1.15rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+  .btn:hover { background: #15694a; }
+</style>

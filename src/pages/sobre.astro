@@ -1,0 +1,156 @@
+---
+import MoneyPage from '../layouts/MoneyPage.astro';
+import hero from '../assets/img/hero-home.jpg';
+
+const title = 'Sobre a Vidraçaria BH | Vidros sob medida em Belo Horizonte';
+const description =
+  'Conheça a Vidraçaria BH: 7 anos de vidro sob medida em Belo Horizonte e região, com equipe de instalação própria e medição técnica no local.';
+const whatsapp = 'https://wa.me/5531991633453';
+const canonical = 'https://vidracariabh.emp.br/sobre/';
+
+const jsonld = [
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    url: canonical,
+    name: 'Sobre a Vidraçaria BH',
+    inLanguage: 'pt-BR',
+  }),
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'HomeAndConstructionBusiness',
+    '@id': 'https://vidracariabh.emp.br/#business',
+    name: 'Vidraçaria BH',
+    description:
+      'Vidraçaria em Belo Horizonte e região metropolitana, com equipe de instalação própria. Box, cortina de vidro, espelhos sob medida, guarda-corpo, cobertura, fachada e manutenção.',
+    url: 'https://vidracariabh.emp.br',
+    telephone: '+55 31 99163-3453',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Belo Horizonte',
+      addressRegion: 'MG',
+      postalCode: '30160-011',
+      addressCountry: 'BR',
+    },
+    areaServed: ['Belo Horizonte', 'Contagem', 'Betim', 'Nova Lima', 'Vespasiano', 'Lagoa Santa'],
+    sameAs: ['https://www.instagram.com/vidracariabh/'],
+  }),
+  JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://vidracariabh.emp.br/' },
+      { '@type': 'ListItem', position: 2, name: 'Sobre', item: canonical },
+    ],
+  }),
+];
+---
+
+<MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/sobre/">
+  <article class="money-page">
+    <nav class="crumbs"><a href="/">Início</a> › <span>Sobre</span></nav>
+
+    <figure class="hero">
+      <img
+        src={hero.src}
+        width={hero.width}
+        height={hero.height}
+        alt="Vidraçaria BH — equipe própria instalando vidro sob medida em Belo Horizonte"
+        loading="eager"
+      />
+    </figure>
+
+    <h1>Sobre a Vidraçaria BH</h1>
+
+    <p>
+      A Vidraçaria BH trabalha com vidro sob medida em Belo Horizonte e na região
+      metropolitana há mais de 7 anos. Atendemos casa, apartamento, comércio e condomínio —
+      de um box de banheiro trocado no fim de semana a uma fachada de vidro inteira.
+    </p>
+
+    <h2>Como a Vidraçaria BH começou</h2>
+    <p>
+      A Vidraçaria BH nasceu com um propósito simples: ajudar empresas da região a crescer e
+      gerar emprego na cidade. A partir disso, o trabalho foi ampliando — do serviço mais
+      comum, como box e espelho, até projetos de guarda-corpo, cobertura, fachada e
+      divisória. Nesses 7 anos, o que se manteve foi o jeito de trabalhar: medir com cuidado,
+      cortar certo e instalar com equipe própria.
+    </p>
+
+    <h2>Como trabalhamos</h2>
+    <p>
+      A gente não terceiriza a instalação. A equipe que mede o seu vão é a mesma que instala.
+      Isso corta a maior causa de retrabalho em vidraçaria, que é medida errada passada de
+      uma pessoa para outra.
+    </p>
+    <p>
+      Todo serviço começa com uma visita técnica: medimos no local, conferimos prumo, nível e
+      onde a peça vai ser fixada, e alinhamos o acabamento — cor da ferragem, tipo de vidro,
+      sentido de abertura. Só depois disso o vidro é cortado, porque vidro temperado não
+      aceita corte nem furo depois de pronto.
+    </p>
+    <p>
+      O orçamento sai fechado, com o tipo e a espessura do vidro, as ferragens, o prazo de
+      fabricação e a data de instalação. Nada fica "a confirmar" para depois. Na entrega,
+      testamos a peça na sua frente — porta abrindo e fechando, box vedando, guarda-corpo
+      firme — e explicamos como limpar e o que evitar para o vidro durar.
+    </p>
+
+    <h2>O que fazemos</h2>
+    <p>
+      Box para banheiro, cortina de vidro, fechamento de varanda, envidraçamento de sacada,
+      espelho sob medida, guarda-corpo, cobertura de vidro, porta de vidro, vidro temperado
+      sob medida, fachada e divisória para comércio.
+    </p>
+    <p>
+      Também fazemos manutenção e assistência técnica: troca de vidro quebrado, regulagem de
+      porta, troca de roldana e de ferragem, ajuste de mola. Você não precisa ter comprado a
+      peça com a gente para chamar a manutenção.
+    </p>
+
+    <h2>Quem atendemos</h2>
+    <p>
+      Trabalhamos com o proprietário que está em obra ou reforma e quer o vidro no projeto, e
+      também com quem só precisa resolver um ponto. Atendemos síndico e administradora de
+      condomínio, com a ficha técnica que a fachada padrão exige, e comércio, com fachada,
+      porta blindex e vitrine. De pequena instalação a projeto mais complexo, o padrão de
+      medição e de acabamento é o mesmo.
+    </p>
+
+    <h2>Onde atendemos</h2>
+    <p>
+      Belo Horizonte inteira e as cidades da região metropolitana — Contagem, Betim, Nova
+      Lima, Vespasiano e Lagoa Santa. Não temos loja física: o atendimento é a domicílio, o
+      que reduz custo fixo e aparece no seu orçamento.
+    </p>
+    <p>
+      Se você quer entender qual vidro serve para o seu caso, ou já sabe o que precisa, fale
+      com a gente pelo WhatsApp (31) 99163-3453. A gente responde no mesmo dia útil com uma
+      orientação e uma faixa de valor.
+    </p>
+
+    <p class="cta"><a class="btn" href={whatsapp}>Falar com a Vidraçaria BH no WhatsApp (31) 99163-3453</a></p>
+
+    <footer class="nap-footer">
+      <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
+      <p>WhatsApp: <a href={whatsapp}>(31) 99163-3453</a></p>
+      <p>Atendimento: segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
+      <p>Área de atendimento: Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
+    </footer>
+  </article>
+</MoneyPage>
+
+<style>
+  .money-page { max-width: 60rem; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; line-height: 1.65; }
+  .money-page h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.2; }
+  .money-page h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); margin-top: 2.5rem; }
+  .crumbs { font-size: 0.85rem; opacity: 0.75; margin-bottom: 1rem; }
+  .crumbs a { color: inherit; }
+  .hero { margin: 0 0 1.5rem; }
+  .hero img { width: 100%; height: auto; border-radius: 12px; display: block; }
+  .nap-footer { background: color-mix(in srgb, currentColor 6%, transparent); border-radius: 10px; padding: 1rem 1.25rem; margin-top: 3rem; }
+  .nap-footer p { margin: 0.3rem 0; }
+  .cta { margin: 2rem 0 0; }
+  .btn { display: inline-block; background: #1a7f5a; color: #fff; padding: 0.7rem 1.15rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+  .btn:hover { background: #15694a; }
+</style>
