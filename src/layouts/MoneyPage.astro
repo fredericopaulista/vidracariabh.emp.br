@@ -2,26 +2,37 @@
 import BaseLayout from './BaseLayout.astro';
 
 export interface Props {
-  title: string;         // meta title (KW no início)
-  description: string;    // meta description (KW como frase)
+  title: string;
+  description: string;
   jsonld?: string | string[];
   canonicalPath?: string;
 }
 
 const { title, description, jsonld, canonicalPath } = Astro.props;
+const wa = 'https://wa.me/5531991633453';
 ---
 <BaseLayout title={title} description={description} jsonld={jsonld} canonicalPath={canonicalPath}>
-  <slot name="header" slot="header" />
-  <!--
-    O conteúdo da Money Page é injetado aqui pelo Link Flow (Fase 3).
-    Regras que o corpo DEVE respeitar (MODELO_ESCRITA / template site-fdf-seo-local):
-    - 1 único <h1> com a KW principal
-    - KW nas primeiras 100 palavras
-    - primeiro e último <h2> com a KW; FAQ é o último <h2>
-    - <h2> de "Regiões atendidas" obrigatório
-    - CTA específico repetido 3x (nunca genérico)
-    - NAP consistente com o projeto.md
-  -->
-  <slot />
-  <slot name="footer" slot="footer" />
+  <div class="page-shell">
+    <div class="trust-bar" aria-hidden="false">
+      <div class="wrap trust-inner">
+        <span><i class="tb-ico tb-clock"></i> 7 anos de atuação</span>
+        <span><i class="tb-ico tb-team"></i> Equipe de instalação própria</span>
+        <span><i class="tb-ico tb-ruler"></i> Medição técnica no local</span>
+        <span><i class="tb-ico tb-doc"></i> Orçamento fechado por escrito</span>
+      </div>
+    </div>
+
+    <slot />
+
+    <section class="cta-band">
+      <div class="wrap cta-band-inner">
+        <div>
+          <p class="cta-band-kicker">Vidraçaria BH · atendimento a domicílio</p>
+          <h2 class="cta-band-title">Peça seu orçamento de vidro sob medida</h2>
+          <p class="cta-band-sub">Mande uma foto do local e o bairro pelo WhatsApp. Você recebe a orientação e uma faixa de valor no mesmo dia útil.</p>
+        </div>
+        <a class="btn btn--lg" href={wa}>Falar no WhatsApp (31) 99163-3453</a>
+      </div>
+    </section>
+  </div>
 </BaseLayout>
