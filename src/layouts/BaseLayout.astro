@@ -12,6 +12,25 @@ const blocks = jsonld ? (Array.isArray(jsonld) ? jsonld : [jsonld]) : [];
 const wa = 'https://wa.me/5531991633453';
 const path = Astro.url.pathname;
 
+const GTM_ID = 'GTM-MZSFFL6K';
+
+// Contexto de página para o dataLayer (GTM / GA4 content_group)
+let pageType = 'outra';
+let serviceSlug: string | null = null;
+let regionSlug: string | null = null;
+if (path === '/') pageType = 'home';
+else if (path === '/blog/') pageType = 'blog_index';
+else if (path.startsWith('/blog/')) pageType = 'blog_post';
+else if (path === '/sobre/') pageType = 'institucional';
+else if (path === '/contato/') pageType = 'contato';
+else if (path.startsWith('/vidracaria-em-')) {
+  pageType = 'regiao';
+  regionSlug = path.replace(/\//g, '').replace('vidracaria-em-', '');
+} else if (/-bh\/$/.test(path)) {
+  pageType = 'servico';
+  serviceSlug = path.replace(/\//g, '');
+} else if (path === '/404') pageType = '404';
+
 const servicos = [
   ['/box-para-banheiro-bh/', 'Box para banheiro'],
   ['/cortina-de-vidro-bh/', 'Cortina de vidro'],
@@ -37,6 +56,33 @@ const regioes = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script is:inline define:vars={{ pageType, serviceSlug, regionSlug, pageTitle: title }}>
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        page_type: pageType,
+        content_group: pageType,
+        page_title: pageTitle,
+        page_path: location.pathname,
+        ...(serviceSlug ? { service: serviceSlug } : {}),
+        ...(regionSlug ? { region: regionSlug } : {}),
+      });
+    </script>
+    <!-- Google Tag Manager -->
+    <script is:inline define:vars={{ GTM_ID }}>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', GTM_ID);
+    </script>
+    <!-- End Google Tag Manager -->
+
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
@@ -55,6 +101,17 @@ const regioes = [
     {blocks.map((b) => <script type="application/ld+json" set:html={b} />)}
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+        title="gtm"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+
     <a class="skip" href="#conteudo">Ir para o conteúdo</a>
 
     <header class="site-header">
@@ -294,5 +351,49 @@ const regioes = [
       .fab:hover{ background:var(--cta-dark); color:#fff; }
       @media (max-width:860px){ .fab{ width:50px; height:50px; right:14px; bottom:14px; } }
     </style>
+
+    <script is:inline>
+      (function () {
+        window.dataLayer = window.dataLayer || [];
+        function loc(a) {
+          if (a.closest('.site-header')) return 'header';
+          if (a.closest('.site-footer')) return 'footer';
+          if (a.classList.contains('fab')) return 'botao_flutuante';
+          if (a.classList.contains('wa-btn')) return 'header';
+          if (a.classList.contains('btn')) return 'cta_principal';
+          if (a.closest('.post-cta')) return 'blog_cta';
+          if (a.closest('.nap-top, .nap-footer')) return 'bloco_contato';
+          if (a.closest('.related')) return 'servicos_relacionados';
+          return 'texto';
+        }
+        document.addEventListener(
+          'click',
+          function (e) {
+            var a = e.target.closest && e.target.closest('a[href]');
+            if (!a) return;
+            var href = a.getAttribute('href') || '';
+            var l = loc(a);
+            if (href.indexOf('wa.me') > -1 || href.indexOf('api.whatsapp.com') > -1) {
+              window.dataLayer.push({
+                event: 'whatsapp_click',
+                lead_channel: 'whatsapp',
+                link_location: l,
+                link_url: href,
+                page_path: location.pathname,
+              });
+            } else if (href.indexOf('mailto:') === 0) {
+              window.dataLayer.push({ event: 'email_click', lead_channel: 'email', link_location: l, page_path: location.pathname });
+            } else if (href.indexOf('tel:') === 0) {
+              window.dataLayer.push({ event: 'phone_click', lead_channel: 'telefone', link_location: l, page_path: location.pathname });
+            } else if (href.indexOf('instagram.com') > -1) {
+              window.dataLayer.push({ event: 'social_click', social_network: 'instagram', link_location: l, page_path: location.pathname });
+            } else if (l === 'servicos_relacionados' || (a.closest('main') && href.charAt(0) === '/')) {
+              window.dataLayer.push({ event: 'internal_link_click', link_location: l, link_url: href, page_path: location.pathname });
+            }
+          },
+          { passive: true }
+        );
+      })();
+    </script>
   </body>
 </html>
