@@ -2,255 +2,80 @@
 import MoneyPage from '../layouts/MoneyPage.astro';
 import hero from '../assets/img/hero-box-para-banheiro.jpg';
 
-const title = 'Box para Banheiro em BH | Vidraçaria BH';
-const description =
-  'Box para banheiro em BH sob medida, em vidro temperado: de correr, de abrir ou de canto. Medição no local e instalação. Peça seu orçamento no WhatsApp.';
-const whatsapp = 'https://wa.me/5531991633453';
-const canonical = 'https://vidracariabh.emp.br/box-para-banheiro-bh/';
-
+const title = "Box para Banheiro em BH sob Medida | Vidraçaria BH";
+const description = "Box para banheiro em BH sob medida, em vidro temperado: de correr, de abrir ou de canto. Medição no local, instalação e orçamento por escrito no WhatsApp. vidracariabh.emp.br";
 const jsonld = [
-  JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: 'Instalação de box para banheiro',
-    name: 'Box para banheiro em BH sob medida',
-    description:
-      'Fabricação e instalação de box para banheiro em vidro temperado sob medida em Belo Horizonte e região: de correr, de abrir, de canto e para banheira.',
-    provider: {
-      '@type': 'HomeAndConstructionBusiness',
-      name: 'Vidraçaria BH',
-      telephone: '+55 31 99163-3453',
-      areaServed: ['Belo Horizonte', 'Contagem', 'Betim', 'Nova Lima', 'Vespasiano', 'Lagoa Santa'],
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Belo Horizonte',
-        addressRegion: 'MG',
-        postalCode: '30160-011',
-        addressCountry: 'BR',
-      },
-    },
-    areaServed: ['Belo Horizonte', 'Contagem', 'Betim', 'Nova Lima', 'Vespasiano', 'Lagoa Santa'],
-    url: canonical,
-  }),
-  JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://vidracariabh.emp.br/' },
-      { '@type': 'ListItem', position: 2, name: 'Box para banheiro em BH', item: canonical },
-    ],
-  }),
-  JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'Em quanto tempo o box fica pronto?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'O prazo depende do tipo de vidro e da agenda, e entra por escrito no orçamento. Como o vidro temperado é feito sob medida, costuma levar alguns dias entre a medição e a instalação.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Vocês cobram a visita para medir?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'O orçamento é sem compromisso. A visita é combinada antes pelo WhatsApp; se houver qualquer custo, ele é informado nesse momento, nunca depois.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'O box é de vidro de segurança?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Sim. Box para banheiro é feito em vidro temperado, que é vidro de segurança: se quebra, vira grãos pequenos em vez de cacos. A espessura padrão é 8 mm.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Dá para instalar box em banheiro pequeno ou em canto?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Dá. Para banheiro pequeno, o box de correr é o mais indicado porque não precisa de espaço para abrir. Para canto, fazemos box em L ou em U, com folhas fixas e de correr.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Vocês trocam um box antigo?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Sim. Retiramos o box antigo, avaliamos se os furos e a fixação servem para o novo e instalamos o box sob medida. Se você só precisa de conserto, veja o serviço de vidraceiro.',
-        },
-      },
-    ],
-  }),
+  JSON.stringify({"@context": "https://schema.org", "@type": ["HomeAndConstructionBusiness", "GlassMerchant"], "@id": "https://vidracariabh.emp.br/#vidracaria-bh", "name": "Vidraçaria BH", "url": "https://vidracariabh.emp.br/", "telephone": "+55 31 99163-3453", "priceRange": "$$", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "@id": "https://vidracariabh.emp.br/box-para-banheiro-bh/#service", "serviceType": "Instalação de box para banheiro sob medida", "name": "Box para banheiro em BH sob medida, em vidro temperado", "description": "Box para banheiro em BH sob medida, em vidro temperado: de correr, de abrir ou de canto. Medição no local, instalação e orçamento por escrito no WhatsApp. vidracariabh.emp.br", "provider": {"@id": "https://vidracariabh.emp.br/#vidracaria-bh"}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/box-para-banheiro-bh/"}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://vidracariabh.emp.br/"}, {"@type": "ListItem", "position": 2, "name": "Box para banheiro em BH", "item": "https://vidracariabh.emp.br/box-para-banheiro-bh/"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Em quanto tempo o box fica pronto?", "acceptedAnswer": {"@type": "Answer", "text": "O prazo depende do tipo de vidro e da agenda, e entra por escrito no orçamento. Como o vidro temperado é feito sob medida, costuma levar alguns dias úteis entre a medição e a instalação."}}, {"@type": "Question", "name": "Vocês cobram a visita para medir?", "acceptedAnswer": {"@type": "Answer", "text": "O orçamento é sem compromisso. A visita é combinada antes pelo WhatsApp; se houver qualquer custo, ele é informado nesse momento, nunca depois."}}, {"@type": "Question", "name": "O box tem garantia?", "acceptedAnswer": {"@type": "Answer", "text": "Tem. A garantia da instalação e a garantia de fábrica do vidro e das ferragens constam por escrito no orçamento, antes de você aprovar."}}, {"@type": "Question", "name": "Como funciona o pagamento?", "acceptedAnswer": {"@type": "Answer", "text": "As formas de pagamento aceitas e as condições são informadas junto com o orçamento fechado. Não há cobrança antes da sua aprovação."}}, {"@type": "Question", "name": "O box é de vidro de segurança?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Box para banheiro é feito em vidro temperado, que é vidro de segurança: se quebra, vira grãos pequenos em vez de cacos. A espessura padrão é 8 mm."}}, {"@type": "Question", "name": "Vocês trocam um box antigo?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Retiramos o box antigo, avaliamos se os furos e a fixação servem para o novo e instalamos o box sob medida. Se você só precisa de conserto, veja a [manutenção de box de banheiro](/manutencao-de-box-de-banheiro-bh/)."}}]})
 ];
 ---
 
 <MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/box-para-banheiro-bh/">
   <article class="money-page">
     <nav class="crumbs"><a href="/">Início</a> › <span>Box para banheiro em BH</span></nav>
-
-    <figure class="hero">
-      <img
-        src={hero.src}
-        width={hero.width}
-        height={hero.height}
-        alt="Box para banheiro BH em vidro temperado, de correr, instalado pela Vidraçaria BH"
-        loading="eager"
-      />
-    </figure>
-
+    <figure class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Box para banheiro BH em vidro temperado, de correr, instalado pela Vidraçaria BH" loading="eager" /></figure>
     <h1>Box para banheiro em BH sob medida, em vidro temperado</h1>
-
-    <p>
-      Se você procura um box para banheiro BH feito sob medida, a Vidraçaria BH mede o seu
-      banheiro no local, indica o tipo de box que cabe no espaço e instala em vidro
-      temperado com as ferragens certas. Atendemos a domicílio em Belo Horizonte e na região
-      metropolitana, sem loja física — o que reduz custo e aparece no seu orçamento.
-    </p>
-    <p>
-      Um box pronto de loja quase nunca encaixa direito: sobra vão, falta vedação, a porta
-      raspa. O box sob medida resolve isso porque o vidro é cortado para o seu banheiro, com
-      o prumo da parede e o nível do piso conferidos antes.
-    </p>
-    <p class="cta">
-      <a class="btn" href={whatsapp}>Fale no WhatsApp (31) 99163-3453</a>
-      e peça seu orçamento sem compromisso.
-    </p>
-
-    <aside class="nap-top">
-      <p><strong>Atendimento:</strong> Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
-      <p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
-      <p><strong>Contato:</strong> WhatsApp <a href={whatsapp}>(31) 99163-3453</a></p>
-    </aside>
-
+    <p>Você quer um box para banheiro BH que encaixe no vão certo, vede a água e não raspe depois de um mês. A Vidraçaria BH mede o seu banheiro no local, define o modelo que cabe no espaço, fabrica em vidro temperado e instala com a ferragem dimensionada para o peso da folha. Atende a domicílio em Belo Horizonte e região metropolitana, sem loja física — e isso baixa o custo que aparece no seu orçamento.</p>
+    <p>Box pronto de loja quase nunca serve: sobra vão, falta vedação, a porta arrasta. O box sob medida corta o vidro para o seu banheiro, com o prumo da parede e o nível do piso conferidos antes da fabricação.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Fale no WhatsApp (31) 99163-3453 e peça o orçamento do seu box sem compromisso.</a></p>
+    <aside class="nap-top"><p><strong>Atendimento:</strong> Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p><p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p><p><strong>Contato:</strong> WhatsApp (31) 99163-3453</p></aside>
     <h2>Como é feito um box para banheiro BH sob medida?</h2>
-    <p>O box para banheiro em BH que a Vidraçaria BH instala passa por três etapas simples:</p>
-    <ol>
-      <li><strong>Medição no local.</strong> Um profissional vai ao seu banheiro, mede o vão, confere se a parede está no prumo e o piso no nível, e verifica onde os trilhos e as dobradiças vão ser fixados.</li>
-      <li><strong>Fabricação sob medida.</strong> O vidro temperado é cortado no tamanho exato e furado para as ferragens antes da têmpera. Depois de temperado, o vidro não pode mais ser cortado nem furado — por isso a medição precisa estar certa.</li>
-      <li><strong>Instalação.</strong> A equipe fixa os trilhos ou as pivotantes, coloca o vidro, regula a vedação e testa a porta abrindo e fechando na sua frente.</li>
-    </ol>
-    <p>O prazo entra por escrito no orçamento. Vidro temperado costuma levar alguns dias porque é feito sob encomenda.</p>
-
+    <p>O box para banheiro em BH que a Vidraçaria BH instala passa por três etapas:</p>
+    <ol><li><strong>Medição no local.</strong> Um profissional vai ao seu banheiro, mede o vão em três alturas, confere se a parede está no prumo e o piso no nível, e marca onde os trilhos e as dobradiças vão ser fixados.</li><li><strong>Fabricação sob medida.</strong> O vidro temperado é cortado no tamanho exato e furado para as ferragens antes da têmpera. Depois de temperado, o vidro não pode mais ser cortado nem furado.</li><li><strong>Instalação.</strong> A equipe fixa os trilhos ou as pivotantes, coloca o vidro, regula a vedação e testa a porta abrindo e fechando na sua frente.</li></ol>
+    <h2>Especificações e processo de execução</h2>
+    <p><strong>Materiais utilizados:</strong></p>
+    <ul><li><strong>Vidro temperado</strong> de 8 mm no padrão; 10 mm em folhas altas ou vãos largos. Incolor, fumê, verde, jateado ou canelado.</li><li><strong>Perfis e trilhos</strong> de alumínio anodizado ou pintado, ou de inox, na cor definida com você.</li><li><strong>Ferragens:</strong> roldanas com rolamento, pivôs, dobradiças de pressão, puxador, fecho e batente.</li><li><strong>Vedação:</strong> borracha de aleta, escovinha e perfil "U" inferior; silicone neutro antifungo no rejunte com a parede.</li></ul>
+    <p><strong>Processo, passo a passo:</strong></p>
+    <ol><li>Medição técnica e escolha de modelo, cor de perfil e tipo de vidro.</li><li>Orçamento fechado por escrito, com o desenho do box e o prazo.</li><li>Corte, furação e têmpera do vidro sob medida.</li><li>Instalação: fixação dos perfis, colocação do vidro, regulagem de folga e de vedação.</li><li>Teste da porta na sua frente e orientação de limpeza.</li></ol>
+    <p><strong>Prazo:</strong> o vidro temperado é feito sob encomenda, então costuma levar alguns dias úteis entre a medição e a instalação. A data exata entra por escrito no orçamento — sem "a confirmar depois".</p>
     <h2>Tipos de box para banheiro</h2>
     <p>O modelo depende do espaço e de como a porta pode abrir sem bater em nada:</p>
-    <ul>
-      <li><strong>Box de correr.</strong> O mais comum. Duas ou mais folhas que deslizam em trilho de alumínio ou inox. Não ocupa área para abrir, ideal para banheiro pequeno.</li>
-      <li><strong>Box de abrir (pivotante).</strong> Uma folha que abre como porta, sobre pivô ou dobradiça. Dá um visual mais limpo, mas precisa de espaço livre na frente.</li>
-      <li><strong>Box de canto (em L ou em U).</strong> Para box que fica no canto do banheiro ou envolve a área do chuveiro por dois ou três lados. Combina folhas fixas e de correr.</li>
-      <li><strong>Box para banheira.</strong> Painéis de vidro sobre a borda da banheira, fixos ou com folha que dobra, para conter a água do chuveiro.</li>
-      <li><strong>Box frontal com fixo lateral.</strong> Uma folha de correr no acesso e um vidro fixo ao lado, quando o vão é largo.</li>
-    </ul>
-    <p>
-      Além do formato, você escolhe o vidro: <strong>incolor</strong> (deixa o banheiro mais
-      claro), <strong>fumê ou verde</strong> (mais privacidade e menos marca de água
-      aparente), <strong>jateado ou acidato</strong> (leitoso, deixa passar luz e não a
-      imagem) e <strong>canelado</strong> (textura em relevo, decorativo).
-    </p>
-
+    <ul><li><strong>Box de correr.</strong> O mais comum. Duas ou mais folhas que deslizam em trilho. Não ocupa área para abrir, ideal para banheiro pequeno.</li><li><strong>Box de abrir (pivotante).</strong> Uma folha que abre como porta, sobre pivô ou dobradiça. Visual mais limpo, precisa de espaço livre na frente.</li><li><strong>Box de canto (em L ou em U).</strong> Para box no canto do banheiro ou que envolve o chuveiro por dois ou três lados. Combina folhas fixas e de correr.</li><li><strong>Box para banheira.</strong> Painéis sobre a borda da banheira, fixos ou com folha que dobra.</li><li><strong>Box frontal com fixo lateral.</strong> Uma folha de correr no acesso e um vidro fixo ao lado, quando o vão é largo.</li></ul>
     <h2>Qual vidro e espessura escolher</h2>
-    <p>
-      Box para banheiro usa <strong>vidro temperado</strong>, que é vidro de segurança:
-      resiste melhor a impacto e, se quebra, vira grãos pequenos em vez de cacos cortantes.
-      A espessura padrão é <strong>8 mm</strong>; em vãos largos ou folhas altas, pode ir
-      para 10 mm.
-    </p>
-    <p>
-      Uma opção a mais é a <strong>película de segurança</strong> aplicada no vidro: se a
-      peça se romper, os fragmentos ficam presos na película por algum tempo, o que dá
-      margem para desligar o chuveiro e sair com cuidado.
-    </p>
-    <p>
-      Sobre a escolha da cor, vale pensar na manutenção: vidro incolor mostra mais o
-      respingo de água com cal; fumê e verde disfarçam. Nenhum vidro dispensa a limpeza com
-      rodo depois do banho, mas alguns pedem menos atenção.
-    </p>
-
+    <p>Box para banheiro usa <strong>vidro temperado</strong>, que é vidro de segurança: resiste melhor a impacto e, se quebra, vira grãos pequenos em vez de cacos cortantes. A espessura padrão é <strong>8 mm</strong>; em vãos largos ou folhas altas, pode ir para 10 mm.</p>
+    <p>Uma opção a mais é a <strong>película de segurança</strong> aplicada no vidro: se a peça se romper, os fragmentos ficam presos na película por algum tempo, o que dá margem para desligar o chuveiro e sair com cuidado.</p>
+    <p>Sobre a cor: vidro incolor mostra mais o respingo de água com cal; fumê e verde disfarçam. Nenhum vidro dispensa o rodo depois do banho, mas alguns pedem menos atenção.</p>
+    <h2>Aplicações e projetos indicados</h2>
+    <ul><li><strong>Banheiro pequeno de apartamento</strong> — box de correr em 8 mm, que não rouba espaço para abrir.</li><li><strong>Suíte com bancada dupla</strong> — frontal com fixo lateral, folha de correr no acesso.</li><li><strong>Reforma com banheira</strong> — painel sobre a borda, fixo ou dobrável, para conter o jato.</li><li><strong>Banheiro acessível / adaptado</strong> — folha de abrir larga ou box com folha removível.</li><li><strong>Comércio: academia, pousada, clínica, salão</strong> — box de correr reforçado, ferragem de maior uso.</li><li><strong>Troca de box antigo</strong> — retirada do kit velho, avaliação dos furos existentes e instalação do novo sob medida.</li></ul>
     <h2>Cuidados e manutenção do box</h2>
-    <p>Um box bem instalado dura anos com pouco esforço:</p>
-    <ul>
-      <li><strong>Depois do banho, passe o rodo no vidro.</strong> Isso evita a mancha branca de cal, que com o tempo fica difícil de tirar.</li>
-      <li><strong>Limpe com pano macio e detergente neutro.</strong> Evite palha de aço, lâmina e produto abrasivo — riscam o vidro e comem as ferragens.</li>
-      <li><strong>Regulagem periódica.</strong> Trilho e roldana acumulam sujeira e cabelo; uma limpeza no trilho a cada poucos meses mantém a porta leve.</li>
-      <li><strong>Peças de desgaste.</strong> Roldana, borracha de vedação e escovinha gastam. Quando a porta começa a raspar ou a vazar água, quase sempre é troca de roldana ou de borracha — um serviço rápido de <a href="/vidraceiro-bh/">vidraceiro</a>.</li>
-    </ul>
-
-    <h2>Por que instalar seu box com a Vidraçaria BH</h2>
-    <p>
-      A Vidraçaria BH está há 7 anos instalando vidros sob medida em Belo Horizonte, para
-      casa, apartamento e comércio. Quem mede o seu banheiro é quem acompanha a instalação —
-      sem intermediário, menos erro de medida.
-    </p>
-    <ul>
-      <li><strong>Medição técnica no local</strong>, com conferência de prumo e nível.</li>
-      <li><strong>Vidro temperado</strong> com certificado do fabricante quando o serviço exige.</li>
-      <li><strong>Prazo por escrito</strong> no orçamento, com data de entrega e de instalação.</li>
-      <li><strong>Atendimento a domicílio</strong> em BH e região, de segunda a sábado.</li>
-      <li><strong>Orçamento fechado</strong> pelo WhatsApp, sem valor "a confirmar" depois.</li>
-    </ul>
-    <p class="cta"><a class="btn" href={whatsapp}>Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a></p>
-
+    <ul><li><strong>Depois do banho, passe o rodo no vidro.</strong> Evita a mancha branca de cal, que fica difícil de tirar com o tempo.</li><li><strong>Limpe com pano macio e detergente neutro.</strong> Nada de palha de aço, lâmina ou abrasivo — riscam o vidro e comem as ferragens.</li><li><strong>Limpe o trilho</strong> a cada poucos meses; cabelo e sujeira travam a roldana.</li><li><strong>Roldana, borracha e escovinha</strong> são peças de desgaste. Quando a porta raspa ou vaza, quase sempre é troca dessas peças — um serviço rápido de <a href="/vidraceiro-bh/">vidraceiro</a> ou de <a href="/manutencao-de-box-de-banheiro-bh/">manutenção de box</a>.</li></ul>
+    <h2>Clientes de box para banheiro em BH</h2>
+    <blockquote><p><strong>Espaço reservado para o depoimento de um cliente deste serviço.</strong> [DEPOIMENTO DE CLIENTE A INCLUIR] — a Vidraçaria BH envia a citação, o primeiro nome e o bairro para publicação.</p></blockquote>
+    <p>A Vidraçaria BH instala box para banheiro em Belo Horizonte há 7 anos, em obra nova e em troca de box antigo, para apartamento, casa e comércio. Peça no WhatsApp fotos de instalações recentes perto do seu endereço; o depoimento de um cliente deste serviço entra aqui assim que autorizado, com primeiro nome e bairro.</p>
+    <h2>Por que fazer seu box para banheiro com a Vidraçaria BH</h2>
+    <p>A Vidraçaria BH está há 7 anos instalando box e vidro sob medida em Belo Horizonte. Quem mede o seu banheiro é quem acompanha a instalação — sem intermediário, menos erro de medida.</p>
+    <ul><li><strong>Medição do vão em três alturas</strong>, com prumo e nível conferidos.</li><li><strong>Vidro temperado</strong> com nota fiscal e, quando o serviço exige, certificado do fabricante.</li><li><strong>Ferragem dimensionada</strong> para o peso da folha, não a mais barata da prateleira.</li><li><strong>Prazo e desenho do box por escrito</strong> no orçamento.</li><li><strong>Orçamento fechado</strong> pelo WhatsApp, sem valor "a confirmar" depois.</li></ul>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a></p>
     <h2>Regiões atendidas</h2>
-    <p>
-      A Vidraçaria BH instala box para banheiro a domicílio em toda Belo Horizonte — de
-      bairros como Centro, Savassi, Buritis, Pampulha, Barreiro e Venda Nova — e nas cidades
-      vizinhas:
-    </p>
-    <ul>
-      <li><a href="/vidracaria-em-contagem/">Contagem</a></li>
-      <li><a href="/vidracaria-em-betim/">Betim</a></li>
-      <li>Nova Lima</li>
-      <li>Vespasiano</li>
-      <li>Lagoa Santa</li>
-    </ul>
+    <p>A Vidraçaria BH instala box para banheiro a domicílio em toda Belo Horizonte — Centro, Savassi, Funcionários, Buritis, Belvedere, Pampulha, Castelo, Barreiro e Venda Nova — e nas cidades vizinhas:</p>
+    <ul><li><a href="/vidracaria-em-contagem/">Contagem</a></li><li><a href="/vidracaria-em-betim/">Betim</a></li><li><a href="/vidracaria-em-nova-lima/">Nova Lima</a></li><li><a href="/vidracaria-em-vespasiano/">Vespasiano</a></li><li><a href="/vidracaria-em-lagoa-santa/">Lagoa Santa</a></li></ul>
     <p>Não achou seu bairro? Chame no WhatsApp que confirmamos o atendimento na hora.</p>
-
     <h2>Peça o orçamento do seu box para banheiro em BH</h2>
-    <p>
-      Manda uma mensagem no WhatsApp com uma foto do banheiro e a medida aproximada do vão.
-      A gente dá uma primeira orientação e uma faixa de valor no mesmo dia útil. Se fizer
-      sentido, marcamos a visita para a medição e o orçamento fechado do seu box para
-      banheiro em BH.
-    </p>
-    <p class="cta"><a class="btn" href={whatsapp}>WhatsApp: (31) 99163-3453</a></p>
-
+    <p>Manda uma mensagem no WhatsApp com uma foto do banheiro e a medida aproximada do vão. Você recebe uma primeira orientação e uma faixa de valor no mesmo dia útil. Se fizer sentido, marcamos a visita para a medição e o orçamento fechado do seu box para banheiro em BH.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">WhatsApp: (31) 99163-3453.</a></p>
     <h2>Perguntas frequentes</h2>
-
     <h3>Em quanto tempo o box fica pronto?</h3>
-    <p>O prazo depende do tipo de vidro e da agenda, e entra por escrito no orçamento. Como o vidro temperado é feito sob medida, costuma levar alguns dias entre a medição e a instalação.</p>
-
+    <p>O prazo depende do tipo de vidro e da agenda, e entra por escrito no orçamento. Como o vidro temperado é feito sob medida, costuma levar alguns dias úteis entre a medição e a instalação.</p>
     <h3>Vocês cobram a visita para medir?</h3>
     <p>O orçamento é sem compromisso. A visita é combinada antes pelo WhatsApp; se houver qualquer custo, ele é informado nesse momento, nunca depois.</p>
-
+    <h3>O box tem garantia?</h3>
+    <p>Tem. A garantia da instalação e a garantia de fábrica do vidro e das ferragens constam por escrito no orçamento, antes de você aprovar.</p>
+    <h3>Como funciona o pagamento?</h3>
+    <p>As formas de pagamento aceitas e as condições são informadas junto com o orçamento fechado. Não há cobrança antes da sua aprovação.</p>
     <h3>O box é de vidro de segurança?</h3>
     <p>Sim. Box para banheiro é feito em vidro temperado, que é vidro de segurança: se quebra, vira grãos pequenos em vez de cacos. A espessura padrão é 8 mm.</p>
-
-    <h3>Dá para instalar box em banheiro pequeno ou em canto?</h3>
-    <p>Dá. Para banheiro pequeno, o box de correr é o mais indicado porque não precisa de espaço para abrir. Para canto, fazemos box em L ou em U, com folhas fixas e de correr.</p>
-
     <h3>Vocês trocam um box antigo?</h3>
-    <p>Sim. Retiramos o box antigo, avaliamos se os furos e a fixação servem para o novo e instalamos o box sob medida. Se você só precisa de conserto, veja o serviço de <a href="/vidraceiro-bh/">vidraceiro</a>.</p>
-
-    <nav class="related" aria-label="Serviços relacionados">
-      <p class="related-title"><strong>Serviços relacionados</strong></p>
-      <ul>
-        <li><a href="/">Vidraçaria em Belo Horizonte (todos os serviços)</a></li>
-        <li><a href="/espelho-sob-medida-bh/">Espelhos sob medida em BH</a></li>
-        <li><a href="/cortina-de-vidro-bh/">Cortina de vidro em BH</a></li>
-        <li><a href="/vidraceiro-bh/">Vidraceiro em BH — manutenção e troca de vidro</a></li>
-      </ul>
-    </nav>
-
+    <p>Sim. Retiramos o box antigo, avaliamos se os furos e a fixação servem para o novo e instalamos o box sob medida. Se você só precisa de conserto, veja a <a href="/manutencao-de-box-de-banheiro-bh/">manutenção de box de banheiro</a>.</p>
+    <nav class="related" aria-label="Serviços relacionados"><p class="related-title"><strong>Serviços relacionados</strong></p><ul><li><a href="/manutencao-de-box-de-banheiro-bh/">Manutenção de box de banheiro</a></li><li><a href="/espelho-sob-medida-bh/">Espelho sob medida em BH</a></li><li><a href="/porta-de-vidro-bh/">Porta de vidro em BH</a></li><li><a href="/vidraceiro-bh/">Vidraceiro — troca e conserto</a></li></ul></nav>
     <footer class="nap-footer">
       <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
-      <p>WhatsApp: <a href={whatsapp}>(31) 99163-3453</a></p>
+      <p>WhatsApp: <a href="https://wa.me/5531991633453">(31) 99163-3453</a></p>
       <p>Atendimento: segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
       <p>Área de atendimento: Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
     </footer>
-    <!-- Bloco "Endereço / mapa fixo" adaptado: negócio é SAB (atende a domicílio, sem loja). Rodapé usa localidade + CEP + área atendida. -->
   </article>
 </MoneyPage>
+
+

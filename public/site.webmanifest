@@ -1,0 +1,15 @@
+{
+  "name": "Vidraçaria BH",
+  "short_name": "Vidraçaria BH",
+  "description": "Vidraçaria em Belo Horizonte e região metropolitana: box, cortina de vidro, espelhos, guarda-corpo, portas e manutenção. Medição no local e orçamento por escrito.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0a4049",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/favicon-32.png", "type": "image/png", "sizes": "32x32" },
+    { "src": "/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

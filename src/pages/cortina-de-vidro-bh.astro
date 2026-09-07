@@ -2,269 +2,80 @@
 import MoneyPage from '../layouts/MoneyPage.astro';
 import hero from '../assets/img/hero-cortina-de-vidro.jpg';
 
-const title = 'Cortina de Vidro em BH | Vidraçaria BH';
-const description =
-  'Cortina de vidro em BH para varanda e sacada: painéis deslizantes em vidro temperado, com abertura total. Medição no local e instalação. Peça seu orçamento.';
-const whatsapp = 'https://wa.me/5531991633453';
-const canonical = 'https://vidracariabh.emp.br/cortina-de-vidro-bh/';
-
+const title = "Cortina de Vidro em BH para Varanda | Vidraçaria BH";
+const description = "Cortina de vidro em BH para varanda e sacada: painéis deslizantes em vidro temperado, com abertura total. Medição no local e orçamento por escrito no WhatsApp. vidracariabh.emp.br";
 const jsonld = [
-  JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: 'Instalação de cortina de vidro',
-    name: 'Cortina de vidro em BH para varanda e sacada',
-    description:
-      'Fabricação e instalação de cortina de vidro em vidro temperado sob medida em Belo Horizonte e região, para varanda, sacada, área gourmet e fachada de comércio.',
-    provider: {
-      '@type': 'HomeAndConstructionBusiness',
-      name: 'Vidraçaria BH',
-      telephone: '+55 31 99163-3453',
-      areaServed: ['Belo Horizonte', 'Contagem', 'Betim', 'Nova Lima', 'Vespasiano', 'Lagoa Santa'],
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Belo Horizonte',
-        addressRegion: 'MG',
-        postalCode: '30160-011',
-        addressCountry: 'BR',
-      },
-    },
-    areaServed: ['Belo Horizonte', 'Contagem', 'Betim', 'Nova Lima', 'Vespasiano', 'Lagoa Santa'],
-    url: canonical,
-  }),
-  JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Início', item: 'https://vidracariabh.emp.br/' },
-      { '@type': 'ListItem', position: 2, name: 'Cortina de vidro em BH', item: canonical },
-    ],
-  }),
-  JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'A cortina de vidro veda chuva e vento?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Ela protege bem de vento e de chuva batendo na varanda, mas não é uma vedação total: passa um pouco de ar pelas frestas entre os vidros. Para isolamento maior, o indicado é o envidraçamento fixo.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Preciso de autorização do condomínio?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Na maioria dos prédios, sim. O condomínio costuma exigir um modelo e uma cor de perfil padrão para manter a fachada uniforme. Confirme com a administração antes de fechar o orçamento; a gente ajuda com as informações técnicas.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'A cortina de vidro abre 100%?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Abre quase todo o vão. Os painéis giram e se empilham numa das laterais, deixando só a espessura dos vidros empilhados ocupando a ponta.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Em quanto tempo fica pronto?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'O prazo depende do sistema e da agenda, e entra por escrito no orçamento. Como o vidro é feito sob medida, costuma levar alguns dias entre a medição e a instalação.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Como é cobrado o valor?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'O orçamento é calculado pela área de vidro (metro quadrado), pelo sistema de ferragem escolhido e pela altura do pavimento. Você recebe o valor fechado antes de aprovar.',
-        },
-      },
-    ],
-  }),
+  JSON.stringify({"@context": "https://schema.org", "@type": ["HomeAndConstructionBusiness", "GlassMerchant"], "@id": "https://vidracariabh.emp.br/#vidracaria-bh", "name": "Vidraçaria BH", "url": "https://vidracariabh.emp.br/", "telephone": "+55 31 99163-3453", "priceRange": "$$", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "@id": "https://vidracariabh.emp.br/cortina-de-vidro-bh/#service", "serviceType": "Instalação de cortina de vidro para varanda", "name": "Cortina de vidro em BH para varanda e sacada", "description": "Cortina de vidro em BH para varanda e sacada: painéis deslizantes em vidro temperado, com abertura total. Medição no local e orçamento por escrito no WhatsApp. vidracariabh.emp.br", "provider": {"@id": "https://vidracariabh.emp.br/#vidracaria-bh"}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/cortina-de-vidro-bh/"}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://vidracariabh.emp.br/"}, {"@type": "ListItem", "position": 2, "name": "Cortina de vidro em BH", "item": "https://vidracariabh.emp.br/cortina-de-vidro-bh/"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A cortina de vidro veda chuva e vento?", "acceptedAnswer": {"@type": "Answer", "text": "Ela protege bem de vento e de chuva batendo na varanda, mas não é vedação total: passa um pouco de ar pelas frestas entre os vidros. Para isolamento maior, o indicado é o envidraçamento fixo."}}, {"@type": "Question", "name": "Preciso de autorização do condomínio?", "acceptedAnswer": {"@type": "Answer", "text": "Na maioria dos prédios, sim. O condomínio costuma exigir um modelo e uma cor de perfil padrão para manter a fachada uniforme. Confirme com a administração antes de fechar o orçamento; a gente ajuda com as informações técnicas."}}, {"@type": "Question", "name": "A cortina de vidro abre 100%?", "acceptedAnswer": {"@type": "Answer", "text": "Abre quase todo o vão. Os painéis giram e se empilham numa das laterais, deixando só a espessura dos vidros empilhados ocupando a ponta."}}, {"@type": "Question", "name": "A cortina de vidro tem garantia?", "acceptedAnswer": {"@type": "Answer", "text": "Tem. A garantia da instalação e a garantia de fábrica do vidro e das ferragens constam por escrito no orçamento, antes de você aprovar."}}, {"@type": "Question", "name": "Como funciona o pagamento?", "acceptedAnswer": {"@type": "Answer", "text": "As formas de pagamento aceitas e as condições são informadas junto com o orçamento fechado. Não há cobrança antes da sua aprovação."}}, {"@type": "Question", "name": "Como é cobrado o valor?", "acceptedAnswer": {"@type": "Answer", "text": "O orçamento é calculado pela área de vidro (metro quadrado), pelo sistema de ferragem e pela altura do pavimento. Você recebe o valor fechado antes de aprovar."}}]})
 ];
 ---
 
 <MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/cortina-de-vidro-bh/">
   <article class="money-page">
     <nav class="crumbs"><a href="/">Início</a> › <span>Cortina de vidro em BH</span></nav>
-
-    <figure class="hero">
-      <img
-        src={hero.src}
-        width={hero.width}
-        height={hero.height}
-        alt="Cortina de vidro BH em varanda de apartamento, painéis de vidro temperado deslizantes"
-        loading="eager"
-      />
-    </figure>
-
+    <figure class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Cortina de vidro BH em varanda de apartamento, painéis de vidro temperado deslizantes" loading="eager" /></figure>
     <h1>Cortina de vidro em BH para varanda e sacada</h1>
-
-    <p>
-      A cortina de vidro BH é o jeito mais discreto de fechar uma varanda: painéis de vidro
-      que deslizam num trilho e se recolhem na lateral, sem montante entre um vidro e outro.
-      Com a varanda fechada, você usa o espaço o ano todo — no vento, na chuva fina e no frio
-      de BH — e abre tudo quando quer a varanda aberta de novo.
-    </p>
-    <p>
-      A Vidraçaria BH mede a sua varanda no local, indica o sistema que serve para o seu vão
-      e a altura do prédio, e instala em vidro temperado. Atendemos a domicílio em Belo
-      Horizonte e região, sem loja física.
-    </p>
-    <p class="cta">
-      <a class="btn" href={whatsapp}>Fale no WhatsApp (31) 99163-3453</a>
-      e peça seu orçamento sem compromisso.
-    </p>
-
-    <aside class="nap-top">
-      <p><strong>Atendimento:</strong> Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
-      <p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
-      <p><strong>Contato:</strong> WhatsApp <a href={whatsapp}>(31) 99163-3453</a></p>
-    </aside>
-
+    <p>Você quer fechar a varanda sem perder a vista e poder abrir tudo de novo nos dias bons. A cortina de vidro BH faz isso: painéis de vidro temperado que deslizam num trilho e se recolhem na lateral, sem montante entre os vidros. Com a varanda fechada você usa o espaço no vento, na garoa e no frio de BH; aberta, o vão fica livre quase inteiro.</p>
+    <p>A Vidraçaria BH mede a sua varanda no local, indica o sistema certo para o vão e a altura do prédio, fabrica em vidro temperado e instala. Atende a domicílio em Belo Horizonte e região, sem loja física.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Fale no WhatsApp (31) 99163-3453 e peça o orçamento da sua cortina de vidro sem compromisso.</a></p>
+    <aside class="nap-top"><p><strong>Atendimento:</strong> Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p><p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p><p><strong>Contato:</strong> WhatsApp (31) 99163-3453</p></aside>
     <h2>O que é uma cortina de vidro BH e onde ela funciona?</h2>
-    <p>
-      A cortina de vidro é um fechamento em que os vidros correm em um trilho superior e
-      outro inferior, giram e se empilham numa das pontas. Diferente da janela de vidro
-      comum, não há perfil de alumínio entre os painéis — só o vidro. Isso deixa a vista
-      limpa quando está fechada e libera o vão quase inteiro quando está aberta.
-    </p>
+    <p>A cortina de vidro é um fechamento em que os vidros correm em um trilho superior e outro inferior, giram e se empilham numa das pontas. Diferente da janela de vidro comum, não há perfil de alumínio entre os painéis — só o vidro. A vista fica limpa quando está fechada e o vão fica livre quando está aberta.</p>
     <p>Onde ela costuma entrar:</p>
-    <ul>
-      <li><strong>Varanda e sacada de apartamento</strong>, para proteger de vento e chuva sem perder a paisagem.</li>
-      <li><strong>Área gourmet e varanda gourmet</strong>, para usar a churrasqueira o ano todo.</li>
-      <li><strong>Terraço e área de piscina</strong>, para conter respingo e folha.</li>
-      <li><strong>Fachada de comércio</strong>, para fechar a loja à noite mantendo a vitrine visível.</li>
-    </ul>
-
+    <ul><li><strong>Varanda e sacada de apartamento</strong>, para proteger de vento e chuva sem perder a paisagem.</li><li><strong>Área gourmet e varanda gourmet</strong>, para usar a churrasqueira o ano todo.</li><li><strong>Terraço e área de piscina</strong>, para conter respingo e folha.</li><li><strong>Fachada de comércio</strong>, para fechar a loja à noite mantendo a vitrine visível.</li></ul>
+    <h2>Especificações e processo de execução</h2>
+    <p><strong>Materiais utilizados:</strong></p>
+    <ul><li><strong>Vidro temperado</strong> de 8 mm no padrão; 10 mm em andar alto, vão largo ou fachada muito exposta. <strong>Vidro laminado</strong> onde a norma do prédio exige.</li><li><strong>Trilho</strong> superior e inferior de alumínio, com roldanas de rolamento e roletes de nylon.</li><li><strong>Ferragens:</strong> fecho, trava, batente lateral e puxador; kit de vedação com borracha e escovinha.</li><li><strong>Vedação inferior</strong> com perfil e borracha para reduzir a entrada de água.</li></ul>
+    <p><strong>Processo, passo a passo:</strong></p>
+    <ol><li>Medição do vão, conferência de prumo, nível e altura do pavimento.</li><li>Definição do sistema (roldana superior ou inferior), do lado de empilhamento e da espessura.</li><li>Orçamento fechado por escrito, com espessura, sistema e prazo.</li><li>Corte e têmpera do vidro sob medida.</li><li>Instalação dos trilhos, colocação dos painéis, regulagem do giro e da vedação, teste na sua frente.</li></ol>
+    <p><strong>Prazo:</strong> o vidro é feito sob encomenda, então costuma levar alguns dias úteis entre a medição e a instalação. A data exata vai por escrito no orçamento.</p>
     <h2>Sistemas de cortina de vidro</h2>
-    <p>Os sistemas mudam pela ferragem e pelo modo de recolher os vidros:</p>
-    <ul>
-      <li><strong>Sistema deslizante com roldana superior.</strong> O peso do vidro fica na parte de cima; o trilho inferior só guia. É o mais usado em varanda residencial.</li>
-      <li><strong>Sistema com roldana inferior.</strong> O vidro apoia embaixo. Indicado em alguns vãos e alturas específicas, definido na medição.</li>
-      <li><strong>Abertura com empilhamento lateral.</strong> Todos os painéis giram e encostam numa lateral, liberando o vão. Você escolhe para que lado empilhar.</li>
-      <li><strong>Cortina de vidro automatizada.</strong> Versão com acionamento motorizado, opcional, para vãos grandes ou quando abrir e fechar manual é incômodo.</li>
-    </ul>
-    <p>Na visita, a gente indica o sistema conforme o tamanho do vão, a altura do prédio e o quanto você quer abrir.</p>
-
+    <ul><li><strong>Deslizante com roldana superior.</strong> O peso do vidro fica em cima; o trilho inferior só guia. O mais usado em varanda residencial.</li><li><strong>Roldana inferior.</strong> O vidro apoia embaixo. Indicado em alguns vãos e alturas específicas, definido na medição.</li><li><strong>Empilhamento lateral.</strong> Todos os painéis giram e encostam numa lateral, liberando o vão. Você escolhe o lado.</li><li><strong>Cortina de vidro automatizada.</strong> Acionamento motorizado, opcional, para vãos grandes ou quando abrir e fechar manual incomoda.</li></ul>
     <h2>Vidro, espessura e vento</h2>
-    <p>
-      A cortina de vidro usa <strong>vidro temperado</strong>, que é vidro de segurança. A
-      espessura padrão é <strong>8 mm</strong>; em andar alto, vão largo ou fachada muito
-      exposta, passa para <strong>10 mm</strong>. A regra é simples: quanto mais vento e mais
-      alto o pavimento, mais grosso o vidro.
-    </p>
-    <p>
-      Onde a norma do prédio ou do projeto exige, usamos <strong>vidro laminado</strong>, que
-      mantém os cacos presos à película se quebrar. Essa definição entra no orçamento junto
-      com a espessura, então você aprova sabendo o que está sendo instalado.
-    </p>
-
-    <h2>Cortina de vidro, envidraçamento fixo ou guarda-corpo: qual escolher</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Solução</th><th>Abre?</th><th>Vedação</th><th>Para quê</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Cortina de vidro</td><td>Sim, empilha na lateral</td><td>Boa contra vento e chuva; passa um pouco de ar pelas frestas</td><td>Varanda que você quer abrir e fechar conforme o dia</td></tr>
-          <tr><td>Envidraçamento fixo (janela de vidro)</td><td>Só as folhas de correr</td><td>Melhor vedação, com borracha em todo o perímetro</td><td>Fechamento definitivo, mais isolamento de ruído</td></tr>
-          <tr><td>Guarda-corpo de vidro</td><td>Não</td><td>Nenhuma — é proteção, não fechamento</td><td>Proteção de sacada, escada e mezanino dentro da norma</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>
-      Se a dúvida é entre cortina e fixo, pense no uso: quem quer a varanda "aberta" na maior
-      parte do tempo tende a preferir a cortina; quem quer isolar de vez costuma ir para o
-      fixo.
-    </p>
-
+    <p>A cortina de vidro usa <strong>vidro temperado</strong>, que é vidro de segurança. Padrão de <strong>8 mm</strong>; em andar alto, vão largo ou fachada exposta, <strong>10 mm</strong>. Regra simples: quanto mais vento e mais alto o pavimento, mais grosso o vidro. Onde a norma do prédio ou do projeto exige, usamos <strong>vidro laminado</strong>, que mantém os cacos presos à película. Espessura e tipo de vidro entram no orçamento — você aprova sabendo o que vai ser instalado.</p>
+    <h2>Aplicações e projetos indicados</h2>
+    <ul><li><strong>Varanda de apartamento com vista</strong> — cortina que você abre no fim de semana e fecha no vento.</li><li><strong>Varanda gourmet com churrasqueira</strong> — protege da fumaça de fora e da chuva sem fechar de vez.</li><li><strong>Terraço de cobertura</strong> — vãos largos, sistema com empilhamento total.</li><li><strong>Sacada de andar alto</strong> — 10 mm, atenção redobrada à fixação e à vedação.</li><li><strong>Loja e quiosque</strong> — fechamento noturno com vitrine visível.</li><li><strong>Quem NÃO quer cortina:</strong> se a meta é isolar ruído e vedar 100%, o indicado é o <a href="/envidracamento-de-sacada-bh/">envidraçamento de sacada</a> ou o <a href="/fechamento-de-varanda-bh/">fechamento de varanda fixo</a>.</li></ul>
+    <h2>Cortina de vidro, envidraçamento fixo ou guarda-corpo</h2>
+    <div class="table-wrap"><table><thead><tr><th>Solução</th><th>Abre?</th><th>Vedação</th><th>Para quê</th></tr></thead><tbody><tr><td>Cortina de vidro</td><td>Sim, empilha na lateral</td><td>Boa contra vento e chuva; passa um pouco de ar pelas frestas</td><td>Varanda que você quer abrir e fechar conforme o dia</td></tr><tr><td>Envidraçamento fixo (janela de vidro)</td><td>Só as folhas de correr</td><td>Melhor vedação, com borracha em todo o perímetro</td><td>Fechamento definitivo, mais isolamento de ruído</td></tr><tr><td>Guarda-corpo de vidro</td><td>Não</td><td>Nenhuma — é proteção, não fechamento</td><td>Proteção de sacada, escada e mezanino dentro da norma</td></tr></tbody></table></div>
     <h2>Manutenção e limpeza da cortina de vidro</h2>
-    <p>A cortina de vidro dá pouco trabalho, mas o trilho pede atenção:</p>
-    <ul>
-      <li><strong>Limpe o trilho inferior</strong> a cada poucos meses. Poeira e folha travam o deslize dos vidros.</li>
-      <li><strong>Passe pano úmido nas roldanas e nos roletes</strong>; não use óleo, que gruda sujeira.</li>
-      <li><strong>Confira as borrachas e as escovinhas</strong> de vedação uma vez por ano.</li>
-      <li>Se um vidro começar a "arrastar" ou sair do prumo, é ajuste de roldana ou de batente — um serviço rápido de <a href="/vidraceiro-bh/">vidraceiro</a>.</li>
-    </ul>
-
+    <ul><li><strong>Limpe o trilho inferior</strong> a cada poucos meses. Poeira e folha travam o deslize.</li><li><strong>Passe pano úmido nas roldanas e nos roletes</strong>; nada de óleo, que gruda sujeira.</li><li><strong>Confira as borrachas e as escovinhas</strong> de vedação uma vez por ano.</li><li>Se um painel começa a arrastar ou sai do prumo, é ajuste de roldana ou de batente — um serviço rápido de <a href="/manutencao-de-cortina-de-vidro-bh/">manutenção de cortina de vidro</a>.</li></ul>
+    <h2>Clientes de cortina de vidro em BH</h2>
+    <blockquote><p><strong>Espaço reservado para o depoimento de um cliente deste serviço.</strong> [DEPOIMENTO DE CLIENTE A INCLUIR] — a Vidraçaria BH envia a citação, o primeiro nome e o bairro para publicação.</p></blockquote>
+    <p>A Vidraçaria BH fecha varandas com cortina de vidro em Belo Horizonte há 7 anos, em apartamento, cobertura e área gourmet, dentro do padrão aprovado pelo condomínio. Peça no WhatsApp fotos de varandas fechadas recentemente na sua região; o depoimento de um cliente deste serviço entra aqui assim que autorizado, com primeiro nome e bairro.</p>
     <h2>Por que fechar sua varanda com a Vidraçaria BH</h2>
-    <p>
-      A Vidraçaria BH está há 7 anos instalando vidros sob medida em Belo Horizonte. Quem vai
-      à sua casa medir é quem acompanha a instalação, o que reduz erro de medida e
-      retrabalho.
-    </p>
-    <ul>
-      <li><strong>Medição técnica no local</strong>, com conferência de prumo, nível e altura do pavimento.</li>
-      <li><strong>Vidro temperado</strong> com certificado do fabricante quando o serviço exige.</li>
-      <li><strong>Prazo por escrito</strong> no orçamento.</li>
-      <li><strong>Atendimento a domicílio</strong> em BH e região, de segunda a sábado.</li>
-      <li><strong>Orçamento fechado</strong> pelo WhatsApp, sem valor "a confirmar" depois.</li>
-    </ul>
-    <p class="cta"><a class="btn" href={whatsapp}>Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a></p>
-
+    <p>A Vidraçaria BH está há 7 anos instalando cortina de vidro e fechamento de varanda em Belo Horizonte. Quem vai à sua casa medir é quem acompanha a instalação.</p>
+    <ul><li><strong>Medição com prumo, nível e altura do pavimento</strong> — o que define a espessura do vidro.</li><li><strong>Orientação sobre o padrão</strong> de perfil e modelo aprovado no seu condomínio.</li><li><strong>Vidro temperado</strong> com nota fiscal e certificado quando o serviço exige.</li><li><strong>Espessura, sistema e prazo por escrito</strong> no orçamento.</li><li><strong>Orçamento fechado</strong> pelo WhatsApp, sem valor "a confirmar" depois.</li></ul>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a></p>
     <h2>Regiões atendidas</h2>
-    <p>
-      A Vidraçaria BH instala cortina de vidro a domicílio em toda Belo Horizonte — de
-      bairros como Centro, Savassi, Buritis, Pampulha, Barreiro e Venda Nova — e nas cidades
-      vizinhas:
-    </p>
-    <ul>
-      <li><a href="/vidracaria-em-contagem/">Contagem</a></li>
-      <li><a href="/vidracaria-em-betim/">Betim</a></li>
-      <li>Nova Lima</li>
-      <li>Vespasiano</li>
-      <li>Lagoa Santa</li>
-    </ul>
+    <p>A Vidraçaria BH instala cortina de vidro em varandas de apartamento e cobertura em toda Belo Horizonte — Centro, Savassi, Lourdes, Buritis, Belvedere, Pampulha, Sion, Barreiro e Venda Nova — e nas cidades vizinhas:</p>
+    <ul><li><a href="/vidracaria-em-contagem/">Contagem</a></li><li><a href="/vidracaria-em-betim/">Betim</a></li><li><a href="/vidracaria-em-nova-lima/">Nova Lima</a></li><li><a href="/vidracaria-em-vespasiano/">Vespasiano</a></li><li><a href="/vidracaria-em-lagoa-santa/">Lagoa Santa</a></li></ul>
     <p>Não achou seu bairro? Chame no WhatsApp que confirmamos o atendimento na hora.</p>
-
     <h2>Peça o orçamento da sua cortina de vidro em BH</h2>
-    <p>
-      Manda uma mensagem no WhatsApp com uma foto da varanda e a largura aproximada do vão, e
-      diga em que andar você mora. A gente dá uma primeira orientação e uma faixa de valor no
-      mesmo dia útil. Se fizer sentido, marcamos a visita para medir e fechar o orçamento da
-      sua cortina de vidro em BH.
-    </p>
-    <p class="cta"><a class="btn" href={whatsapp}>WhatsApp: (31) 99163-3453</a></p>
-
+    <p>Manda uma mensagem no WhatsApp com uma foto da varanda, a largura aproximada do vão e o andar. Você recebe uma primeira orientação e uma faixa de valor no mesmo dia útil. Se fizer sentido, marcamos a visita para medir e fechar o orçamento da sua cortina de vidro em BH.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">WhatsApp: (31) 99163-3453.</a></p>
     <h2>Perguntas frequentes</h2>
-
     <h3>A cortina de vidro veda chuva e vento?</h3>
-    <p>Ela protege bem de vento e de chuva batendo na varanda, mas não é uma vedação total: passa um pouco de ar pelas frestas entre os vidros. Para isolamento maior, o indicado é o envidraçamento fixo.</p>
-
+    <p>Ela protege bem de vento e de chuva batendo na varanda, mas não é vedação total: passa um pouco de ar pelas frestas entre os vidros. Para isolamento maior, o indicado é o envidraçamento fixo.</p>
     <h3>Preciso de autorização do condomínio?</h3>
     <p>Na maioria dos prédios, sim. O condomínio costuma exigir um modelo e uma cor de perfil padrão para manter a fachada uniforme. Confirme com a administração antes de fechar o orçamento; a gente ajuda com as informações técnicas.</p>
-
     <h3>A cortina de vidro abre 100%?</h3>
     <p>Abre quase todo o vão. Os painéis giram e se empilham numa das laterais, deixando só a espessura dos vidros empilhados ocupando a ponta.</p>
-
-    <h3>Em quanto tempo fica pronto?</h3>
-    <p>O prazo depende do sistema e da agenda, e entra por escrito no orçamento. Como o vidro é feito sob medida, costuma levar alguns dias entre a medição e a instalação.</p>
-
+    <h3>A cortina de vidro tem garantia?</h3>
+    <p>Tem. A garantia da instalação e a garantia de fábrica do vidro e das ferragens constam por escrito no orçamento, antes de você aprovar.</p>
+    <h3>Como funciona o pagamento?</h3>
+    <p>As formas de pagamento aceitas e as condições são informadas junto com o orçamento fechado. Não há cobrança antes da sua aprovação.</p>
     <h3>Como é cobrado o valor?</h3>
-    <p>O orçamento é calculado pela área de vidro (metro quadrado), pelo sistema de ferragem escolhido e pela altura do pavimento. Você recebe o valor fechado antes de aprovar.</p>
-
-    <nav class="related" aria-label="Serviços relacionados">
-      <p class="related-title"><strong>Serviços relacionados</strong></p>
-      <ul>
-        <li><a href="/">Vidraçaria em Belo Horizonte (todos os serviços)</a></li>
-        <li><a href="/box-para-banheiro-bh/">Box para banheiro em BH</a></li>
-        <li><a href="/espelho-sob-medida-bh/">Espelhos sob medida em BH</a></li>
-        <li><a href="/vidraceiro-bh/">Vidraceiro em BH — manutenção e troca de vidro</a></li>
-      </ul>
-    </nav>
-
+    <p>O orçamento é calculado pela área de vidro (metro quadrado), pelo sistema de ferragem e pela altura do pavimento. Você recebe o valor fechado antes de aprovar.</p>
+    <nav class="related" aria-label="Serviços relacionados"><p class="related-title"><strong>Serviços relacionados</strong></p><ul><li><a href="/fechamento-de-varanda-bh/">Fechamento de varanda: qual opção</a></li><li><a href="/envidracamento-de-sacada-bh/">Envidraçamento de sacada em BH</a></li><li><a href="/guarda-corpo-de-vidro-bh/">Guarda-corpo de vidro em BH</a></li><li><a href="/manutencao-de-cortina-de-vidro-bh/">Manutenção de cortina de vidro</a></li></ul></nav>
     <footer class="nap-footer">
       <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
-      <p>WhatsApp: <a href={whatsapp}>(31) 99163-3453</a></p>
+      <p>WhatsApp: <a href="https://wa.me/5531991633453">(31) 99163-3453</a></p>
       <p>Atendimento: segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
       <p>Área de atendimento: Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
     </footer>
-    <!-- Bloco "Endereço / mapa fixo" adaptado: negócio é SAB (atende a domicílio, sem loja). Rodapé usa localidade + CEP + área atendida. -->
   </article>
 </MoneyPage>
+
+
