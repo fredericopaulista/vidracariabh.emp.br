@@ -1,5 +1,4 @@
-# build output
-dist/
+# build output — dist/ é COMMITADO para deploy no cPanel (ver .cpanel.yml)
 .output/
 
 # dependencies

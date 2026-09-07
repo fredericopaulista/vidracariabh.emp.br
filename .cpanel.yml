@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    # Publica o build estático (dist/) em ~/public_html no deploy do cPanel Git.
+    # Requer que dist/ esteja commitado no repositório (o build roda localmente, não no servidor).
+    - export DEPLOYPATH=$HOME/public_html
+    - /bin/mkdir -p "$DEPLOYPATH"
+    - /bin/rm -rf "$DEPLOYPATH/_astro"
+    - /bin/cp -R dist/. "$DEPLOYPATH/"
