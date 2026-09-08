@@ -13,24 +13,24 @@ const wa = 'https://wa.me/5531991633453';
 ---
 <BaseLayout title={title} description={description} jsonld={jsonld} canonicalPath={canonicalPath}>
   <div class="page-shell">
-    <div class="trust-bar" aria-hidden="false">
-      <div class="wrap trust-inner">
-        <span><i class="tb-ico tb-clock"></i> 7 anos de atuação</span>
-        <span><i class="tb-ico tb-team"></i> Equipe de instalação própria</span>
-        <span><i class="tb-ico tb-ruler"></i> Medição técnica no local</span>
-        <span><i class="tb-ico tb-doc"></i> Orçamento fechado por escrito</span>
-        <span><i class="tb-ico tb-doc"></i> 90 dias de garantia (CDC)</span>
-        <span><i class="tb-ico tb-doc"></i> Pix, débito, crédito 12x ou dinheiro</span>
-      </div>
-    </div>
+    <aside class="trust-bar" aria-label="Diferenciais da Vidraçaria BH">
+      <ul class="wrap trust-inner">
+        <li><i class="tb-ico tb-clock" aria-hidden="true"></i> 7 anos de atuação</li>
+        <li><i class="tb-ico tb-team" aria-hidden="true"></i> Equipe de instalação própria</li>
+        <li><i class="tb-ico tb-ruler" aria-hidden="true"></i> Medição técnica no local</li>
+        <li><i class="tb-ico tb-doc" aria-hidden="true"></i> Orçamento fechado por escrito</li>
+        <li><i class="tb-ico tb-doc" aria-hidden="true"></i> 90 dias de garantia (CDC)</li>
+        <li><i class="tb-ico tb-doc" aria-hidden="true"></i> Pix, débito, crédito 12x ou dinheiro</li>
+      </ul>
+    </aside>
 
     <slot />
 
-    <section class="cta-band">
+    <section class="cta-band" aria-labelledby="cta-band-title">
       <div class="wrap cta-band-inner">
         <div>
           <p class="cta-band-kicker">Vidraçaria BH · atendimento a domicílio</p>
-          <h2 class="cta-band-title">Peça seu orçamento de vidro sob medida</h2>
+          <h2 id="cta-band-title" class="cta-band-title">Peça seu orçamento de vidro sob medida</h2>
           <p class="cta-band-sub">Mande uma foto do local e o bairro pelo WhatsApp. Você recebe a orientação e uma faixa de valor no mesmo dia útil.</p>
         </div>
         <a class="btn btn--lg" href={wa}>Falar no WhatsApp (31) 99163-3453</a>

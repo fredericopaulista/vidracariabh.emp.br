@@ -5,7 +5,8 @@ import hero from '../assets/img/hero-regiao-nova-lima.jpg';
 const title = "Vidraçaria Nova Lima | Vidraçaria BH";
 const description = "Vidraçaria em Nova Lima a domicílio: guarda-corpo de vidro, sacada panorâmica, fachada, box e espelhos sob medida. Medição no local. Peça seu orçamento no WhatsApp.";
 const jsonld = [
-  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "serviceType": "Vidraçaria em Nova Lima", "name": "Vidraçaria Nova Lima: guarda-corpo, sacada panorâmica e espelhos", "description": "Vidraçaria em Nova Lima a domicílio: guarda-corpo de vidro, sacada panorâmica, fachada, box e espelhos sob medida. Medição no local. Peça seu orçamento no WhatsApp.", "provider": {"@type": "HomeAndConstructionBusiness", "name": "Vidraçaria BH", "telephone": "+55 31 99163-3453", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/vidracaria-em-nova-lima/"}),
+  JSON.stringify({"@context": "https://schema.org", "@type": ["HomeAndConstructionBusiness", "GlassMerchant"], "@id": "https://vidracariabh.emp.br/#vidracaria-bh", "name": "Vidraçaria BH", "url": "https://vidracariabh.emp.br/", "telephone": "+55 31 99163-3453", "priceRange": "$$", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "@id": "https://vidracariabh.emp.br/vidracaria-em-nova-lima/#service", "serviceType": "Vidraçaria em Nova Lima", "name": "Vidraçaria Nova Lima: guarda-corpo, sacada panorâmica e espelhos", "description": "Vidraçaria em Nova Lima a domicílio: guarda-corpo de vidro, sacada panorâmica, fachada, box e espelhos sob medida. Medição no local. Peça seu orçamento no WhatsApp.", "provider": {"@id": "https://vidracariabh.emp.br/#vidracaria-bh"}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/vidracaria-em-nova-lima/"}),
   JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://vidracariabh.emp.br/"}, {"@type": "ListItem", "position": 2, "name": "Vidraçaria em Nova Lima", "item": "https://vidracariabh.emp.br/vidracaria-em-nova-lima/"}]}),
   JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A Vidraçaria BH atende o meu condomínio em Nova Lima?", "acceptedAnswer": {"@type": "Answer", "text": "Atendemos Alphaville, Vale do Sereno, Vila da Serra, Jardim Canadá, o Centro e a região de Macacos. Confirme o endereço pelo WhatsApp para a gente checar o acesso."}}, {"@type": "Question", "name": "Vocês seguem a norma de guarda-corpo?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Guarda-corpo em Nova Lima segue a NBR 14718, com vidro laminado e fixação dimensionada. Fora da norma é risco e problema em vistoria."}}, {"@type": "Question", "name": "O condomínio exige um modelo específico?", "acceptedAnswer": {"@type": "Answer", "text": "Muitos exigem, para manter a fachada uniforme. Confirme o padrão com a administração; a gente fornece as informações técnicas do sistema."}}, {"@type": "Question", "name": "Vocês cobram deslocamento até Nova Lima?", "acceptedAnswer": {"@type": "Answer", "text": "Pode haver um valor conforme a distância, principalmente para Macacos e Honório Bicalho. Se houver, vem no orçamento antes de você aprovar."}}, {"@type": "Question", "name": "Fazem espelho decorativo e com LED?", "acceptedAnswer": {"@type": "Answer", "text": "Fazemos. Espelho bisotado, bronze, envelhecido e com LED (tipo camarim), sob medida, para sala, hall e banheiro."}}]})
 ];
@@ -13,28 +14,46 @@ const jsonld = [
 
 <MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/vidracaria-em-nova-lima/">
   <article class="money-page">
-    <nav class="crumbs"><a href="/">Início</a> › <span>Vidraçaria em Nova Lima</span></nav>
-    <figure class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Vidraçaria em Nova Lima — guarda-corpo de vidro em sacada panorâmica de condomínio" loading="eager" /></figure>
+    <nav class="crumbs" aria-label="Trilha de navegação">
+      <ol>
+        <li><a href="/">Início</a></li>
+        <li><span aria-current="page">Vidraçaria em Nova Lima</span></li>
+      </ol>
+    </nav>
+    <div class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Vidraçaria em Nova Lima — guarda-corpo de vidro em sacada panorâmica de condomínio" loading="eager" /></div>
     <h1>Vidraçaria Nova Lima: guarda-corpo, sacada panorâmica e espelhos</h1>
     <p>A Vidraçaria BH é uma vidraçaria Nova Lima que atende a domicílio, com medição no local e instalação em vidro temperado e laminado. Fazemos guarda-corpo de vidro, envidraçamento de sacada, fachada, box para banheiro, espelhos sob medida, cobertura e manutenção. Em Nova Lima, boa parte da demanda vem de condomínios — sacada panorâmica, guarda-corpo na norma e vidro de fachada.</p>
     <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Fale no WhatsApp (31) 99163-3453 e peça seu orçamento sem compromisso.</a></p>
     <aside class="nap-top"><p><strong>Atendimento:</strong> Nova Lima e toda a região metropolitana de BH</p><p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p><p><strong>Contato:</strong> WhatsApp (31) 99163-3453</p></aside>
-    <h2>O que a Vidraçaria BH faz em Nova Lima?</h2>
+    <section aria-labelledby="o-que-a-vidra-aria-bh-faz-em-nova-lima-1">
+    <h2 id="o-que-a-vidra-aria-bh-faz-em-nova-lima-1">O que a Vidraçaria BH faz em Nova Lima?</h2>
     <ul><li><strong><a href="/guarda-corpo-de-vidro-bh/">Guarda-corpo de vidro</a></strong> para sacada, escada e mezanino, dentro da NBR 14718.</li><li><strong><a href="/envidracamento-de-sacada-bh/">Envidraçamento de sacada</a></strong> e <strong><a href="/cortina-de-vidro-bh/">cortina de vidro</a></strong>.</li><li><strong><a href="/cobertura-de-vidro-bh/">Cobertura de vidro</a></strong> para área gourmet e varanda.</li><li><strong><a href="/box-para-banheiro-bh/">Box para banheiro</a></strong> e <strong><a href="/espelho-sob-medida-bh/">espelhos sob medida</a></strong>, inclusive espelho decorativo e com LED.</li><li><strong><a href="/porta-de-vidro-bh/">Porta de vidro</a></strong> de correr e pivotante.</li><li><strong>Fachada e pele de vidro</strong> para casa e prédio.</li><li><strong><a href="/vidraceiro-bh/">Vidraceiro</a></strong> para troca de vidro, regulagem e ferragem.</li></ul>
-    <h2>Bairros e regiões de Nova Lima que atendemos</h2>
+    </section>
+    <section aria-labelledby="bairros-e-regi-es-de-nova-lima-que-atend-2">
+    <h2 id="bairros-e-regi-es-de-nova-lima-que-atend-2">Bairros e regiões de Nova Lima que atendemos</h2>
     <p>Atendemos toda Nova Lima a domicílio — o Centro histórico, Alphaville, Vale do Sereno, Vila da Serra, Jardim Canadá, Cristais, Honório Bicalho e São Sebastião das Águas Claras (Macacos). Se o seu condomínio ou bairro não estiver na lista, chame no WhatsApp.</p>
-    <h2>Serviços mais pedidos em Nova Lima</h2>
+    </section>
+    <section aria-labelledby="servi-os-mais-pedidos-em-nova-lima-3">
+    <h2 id="servi-os-mais-pedidos-em-nova-lima-3">Serviços mais pedidos em Nova Lima</h2>
     <p>Em Nova Lima predomina o alto padrão, com muitos condomínios de casas e de apartamentos. Os chamados mais comuns são <strong>guarda-corpo de vidro</strong> (autoportante ou com corrimão de inox), <strong>sacada panorâmica</strong> com o mínimo de estrutura aparente, <strong>fachada de vidro</strong>, <strong>cobertura de área gourmet</strong> e <strong>espelho decorativo</strong>. Nesses condomínios costuma haver regra de fachada — a gente entrega a ficha técnica que a administração pede.</p>
-    <h2>Como funciona o atendimento em Nova Lima</h2>
+    </section>
+    <section aria-labelledby="como-funciona-o-atendimento-em-nova-lima-4">
+    <h2 id="como-funciona-o-atendimento-em-nova-lima-4">Como funciona o atendimento em Nova Lima</h2>
     <ol><li><strong>WhatsApp com foto.</strong> Serviço, foto do local e condomínio/bairro. Retorno no mesmo dia útil.</li><li><strong>Visita e medição.</strong> A data depende da agenda; regiões mais distantes, como Macacos, podem ter data um pouco mais espaçada.</li><li><strong>Orçamento fechado</strong>, com vidro, fixação, prazo e forma de pagamento.</li><li><strong>Instalação e teste</strong> na sua frente.</li></ol>
-    <h2>Por que escolher a Vidraçaria BH</h2>
+    </section>
+    <section aria-labelledby="por-que-escolher-a-vidra-aria-bh-5">
+    <h2 id="por-que-escolher-a-vidra-aria-bh-5">Por que escolher a Vidraçaria BH</h2>
     <p>A Vidraçaria BH está há 7 anos instalando vidros sob medida em BH e região.</p>
     <ul><li><strong>Medição técnica no local</strong>, com conferência de fixação e de carga.</li><li><strong>Vidro laminado</strong> conforme a norma para guarda-corpo e cobertura.</li><li><strong>Ficha técnica</strong> para a administração do condomínio.</li><li><strong>Prazo por escrito</strong> no orçamento.</li></ul>
     <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a></p>
-    <h2>Peça o orçamento da sua vidraçaria em Nova Lima</h2>
+    </section>
+    <section aria-labelledby="pe-a-o-or-amento-da-sua-vidra-aria-em-no-6">
+    <h2 id="pe-a-o-or-amento-da-sua-vidra-aria-em-no-6">Peça o orçamento da sua vidraçaria em Nova Lima</h2>
     <p>Manda uma foto do local no WhatsApp, a medida aproximada e o condomínio ou bairro. A gente dá a orientação inicial e uma faixa de valor no mesmo dia útil. Se fizer sentido, marcamos a visita para medir e fechar o orçamento da sua vidraçaria em Nova Lima.</p>
     <p class="cta"><a class="btn" href="https://wa.me/5531991633453">WhatsApp: (31) 99163-3453.</a></p>
-    <h2>Perguntas frequentes</h2>
+    </section>
+    <section aria-labelledby="perguntas-frequentes-7">
+    <h2 id="perguntas-frequentes-7">Perguntas frequentes</h2>
     <h3>A Vidraçaria BH atende o meu condomínio em Nova Lima?</h3>
     <p>Atendemos Alphaville, Vale do Sereno, Vila da Serra, Jardim Canadá, o Centro e a região de Macacos. Confirme o endereço pelo WhatsApp para a gente checar o acesso.</p>
     <h3>Vocês seguem a norma de guarda-corpo?</h3>
@@ -45,6 +64,7 @@ const jsonld = [
     <p>Pode haver um valor conforme a distância, principalmente para Macacos e Honório Bicalho. Se houver, vem no orçamento antes de você aprovar.</p>
     <h3>Fazem espelho decorativo e com LED?</h3>
     <p>Fazemos. Espelho bisotado, bronze, envelhecido e com LED (tipo camarim), sob medida, para sala, hall e banheiro.</p>
+    </section>
     <footer class="nap-footer">
       <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
       <p>WhatsApp: <a href="https://wa.me/5531991633453">(31) 99163-3453</a></p>
@@ -53,3 +73,5 @@ const jsonld = [
     </footer>
   </article>
 </MoneyPage>
+
+

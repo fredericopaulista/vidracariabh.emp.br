@@ -51,7 +51,12 @@ const jsonld = [
 
 <MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/contato/">
   <article class="money-page">
-    <nav class="crumbs"><a href="/">Início</a> › <span>Contato</span></nav>
+    <nav class="crumbs" aria-label="Trilha de navegação">
+      <ol>
+        <li><a href="/">Início</a></li>
+        <li><span aria-current="page">Contato</span></li>
+      </ol>
+    </nav>
 
     <h1>Contato — Vidraçaria BH</h1>
 
@@ -61,7 +66,8 @@ const jsonld = [
       combinada antes.
     </p>
 
-    <h2>WhatsApp</h2>
+    <section aria-labelledby="ct-whatsapp">
+    <h2 id="ct-whatsapp">WhatsApp</h2>
     <p>
       O jeito mais rápido de falar com a gente é pelo WhatsApp:
       <a href={whatsapp}><strong>(31) 99163-3453</strong></a>.
@@ -73,21 +79,27 @@ const jsonld = [
     </p>
     <p class="cta"><a class="btn" href={whatsapp}>Abrir conversa no WhatsApp</a></p>
 
-    <h2>E-mail</h2>
+    </section>
+    <section aria-labelledby="ct-email">
+    <h2 id="ct-email">E-mail</h2>
     <p>
       Para orçamento de obra maior, documentação técnica ou pedido de condomínio, você
       também pode escrever para <a href={`mailto:${email}`}><strong>{email}</strong></a>.
       Anexe fotos e as medidas que tiver.
     </p>
 
-    <h2>Horário de atendimento</h2>
+    </section>
+    <section aria-labelledby="ct-horario">
+    <h2 id="ct-horario">Horário de atendimento</h2>
     <ul>
       <li>Segunda a sexta: das 8h às 18h</li>
       <li>Sábado: das 8h às 12h</li>
       <li>Domingo: não atendemos; deixe a mensagem no WhatsApp que respondemos no próximo dia útil</li>
     </ul>
 
-    <h2>Área de atendimento</h2>
+    </section>
+    <section aria-labelledby="ct-area">
+    <h2 id="ct-area">Área de atendimento</h2>
     <p>Atendemos a domicílio em toda Belo Horizonte e nas cidades da região metropolitana:</p>
     <ul>
       <li>Belo Horizonte</li>
@@ -99,7 +111,9 @@ const jsonld = [
     </ul>
     <p>Se o seu endereço estiver fora dessa área, confirme pelo WhatsApp antes de agendar.</p>
 
-    <h2>Como funciona o atendimento</h2>
+    </section>
+    <section aria-labelledby="ct-como">
+    <h2 id="ct-como">Como funciona o atendimento</h2>
     <p>
       O atendimento tem uma parte remota e uma parte presencial. A parte remota é o contato
       pelo WhatsApp ou por e-mail, com foto e medidas, para a orientação inicial e a faixa de
@@ -107,6 +121,8 @@ const jsonld = [
       vão, confere a fixação e fecha o orçamento com prazo e forma de pagamento. Depois vêm a
       fabricação sob medida e a instalação, com teste da peça na sua frente.
     </p>
+
+    </section>
 
     <footer class="nap-footer">
       <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>

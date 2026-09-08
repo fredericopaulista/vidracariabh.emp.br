@@ -5,7 +5,8 @@ import hero from '../assets/img/hero-regiao-contagem.jpg';
 const title = "Vidraçaria em Contagem | Vidraçaria BH";
 const description = "Vidraçaria em Contagem a domicílio: box para banheiro, cortina de vidro, espelhos sob medida, guarda-corpo, fachada e manutenção. Medição no local. Peça seu orçamento.";
 const jsonld = [
-  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "serviceType": "Vidraçaria em Contagem", "name": "Vidraçaria em Contagem: vidros, box e espelhos sob medida", "description": "Vidraçaria em Contagem a domicílio: box para banheiro, cortina de vidro, espelhos sob medida, guarda-corpo, fachada e manutenção. Medição no local. Peça seu orçamento.", "provider": {"@type": "HomeAndConstructionBusiness", "name": "Vidraçaria BH", "telephone": "+55 31 99163-3453", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/vidracaria-em-contagem/"}),
+  JSON.stringify({"@context": "https://schema.org", "@type": ["HomeAndConstructionBusiness", "GlassMerchant"], "@id": "https://vidracariabh.emp.br/#vidracaria-bh", "name": "Vidraçaria BH", "url": "https://vidracariabh.emp.br/", "telephone": "+55 31 99163-3453", "priceRange": "$$", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "@id": "https://vidracariabh.emp.br/vidracaria-em-contagem/#service", "serviceType": "Vidraçaria em Contagem", "name": "Vidraçaria em Contagem: vidros, box e espelhos sob medida", "description": "Vidraçaria em Contagem a domicílio: box para banheiro, cortina de vidro, espelhos sob medida, guarda-corpo, fachada e manutenção. Medição no local. Peça seu orçamento.", "provider": {"@id": "https://vidracariabh.emp.br/#vidracaria-bh"}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/vidracaria-em-contagem/"}),
   JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://vidracariabh.emp.br/"}, {"@type": "ListItem", "position": 2, "name": "Vidraçaria em Contagem", "item": "https://vidracariabh.emp.br/vidracaria-em-contagem/"}]}),
   JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A Vidraçaria BH atende o meu bairro em Contagem?", "acceptedAnswer": {"@type": "Answer", "text": "Atendemos toda Contagem a domicílio. Se o endereço estiver muito na divisa ou em área rural, confirmamos pelo WhatsApp antes de agendar."}}, {"@type": "Question", "name": "Vocês cobram deslocamento até Contagem?", "acceptedAnswer": {"@type": "Answer", "text": "Contagem faz divisa com BH, então em geral não há custo de deslocamento. Qualquer valor, se houver, é informado no orçamento antes de você aprovar."}}, {"@type": "Question", "name": "O prazo é diferente do de BH?", "acceptedAnswer": {"@type": "Answer", "text": "O prazo de fabricação do vidro é o mesmo. O que pode mudar é a data da visita, conforme a agenda da semana — mas Contagem costuma ter data próxima."}}, {"@type": "Question", "name": "Vocês atendem comércio em Contagem?", "acceptedAnswer": {"@type": "Answer", "text": "Sim. Fazemos fachada, porta blindex, divisória e vitrine, além da manutenção — mola de porta, fechadura e troca de vidro."}}, {"@type": "Question", "name": "Fazem só manutenção, sem instalar peça nova?", "acceptedAnswer": {"@type": "Answer", "text": "Fazemos. Troca de vidro quebrado, regulagem de porta, troca de roldana e de ferragem são serviços de vidraceiro que atendemos em Contagem."}}]})
 ];
@@ -13,28 +14,46 @@ const jsonld = [
 
 <MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/vidracaria-em-contagem/">
   <article class="money-page">
-    <nav class="crumbs"><a href="/">Início</a> › <span>Vidraçaria em Contagem</span></nav>
-    <figure class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Vidraçaria em Contagem — instalação de box de vidro e espelho em apartamento" loading="eager" /></figure>
+    <nav class="crumbs" aria-label="Trilha de navegação">
+      <ol>
+        <li><a href="/">Início</a></li>
+        <li><span aria-current="page">Vidraçaria em Contagem</span></li>
+      </ol>
+    </nav>
+    <div class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Vidraçaria em Contagem — instalação de box de vidro e espelho em apartamento" loading="eager" /></div>
     <h1>Vidraçaria em Contagem: vidros, box e espelhos sob medida</h1>
     <p>A Vidraçaria BH é uma vidraçaria em Contagem que atende a domicílio, com medição no local e instalação em vidro temperado. Fazemos box para banheiro, cortina de vidro, fechamento de varanda, espelhos sob medida, guarda-corpo, cobertura, porta de vidro e manutenção de peças já instaladas. Contagem faz divisa com Belo Horizonte, então o deslocamento é curto e a data da visita costuma ser rápida.</p>
     <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Fale no WhatsApp (31) 99163-3453 e peça seu orçamento sem compromisso.</a></p>
     <aside class="nap-top"><p><strong>Atendimento:</strong> Contagem e toda a região metropolitana de BH</p><p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p><p><strong>Contato:</strong> WhatsApp (31) 99163-3453</p></aside>
-    <h2>O que a Vidraçaria BH faz em Contagem?</h2>
+    <section aria-labelledby="o-que-a-vidra-aria-bh-faz-em-contagem-1">
+    <h2 id="o-que-a-vidra-aria-bh-faz-em-contagem-1">O que a Vidraçaria BH faz em Contagem?</h2>
     <ul><li><strong><a href="/box-para-banheiro-bh/">Box para banheiro</a></strong> em vidro temperado, de correr, de abrir ou de canto.</li><li><strong><a href="/cortina-de-vidro-bh/">Cortina de vidro</a></strong> e <strong><a href="/fechamento-de-varanda-bh/">fechamento de varanda</a></strong> para apartamento e casa.</li><li><strong><a href="/espelho-sob-medida-bh/">Espelhos sob medida</a></strong> para banheiro, sala, academia e loja.</li><li><strong><a href="/guarda-corpo-de-vidro-bh/">Guarda-corpo de vidro</a></strong> para sacada, escada e mezanino, na norma.</li><li><strong><a href="/cobertura-de-vidro-bh/">Cobertura de vidro</a></strong> para área gourmet, corredor e garagem.</li><li><strong><a href="/porta-de-vidro-bh/">Porta de vidro</a></strong> de correr, pivotante e blindex.</li><li><strong><a href="/vidraceiro-bh/">Vidraceiro</a></strong> para troca de vidro quebrado, regulagem e ferragem.</li></ul>
-    <h2>Bairros de Contagem que atendemos</h2>
+    </section>
+    <section aria-labelledby="bairros-de-contagem-que-atendemos-2">
+    <h2 id="bairros-de-contagem-que-atendemos-2">Bairros de Contagem que atendemos</h2>
     <p>Atendemos toda Contagem a domicílio — Eldorado, Industrial, Cidade Industrial, Ressaca, Nacional, Riacho das Pedras, Petrolândia, Água Branca, Nova Contagem e a região da Sede/Centro. Se o seu bairro não estiver na lista, chame no WhatsApp que confirmamos na hora.</p>
-    <h2>Serviços mais pedidos em Contagem</h2>
+    </section>
+    <section aria-labelledby="servi-os-mais-pedidos-em-contagem-3">
+    <h2 id="servi-os-mais-pedidos-em-contagem-3">Serviços mais pedidos em Contagem</h2>
     <p>Contagem tem muito prédio residencial e uma zona de comércio forte. Os chamados mais comuns são <strong>box e espelho</strong> para apartamento, <strong>fechamento de varanda</strong> em condomínio e, na parte comercial, <strong>porta de vidro blindex</strong>, <strong>fachada</strong> e <strong>divisória</strong> para loja e escritório. Para comércio, a gente também atende a manutenção — mola de porta, fechadura e troca de vidro de vitrine.</p>
-    <h2>Como funciona o atendimento em Contagem</h2>
+    </section>
+    <section aria-labelledby="como-funciona-o-atendimento-em-contagem-4">
+    <h2 id="como-funciona-o-atendimento-em-contagem-4">Como funciona o atendimento em Contagem</h2>
     <ol><li><strong>WhatsApp com foto.</strong> Você manda o serviço, a foto do local e o bairro. A gente responde no mesmo dia útil com orientação e faixa de valor.</li><li><strong>Visita e medição.</strong> Marcamos o horário; por ser divisa com BH, a agenda em Contagem costuma ser próxima.</li><li><strong>Orçamento fechado</strong>, com vidro, ferragem, prazo e forma de pagamento.</li><li><strong>Instalação e teste</strong> na sua frente.</li></ol>
-    <h2>Por que escolher a Vidraçaria BH</h2>
+    </section>
+    <section aria-labelledby="por-que-escolher-a-vidra-aria-bh-5">
+    <h2 id="por-que-escolher-a-vidra-aria-bh-5">Por que escolher a Vidraçaria BH</h2>
     <p>A Vidraçaria BH está há 7 anos instalando vidros sob medida em BH e região.</p>
     <ul><li><strong>Medição técnica no local</strong>, sem "medir no olho".</li><li><strong>Vidro temperado</strong> com certificado do fabricante quando o serviço exige.</li><li><strong>Prazo por escrito</strong> no orçamento.</li><li><strong>Atendimento a domicílio</strong> em Contagem, de segunda a sábado.</li></ul>
     <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a></p>
-    <h2>Peça o orçamento da sua vidraçaria em Contagem</h2>
+    </section>
+    <section aria-labelledby="pe-a-o-or-amento-da-sua-vidra-aria-em-co-6">
+    <h2 id="pe-a-o-or-amento-da-sua-vidra-aria-em-co-6">Peça o orçamento da sua vidraçaria em Contagem</h2>
     <p>Manda uma foto do local no WhatsApp, a medida aproximada e o bairro. A gente dá a orientação inicial e uma faixa de valor no mesmo dia útil. Se fizer sentido, marcamos a visita para medir e fechar o orçamento da sua vidraçaria em Contagem.</p>
     <p class="cta"><a class="btn" href="https://wa.me/5531991633453">WhatsApp: (31) 99163-3453.</a></p>
-    <h2>Perguntas frequentes</h2>
+    </section>
+    <section aria-labelledby="perguntas-frequentes-7">
+    <h2 id="perguntas-frequentes-7">Perguntas frequentes</h2>
     <h3>A Vidraçaria BH atende o meu bairro em Contagem?</h3>
     <p>Atendemos toda Contagem a domicílio. Se o endereço estiver muito na divisa ou em área rural, confirmamos pelo WhatsApp antes de agendar.</p>
     <h3>Vocês cobram deslocamento até Contagem?</h3>
@@ -45,6 +64,7 @@ const jsonld = [
     <p>Sim. Fazemos fachada, porta blindex, divisória e vitrine, além da manutenção — mola de porta, fechadura e troca de vidro.</p>
     <h3>Fazem só manutenção, sem instalar peça nova?</h3>
     <p>Fazemos. Troca de vidro quebrado, regulagem de porta, troca de roldana e de ferragem são serviços de vidraceiro que atendemos em Contagem.</p>
+    </section>
     <footer class="nap-footer">
       <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
       <p>WhatsApp: <a href="https://wa.me/5531991633453">(31) 99163-3453</a></p>
@@ -53,3 +73,5 @@ const jsonld = [
     </footer>
   </article>
 </MoneyPage>
+
+

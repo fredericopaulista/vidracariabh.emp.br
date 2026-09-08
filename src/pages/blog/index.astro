@@ -8,12 +8,19 @@ const posts = (await getCollection('blog'))
 const title = 'Blog | Vidraçaria BH — dicas de vidro, box e espelho';
 const description =
   'Guias práticos sobre vidro, box de banheiro, espelhos e envidraçamento: como limpar, tipos de vidro, o que escolher. Blog da Vidraçaria BH.';
+
+const iso = (d) => d.toISOString().slice(0, 10);
 ---
 
 <BaseLayout title={title} description={description} canonicalPath="/blog/">
-  <section class="bloglist">
-    <nav class="crumbs"><a href="/">Início</a> › <span>Blog</span></nav>
-    <h1>Blog da Vidraçaria BH</h1>
+  <section class="bloglist" aria-labelledby="blog-h">
+    <nav class="crumbs" aria-label="Trilha de navegação">
+      <ol>
+        <li><a href="/">Início</a></li>
+        <li><span aria-current="page">Blog</span></li>
+      </ol>
+    </nav>
+    <h1 id="blog-h">Blog da Vidraçaria BH</h1>
     <p>Guias práticos sobre vidro, box, espelho e envidraçamento — o que funciona, o que evitar e quando chamar um profissional.</p>
 
     {posts.length === 0 && <p>Ainda não há artigos publicados.</p>}
@@ -21,23 +28,27 @@ const description =
     <ul class="posts">
       {posts.map((post) => (
         <li>
-          <a href={`/blog/${post.slug}/`}>
-            {post.data.heroImage && (
-              <img
-                class="post-card-img"
-                src={post.data.heroImage}
-                alt={post.data.heroAlt ?? post.data.title}
-                width="1200"
-                height="675"
-                loading="lazy"
-              />
-            )}
-            <div class="post-card-body">
-              <h2>{post.data.title}</h2>
-              <p>{post.data.description}</p>
-              <span class="date">{post.data.pubDate.toLocaleDateString('pt-BR')}</span>
-            </div>
-          </a>
+          <article>
+            <a href={`/blog/${post.slug}/`}>
+              {post.data.heroImage && (
+                <img
+                  class="post-card-img"
+                  src={post.data.heroImage}
+                  alt={post.data.heroAlt ?? ''}
+                  width="1200"
+                  height="675"
+                  loading="lazy"
+                />
+              )}
+              <div class="post-card-body">
+                <h2>{post.data.title}</h2>
+                <p>{post.data.description}</p>
+                <time class="date" datetime={iso(post.data.pubDate)}>
+                  {post.data.pubDate.toLocaleDateString('pt-BR')}
+                </time>
+              </div>
+            </a>
+          </article>
         </li>
       ))}
     </ul>

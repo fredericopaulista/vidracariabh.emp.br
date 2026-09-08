@@ -48,9 +48,14 @@ const jsonld = [
 
 <MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/sobre/">
   <article class="money-page">
-    <nav class="crumbs"><a href="/">Início</a> › <span>Sobre</span></nav>
+    <nav class="crumbs" aria-label="Trilha de navegação">
+      <ol>
+        <li><a href="/">Início</a></li>
+        <li><span aria-current="page">Sobre</span></li>
+      </ol>
+    </nav>
 
-    <figure class="hero">
+    <div class="hero">
       <img
         src={hero.src}
         width={hero.width}
@@ -58,7 +63,7 @@ const jsonld = [
         alt="Vidraçaria BH — equipe própria instalando vidro sob medida em Belo Horizonte"
         loading="eager"
       />
-    </figure>
+    </div>
 
     <h1>Sobre a Vidraçaria BH</h1>
 
@@ -68,7 +73,8 @@ const jsonld = [
       de um box de banheiro trocado no fim de semana a uma fachada de vidro inteira.
     </p>
 
-    <h2>Como a Vidraçaria BH começou</h2>
+    <section aria-labelledby="sobre-inicio">
+    <h2 id="sobre-inicio">Como a Vidraçaria BH começou</h2>
     <p>
       A Vidraçaria BH nasceu com um propósito simples: ajudar empresas da região a crescer e
       gerar emprego na cidade. A partir disso, o trabalho foi ampliando — do serviço mais
@@ -77,7 +83,9 @@ const jsonld = [
       cortar certo e instalar com equipe própria.
     </p>
 
-    <h2>Como trabalhamos</h2>
+    </section>
+    <section aria-labelledby="como-trabalhamos">
+    <h2 id="como-trabalhamos">Como trabalhamos</h2>
     <p>
       A gente não terceiriza a instalação. A equipe que mede o seu vão é a mesma que instala.
       Isso corta a maior causa de retrabalho em vidraçaria, que é medida errada passada de
@@ -96,7 +104,9 @@ const jsonld = [
       firme — e explicamos como limpar e o que evitar para o vidro durar.
     </p>
 
-    <h2>O que fazemos</h2>
+    </section>
+    <section aria-labelledby="o-que-fazemos">
+    <h2 id="o-que-fazemos">O que fazemos</h2>
     <p>
       Box para banheiro, cortina de vidro, fechamento de varanda, envidraçamento de sacada,
       espelho sob medida, guarda-corpo, cobertura de vidro, porta de vidro, vidro temperado
@@ -108,7 +118,9 @@ const jsonld = [
       peça com a gente para chamar a manutenção.
     </p>
 
-    <h2>Quem atendemos</h2>
+    </section>
+    <section aria-labelledby="quem-atendemos">
+    <h2 id="quem-atendemos">Quem atendemos</h2>
     <p>
       Trabalhamos com o proprietário que está em obra ou reforma e quer o vidro no projeto, e
       também com quem só precisa resolver um ponto. Atendemos síndico e administradora de
@@ -117,7 +129,9 @@ const jsonld = [
       medição e de acabamento é o mesmo.
     </p>
 
-    <h2>Onde atendemos</h2>
+    </section>
+    <section aria-labelledby="onde-atendemos">
+    <h2 id="onde-atendemos">Onde atendemos</h2>
     <p>
       Belo Horizonte inteira e as cidades da região metropolitana — Contagem, Betim, Nova
       Lima, Vespasiano e Lagoa Santa. Não temos loja física: o atendimento é a domicílio, o
@@ -128,6 +142,8 @@ const jsonld = [
       com a gente pelo WhatsApp (31) 99163-3453. A gente responde no mesmo dia útil com uma
       orientação e uma faixa de valor.
     </p>
+
+    </section>
 
     <p class="cta"><a class="btn" href={whatsapp}>Falar com a Vidraçaria BH no WhatsApp (31) 99163-3453</a></p>
 

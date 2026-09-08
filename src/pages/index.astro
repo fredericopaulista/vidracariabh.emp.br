@@ -19,7 +19,6 @@ const servicos = [
   ['/divisoria-de-vidro-bh/', 'Divisória de vidro', 'Piso-teto ou meia altura, com ou sem porta — escritório, cozinha, clínica.', 'M3 4h18v16H3z M12 4v16'],
   ['/fachada-de-vidro-bh/', 'Fachada de vidro', 'Vitrine, pele de vidro e fachada de loja, escritório e residência.', 'M4 3h16v18H4z M4 9h16 M9 9v12'],
   ['/corrimao-de-vidro-bh/', 'Corrimão de vidro', 'Para escada e rampa: vidro laminado com barra de apoio em inox.', 'M4 20l6-14 M20 20l-6-14 M4 12h16'],
-  ['/pelicula-para-vidro-bh/', 'Película para vidro', 'Controle solar, privacidade (jateada) e segurança, no vidro já instalado.', 'M4 4h16v16H4z M4 4l16 16'],
   ['/vidro-temperado-bh/', 'Vidro temperado', 'Fornecimento e instalação para tampo, prateleira, divisória e mais.', 'M5 3h14v18H5z M5 9h14'],
   ['/vidraceiro-bh/', 'Vidraceiro (manutenção)', 'Troca de vidro quebrado, regulagem de porta, roldana e ferragem.', 'M14 7l3 3-7 7-3-3z M3 21l4-1 M16 5l3 3'],
 ];
@@ -86,67 +85,69 @@ const jsonld = [
     </div>
   </section>
 
-  <section class="trust-bar trust-bar--home">
-    <div class="wrap trust-inner">
-      <span><i class="tb-ico tb-clock"></i> 7 anos de atuação</span>
-      <span><i class="tb-ico tb-team"></i> Equipe de instalação própria</span>
-      <span><i class="tb-ico tb-ruler"></i> Medição técnica no local</span>
-      <span><i class="tb-ico tb-doc"></i> Orçamento fechado por escrito</span>
-    </div>
-  </section>
+  <aside class="trust-bar trust-bar--home" aria-label="Diferenciais da Vidraçaria BH">
+    <ul class="wrap trust-inner">
+      <li><i class="tb-ico tb-clock" aria-hidden="true"></i> 7 anos de atuação</li>
+      <li><i class="tb-ico tb-team" aria-hidden="true"></i> Equipe de instalação própria</li>
+      <li><i class="tb-ico tb-ruler" aria-hidden="true"></i> Medição técnica no local</li>
+      <li><i class="tb-ico tb-doc" aria-hidden="true"></i> Orçamento fechado por escrito</li>
+    </ul>
+  </aside>
 
   <div class="home">
-    <section id="servicos" class="section">
+    <section id="servicos" class="section" aria-labelledby="servicos-h">
       <div class="wrap">
         <p class="eyebrow">Serviços</p>
-        <h2 class="section-title">O que a Vidraçaria BH faz em Belo Horizonte</h2>
+        <h2 id="servicos-h" class="section-title">O que a Vidraçaria BH faz em Belo Horizonte</h2>
         <p class="section-lead">Atende quem está em obra ou reforma e quer o vidro no projeto, e também quem só precisa resolver um ponto. Cada página tem os tipos de vidro, o prazo e os cuidados.</p>
-        <div class="svc-grid">
+        <ul class="svc-grid">
           {servicos.map(([href, nome, desc, d]) => (
-            <a class="svc-card" href={href}>
-              <svg class="svc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={d} /></svg>
-              <span class="svc-name">{nome}</span>
-              <span class="svc-desc">{desc}</span>
-              <span class="svc-go">Ver detalhes →</span>
-            </a>
+            <li>
+              <a class="svc-card" href={href}>
+                <svg class="svc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={d} /></svg>
+                <h3 class="svc-name">{nome}</h3>
+                <span class="svc-desc">{desc}</span>
+                <span class="svc-go">Ver detalhes →</span>
+              </a>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section" aria-labelledby="manut-h">
       <div class="wrap">
         <p class="eyebrow">Manutenção e assistência técnica</p>
-        <h2 class="section-title">Vidro quebrado, box ou porta com problema?</h2>
+        <h2 id="manut-h" class="section-title">Vidro quebrado, box ou porta com problema?</h2>
         <p class="section-lead">A Vidraçaria BH também conserta o que já está instalado — troca de vidro, roldana, borracha, mola e ferragem. Manda uma foto no WhatsApp que a gente prioriza.</p>
-        <div class="svc-grid">
-          <a class="svc-card" href="/manutencao-de-box-de-banheiro-bh/">
+        <ul class="svc-grid">
+          <li><a class="svc-card" href="/manutencao-de-box-de-banheiro-bh/">
             <svg class="svc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z M4 9h16 M8 4v5" /></svg>
-            <span class="svc-name">Manutenção de box de banheiro</span>
+            <h3 class="svc-name">Manutenção de box de banheiro</h3>
             <span class="svc-desc">Box vazando, saindo do trilho ou com a porta pesada. Troca de roldana, borracha e vidro.</span>
             <span class="svc-go">Ver detalhes →</span>
-          </a>
-          <a class="svc-card" href="/manutencao-de-porta-de-vidro-bh/">
+          </a></li>
+          <li><a class="svc-card" href="/manutencao-de-porta-de-vidro-bh/">
             <svg class="svc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9v18H6z M12 12h.5 M15 20h3" /></svg>
-            <span class="svc-name">Manutenção de porta de vidro</span>
+            <h3 class="svc-name">Manutenção de porta de vidro</h3>
             <span class="svc-desc">Porta raspando, batendo ou que não fecha. Regulagem e troca de mola, pivô e fechadura.</span>
             <span class="svc-go">Ver detalhes →</span>
-          </a>
-          <a class="svc-card" href="/manutencao-de-cortina-de-vidro-bh/">
+          </a></li>
+          <li><a class="svc-card" href="/manutencao-de-cortina-de-vidro-bh/">
             <svg class="svc-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z M8 4v16 M12 4v16 M16 4v16 M4 8h16" /></svg>
-            <span class="svc-name">Manutenção de cortina de vidro</span>
+            <h3 class="svc-name">Manutenção de cortina de vidro</h3>
             <span class="svc-desc">Cortina travando ou entrando água. Ajuste de trilho, troca de roldana e vedação.</span>
             <span class="svc-go">Ver detalhes →</span>
-          </a>
-        </div>
+          </a></li>
+        </ul>
         <p class="section-more"><a href="/vidraceiro-bh/">Ver todos os serviços de vidraceiro e assistência técnica →</a></p>
       </div>
     </section>
 
-    <section class="section section--tint">
+    <section  class="section section--tint" aria-labelledby="sec-1">
       <div class="wrap">
         <p class="eyebrow">Como funciona</p>
-        <h2 class="section-title">Do WhatsApp à instalação, em 4 passos</h2>
+        <h2 id="sec-1" class="section-title">Do WhatsApp à instalação, em 4 passos</h2>
         <ol class="steps">
           <li><span class="step-n">1</span><strong>Contato pelo WhatsApp</strong><p>Você manda o serviço, uma foto do local e o bairro. Recebe orientação e uma faixa de valor no mesmo dia útil.</p></li>
           <li><span class="step-n">2</span><strong>Visita e medição</strong><p>Um profissional vai até você medir o vão, conferir prumo e nível e alinhar o acabamento.</p></li>
@@ -156,11 +157,11 @@ const jsonld = [
       </div>
     </section>
 
-    <section class="section">
+    <section  class="section" aria-labelledby="sec-2">
       <div class="wrap grid-2">
         <div>
           <p class="eyebrow">Por que a Vidraçaria BH</p>
-          <h2 class="section-title">Quem mede é quem instala</h2>
+          <h2 id="sec-2" class="section-title">Quem mede é quem instala</h2>
           <p>Não terceirizamos a instalação. Isso corta a maior causa de retrabalho em vidraçaria: medida errada passada de uma pessoa para outra.</p>
           <ul class="check-list">
             <li>Medição técnica no local, com conferência de prumo e nível</li>
@@ -171,7 +172,7 @@ const jsonld = [
           </ul>
         </div>
         <aside class="info-card">
-          <p class="info-card-title">Atendimento</p>
+          <h3 class="info-card-title">Atendimento</h3>
           <p><strong>WhatsApp</strong><br /><a href={wa}>(31) 99163-3453</a></p>
           <p><strong>E-mail</strong><br /><a href="mailto:contato@vidracariabh.emp.br">contato@vidracariabh.emp.br</a></p>
           <p><strong>Horário</strong><br />Seg a sex, 8h–18h · sáb, 8h–12h</p>
@@ -181,36 +182,36 @@ const jsonld = [
       </div>
     </section>
 
-    <section class="section">
+    <section  class="section" aria-labelledby="sec-3">
       <div class="wrap">
         <p class="eyebrow">O que dizem os clientes</p>
-        <h2 class="section-title">Clientes da Vidraçaria BH em Belo Horizonte</h2>
+        <h2 id="sec-3" class="section-title">Clientes da Vidraçaria BH em Belo Horizonte</h2>
         <p class="section-lead">Depoimentos de clientes atendidos a domicílio em BH e região.</p>
         <div class="quote-grid">
           <figure class="quote-card">
-            <p>“Pesquisei algumas vidraçarias em Belo Horizonte antes de contratar e escolhi a Vidraçaria BH para instalar o box do meu banheiro. O atendimento foi rápido, o orçamento veio sem complicação e a instalação ficou muito bem feita. Tudo foi entregue dentro do prazo combinado.”</p>
+            <blockquote><p>“Pesquisei algumas vidraçarias em Belo Horizonte antes de contratar e escolhi a Vidraçaria BH para instalar o box do meu banheiro. O atendimento foi rápido, o orçamento veio sem complicação e a instalação ficou muito bem feita. Tudo foi entregue dentro do prazo combinado.”</p></blockquote>
             <figcaption>Carlos Henrique — Castelo, Belo Horizonte</figcaption>
           </figure>
           <figure class="quote-card">
-            <p>“Estava procurando uma vidraçaria na região Centro-Sul de BH para fazer um espelho sob medida para a sala. Recebi o orçamento rapidamente e a instalação foi feita na data marcada. O acabamento ficou excelente.”</p>
+            <blockquote><p>“Estava procurando uma vidraçaria na região Centro-Sul de BH para fazer um espelho sob medida para a sala. Recebi o orçamento rapidamente e a instalação foi feita na data marcada. O acabamento ficou excelente.”</p></blockquote>
             <figcaption>Fernanda Oliveira — Sion, Belo Horizonte</figcaption>
           </figure>
           <figure class="quote-card">
-            <p>“Contratei o fechamento de varanda em vidro para minha casa no Santa Amélia. Desde a visita para medição até a instalação final, o atendimento foi profissional. O serviço ficou exatamente como eu imaginava e valorizou bastante o ambiente.”</p>
+            <blockquote><p>“Contratei o fechamento de varanda em vidro para minha casa no Santa Amélia. Desde a visita para medição até a instalação final, o atendimento foi profissional. O serviço ficou exatamente como eu imaginava e valorizou bastante o ambiente.”</p></blockquote>
             <figcaption>Ricardo Almeida — Santa Amélia, Belo Horizonte</figcaption>
           </figure>
           <figure class="quote-card">
-            <p>“Recebi indicação da Vidraçaria BH para instalar guarda-corpo de vidro na área externa da minha casa. O serviço foi realizado com segurança e atenção aos detalhes. Gostei da transparência durante todo o processo.”</p>
+            <blockquote><p>“Recebi indicação da Vidraçaria BH para instalar guarda-corpo de vidro na área externa da minha casa. O serviço foi realizado com segurança e atenção aos detalhes. Gostei da transparência durante todo o processo.”</p></blockquote>
             <figcaption>Eduardo Mendes — Pampulha, Belo Horizonte</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section class="section section--tint">
+    <section  class="section section--tint" aria-labelledby="sec-4">
       <div class="wrap">
         <p class="eyebrow">Regiões atendidas</p>
-        <h2 class="section-title">Belo Horizonte e região metropolitana</h2>
+        <h2 id="sec-4" class="section-title">Belo Horizonte e região metropolitana</h2>
         <p class="section-lead">Atendemos a domicílio em toda BH — Centro, Savassi, Buritis, Pampulha, Barreiro, Venda Nova — e nas cidades vizinhas:</p>
         <ul class="chips">
           {regioes.map(([href, nome]) => <li><a href={href}>{nome}</a></li>)}
@@ -218,10 +219,10 @@ const jsonld = [
       </div>
     </section>
 
-    <section class="section">
+    <section  class="section" aria-labelledby="sec-5">
       <div class="wrap">
         <p class="eyebrow">Dúvidas frequentes</p>
-        <h2 class="section-title">Perguntas frequentes</h2>
+        <h2 id="sec-5" class="section-title">Perguntas frequentes</h2>
         <div class="faq">
           {faqs.map(([q, a]) => (
             <details>
@@ -234,11 +235,11 @@ const jsonld = [
     </section>
   </div>
 
-  <section class="cta-band">
+  <section class="cta-band" aria-labelledby="home-cta-title">
     <div class="wrap cta-band-inner">
       <div>
         <p class="cta-band-kicker">Vidraçaria BH · atendimento a domicílio</p>
-        <h2 class="cta-band-title">Peça seu orçamento de vidraçaria em Belo Horizonte</h2>
+        <h2 id="home-cta-title" class="cta-band-title">Peça seu orçamento de vidraçaria em Belo Horizonte</h2>
         <p class="cta-band-sub">Mande uma foto do local e o seu bairro pelo WhatsApp. Sem compromisso.</p>
       </div>
       <a class="btn btn--lg" href={wa}>Falar no WhatsApp (31) 99163-3453</a>

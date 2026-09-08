@@ -4,21 +4,23 @@ const title = 'Página não encontrada | Vidraçaria BH';
 const description = 'A página que você procurou não existe ou foi movida.';
 ---
 <BaseLayout title={title} description={description} canonicalPath="/404">
-  <section class="nf">
-    <h1>Página não encontrada</h1>
+  <section class="nf" aria-labelledby="nf-h">
+    <h1 id="nf-h">Página não encontrada</h1>
     <p>O endereço que você acessou não existe ou foi movido.</p>
     <p>
       Volte para a <a href="/">página inicial</a>, veja os
       <a href="/blog/">artigos do blog</a> ou fale com a gente no
       <a href="https://wa.me/5531991633453">WhatsApp (31) 99163-3453</a>.
     </p>
-    <h2>Serviços</h2>
-    <ul>
-      <li><a href="/box-para-banheiro-bh/">Box para banheiro em BH</a></li>
-      <li><a href="/cortina-de-vidro-bh/">Cortina de vidro em BH</a></li>
-      <li><a href="/espelho-sob-medida-bh/">Espelhos sob medida em BH</a></li>
-      <li><a href="/guarda-corpo-de-vidro-bh/">Guarda-corpo de vidro em BH</a></li>
-      <li><a href="/vidraceiro-bh/">Vidraceiro em BH</a></li>
-    </ul>
+    <nav aria-labelledby="nf-svc">
+      <h2 id="nf-svc">Serviços</h2>
+      <ul>
+        <li><a href="/box-para-banheiro-bh/">Box para banheiro em BH</a></li>
+        <li><a href="/cortina-de-vidro-bh/">Cortina de vidro em BH</a></li>
+        <li><a href="/espelho-sob-medida-bh/">Espelhos sob medida em BH</a></li>
+        <li><a href="/guarda-corpo-de-vidro-bh/">Guarda-corpo de vidro em BH</a></li>
+        <li><a href="/vidraceiro-bh/">Vidraceiro em BH</a></li>
+      </ul>
+    </nav>
   </section>
 </BaseLayout>

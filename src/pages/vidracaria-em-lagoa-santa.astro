@@ -5,7 +5,8 @@ import hero from '../assets/img/hero-regiao-lagoa-santa.jpg';
 const title = "Vidraçaria Lagoa Santa | Vidraçaria BH";
 const description = "Vidraçaria em Lagoa Santa a domicílio: cobertura de vidro, fechamento de área gourmet, guarda-corpo, box e espelhos sob medida. Medição no local. Peça seu orçamento.";
 const jsonld = [
-  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "serviceType": "Vidraçaria em Lagoa Santa", "name": "Vidraçaria Lagoa Santa: cobertura de vidro, área gourmet e guarda-corpo", "description": "Vidraçaria em Lagoa Santa a domicílio: cobertura de vidro, fechamento de área gourmet, guarda-corpo, box e espelhos sob medida. Medição no local. Peça seu orçamento.", "provider": {"@type": "HomeAndConstructionBusiness", "name": "Vidraçaria BH", "telephone": "+55 31 99163-3453", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/vidracaria-em-lagoa-santa/"}),
+  JSON.stringify({"@context": "https://schema.org", "@type": ["HomeAndConstructionBusiness", "GlassMerchant"], "@id": "https://vidracariabh.emp.br/#vidracaria-bh", "name": "Vidraçaria BH", "url": "https://vidracariabh.emp.br/", "telephone": "+55 31 99163-3453", "priceRange": "$$", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "@id": "https://vidracariabh.emp.br/vidracaria-em-lagoa-santa/#service", "serviceType": "Vidraçaria em Lagoa Santa", "name": "Vidraçaria Lagoa Santa: cobertura de vidro, área gourmet e guarda-corpo", "description": "Vidraçaria em Lagoa Santa a domicílio: cobertura de vidro, fechamento de área gourmet, guarda-corpo, box e espelhos sob medida. Medição no local. Peça seu orçamento.", "provider": {"@id": "https://vidracariabh.emp.br/#vidracaria-bh"}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/vidracaria-em-lagoa-santa/"}),
   JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://vidracariabh.emp.br/"}, {"@type": "ListItem", "position": 2, "name": "Vidraçaria em Lagoa Santa", "item": "https://vidracariabh.emp.br/vidracaria-em-lagoa-santa/"}]}),
   JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A Vidraçaria BH atende o meu condomínio em Lagoa Santa?", "acceptedAnswer": {"@type": "Answer", "text": "Atendemos o Centro, a orla, os bairros e os condomínios da cidade. Confirme o endereço pelo WhatsApp para a gente checar o acesso."}}, {"@type": "Question", "name": "A cobertura de vidro não vai esquentar a área gourmet?", "acceptedAnswer": {"@type": "Answer", "text": "Vidro comum esquenta. Com vidro de controle solar ou película refletiva, o calor cai bastante. A gente indica a opção conforme a posição do sol no seu vão."}}, {"@type": "Question", "name": "Vocês cobram deslocamento até Lagoa Santa?", "acceptedAnswer": {"@type": "Answer", "text": "Pode haver um valor conforme a distância e o porte do serviço. Se houver, vem informado no orçamento antes de você aprovar."}}, {"@type": "Question", "name": "Fazem fechamento de varanda gourmet que abre por inteiro?", "acceptedAnswer": {"@type": "Answer", "text": "Fazemos, com cortina de vidro: os painéis empilham na lateral e liberam quase todo o vão nos dias bons."}}, {"@type": "Question", "name": "O prazo é diferente do de BH?", "acceptedAnswer": {"@type": "Answer", "text": "O prazo de fabricação do vidro é o mesmo. A data da visita depende da agenda da semana."}}]})
 ];
@@ -13,28 +14,46 @@ const jsonld = [
 
 <MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/vidracaria-em-lagoa-santa/">
   <article class="money-page">
-    <nav class="crumbs"><a href="/">Início</a> › <span>Vidraçaria em Lagoa Santa</span></nav>
-    <figure class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Vidraçaria em Lagoa Santa — cobertura de vidro sobre área gourmet de casa" loading="eager" /></figure>
+    <nav class="crumbs" aria-label="Trilha de navegação">
+      <ol>
+        <li><a href="/">Início</a></li>
+        <li><span aria-current="page">Vidraçaria em Lagoa Santa</span></li>
+      </ol>
+    </nav>
+    <div class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Vidraçaria em Lagoa Santa — cobertura de vidro sobre área gourmet de casa" loading="eager" /></div>
     <h1>Vidraçaria Lagoa Santa: cobertura de vidro, área gourmet e guarda-corpo</h1>
     <p>A Vidraçaria BH é uma vidraçaria Lagoa Santa que atende a domicílio, com medição no local e instalação em vidro temperado e laminado. Fazemos cobertura de vidro, fechamento de área gourmet, guarda-corpo, envidraçamento de sacada, box para banheiro, espelhos sob medida, porta de vidro e manutenção. Em Lagoa Santa predominam casas e condomínios com área externa, então a demanda de cobertura e de fechamento de área gourmet é alta.</p>
     <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Fale no WhatsApp (31) 99163-3453 e peça seu orçamento sem compromisso.</a></p>
     <aside class="nap-top"><p><strong>Atendimento:</strong> Lagoa Santa e toda a região metropolitana de BH</p><p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p><p><strong>Contato:</strong> WhatsApp (31) 99163-3453</p></aside>
-    <h2>O que a Vidraçaria BH faz em Lagoa Santa?</h2>
+    <section aria-labelledby="o-que-a-vidra-aria-bh-faz-em-lagoa-santa-1">
+    <h2 id="o-que-a-vidra-aria-bh-faz-em-lagoa-santa-1">O que a Vidraçaria BH faz em Lagoa Santa?</h2>
     <ul><li><strong><a href="/cobertura-de-vidro-bh/">Cobertura de vidro</a></strong> para área gourmet, corredor, garagem e entrada.</li><li><strong>Fechamento de área gourmet</strong> com <strong><a href="/cortina-de-vidro-bh/">cortina de vidro</a></strong> ou <strong><a href="/envidracamento-de-sacada-bh/">envidraçamento</a></strong>.</li><li><strong><a href="/guarda-corpo-de-vidro-bh/">Guarda-corpo de vidro</a></strong> para escada, mezanino e desnível de terreno.</li><li><strong><a href="/box-para-banheiro-bh/">Box para banheiro</a></strong> e <strong><a href="/espelho-sob-medida-bh/">espelhos sob medida</a></strong>.</li><li><strong><a href="/porta-de-vidro-bh/">Porta de vidro</a></strong> de correr e pivotante.</li><li><strong><a href="/vidraceiro-bh/">Vidraceiro</a></strong> para troca de vidro quebrado, regulagem e ferragem.</li></ul>
-    <h2>Bairros e regiões de Lagoa Santa que atendemos</h2>
+    </section>
+    <section aria-labelledby="bairros-e-regi-es-de-lagoa-santa-que-ate-2">
+    <h2 id="bairros-e-regi-es-de-lagoa-santa-que-ate-2">Bairros e regiões de Lagoa Santa que atendemos</h2>
     <p>Atendemos toda Lagoa Santa a domicílio — o Centro, a orla da Lagoa, Lundcéia, Várzea, Bela Vista, Joá e os condomínios da cidade. Se o seu endereço não estiver na lista, chame no WhatsApp que confirmamos na hora.</p>
-    <h2>Serviços mais pedidos em Lagoa Santa</h2>
+    </section>
+    <section aria-labelledby="servi-os-mais-pedidos-em-lagoa-santa-3">
+    <h2 id="servi-os-mais-pedidos-em-lagoa-santa-3">Serviços mais pedidos em Lagoa Santa</h2>
     <p>Com muitas casas e chácaras urbanas, os chamados mais comuns são <strong>cobertura de vidro</strong> sobre área gourmet e churrasqueira, <strong>fechamento de varanda gourmet</strong> para usar o espaço na chuva, <strong>guarda-corpo</strong> em desnível de terreno e escada, além de <strong>box</strong> e <strong>espelho</strong>. Pelo clima quente da região, a gente costuma indicar <strong>vidro de controle solar</strong> ou <strong>película</strong> na cobertura, para não esquentar o ambiente embaixo.</p>
-    <h2>Como funciona o atendimento em Lagoa Santa</h2>
+    </section>
+    <section aria-labelledby="como-funciona-o-atendimento-em-lagoa-san-4">
+    <h2 id="como-funciona-o-atendimento-em-lagoa-san-4">Como funciona o atendimento em Lagoa Santa</h2>
     <ol><li><strong>WhatsApp com foto.</strong> Serviço, foto do local e bairro/condomínio. Retorno no mesmo dia útil.</li><li><strong>Visita e medição.</strong> A data depende da agenda; por ser no vetor norte, costuma sair na semana.</li><li><strong>Orçamento fechado</strong>, com vidro, estrutura, prazo e forma de pagamento.</li><li><strong>Instalação e teste</strong> na sua frente.</li></ol>
-    <h2>Por que escolher a Vidraçaria BH</h2>
+    </section>
+    <section aria-labelledby="por-que-escolher-a-vidra-aria-bh-5">
+    <h2 id="por-que-escolher-a-vidra-aria-bh-5">Por que escolher a Vidraçaria BH</h2>
     <p>A Vidraçaria BH está há 7 anos instalando vidros sob medida em BH e região.</p>
     <ul><li><strong>Medição técnica no local</strong>, com cálculo de caimento e de calha na cobertura.</li><li><strong>Vidro laminado</strong> na cobertura e no guarda-corpo, conforme a norma.</li><li><strong>Orientação sobre controle de calor</strong> para a cobertura.</li><li><strong>Prazo por escrito</strong> no orçamento.</li></ul>
     <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a></p>
-    <h2>Peça o orçamento da sua vidraçaria em Lagoa Santa</h2>
+    </section>
+    <section aria-labelledby="pe-a-o-or-amento-da-sua-vidra-aria-em-la-6">
+    <h2 id="pe-a-o-or-amento-da-sua-vidra-aria-em-la-6">Peça o orçamento da sua vidraçaria em Lagoa Santa</h2>
     <p>Manda uma foto do local no WhatsApp, a medida aproximada e o bairro. A gente dá a orientação inicial e uma faixa de valor no mesmo dia útil. Se fizer sentido, marcamos a visita para medir e fechar o orçamento da sua vidraçaria em Lagoa Santa.</p>
     <p class="cta"><a class="btn" href="https://wa.me/5531991633453">WhatsApp: (31) 99163-3453.</a></p>
-    <h2>Perguntas frequentes</h2>
+    </section>
+    <section aria-labelledby="perguntas-frequentes-7">
+    <h2 id="perguntas-frequentes-7">Perguntas frequentes</h2>
     <h3>A Vidraçaria BH atende o meu condomínio em Lagoa Santa?</h3>
     <p>Atendemos o Centro, a orla, os bairros e os condomínios da cidade. Confirme o endereço pelo WhatsApp para a gente checar o acesso.</p>
     <h3>A cobertura de vidro não vai esquentar a área gourmet?</h3>
@@ -45,6 +64,7 @@ const jsonld = [
     <p>Fazemos, com cortina de vidro: os painéis empilham na lateral e liberam quase todo o vão nos dias bons.</p>
     <h3>O prazo é diferente do de BH?</h3>
     <p>O prazo de fabricação do vidro é o mesmo. A data da visita depende da agenda da semana.</p>
+    </section>
     <footer class="nap-footer">
       <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
       <p>WhatsApp: <a href="https://wa.me/5531991633453">(31) 99163-3453</a></p>
@@ -53,3 +73,5 @@ const jsonld = [
     </footer>
   </article>
 </MoneyPage>
+
+
