@@ -1,0 +1,70 @@
+---
+import MoneyPage from '../layouts/MoneyPage.astro';
+import hero from '../assets/img/hero-pelicula-para-vidro.jpg';
+
+const title = "Película para Vidro em BH — Aplicação | Vidraçaria BH";
+const description = "Película para vidro em BH: controle solar, privacidade (jateada) e segurança, aplicada em janela, porta, box e fachada já instalados. Orçamento no WhatsApp. vidracariabh.emp.br";
+const jsonld = [
+  JSON.stringify({"@context": "https://schema.org", "@type": ["HomeAndConstructionBusiness", "GlassMerchant"], "@id": "https://vidracariabh.emp.br/#vidracaria-bh", "name": "Vidraçaria BH", "url": "https://vidracariabh.emp.br/", "telephone": "+55 31 99163-3453", "priceRange": "$$", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "@id": "https://vidracariabh.emp.br/pelicula-para-vidro-bh/#service", "serviceType": "Aplicação de película para vidro residencial e comercial", "name": "Película para vidro em BH: controle solar, privacidade e segurança", "description": "Película para vidro em BH: controle solar, privacidade (jateada) e segurança, aplicada em janela, porta, box e fachada já instalados. Orçamento no WhatsApp. vidracariabh.emp.br", "provider": {"@id": "https://vidracariabh.emp.br/#vidracaria-bh"}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/pelicula-para-vidro-bh/"}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://vidracariabh.emp.br/"}, {"@type": "ListItem", "position": 2, "name": "Película para vidro em BH", "item": "https://vidracariabh.emp.br/pelicula-para-vidro-bh/"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "A película descola com o tempo?", "acceptedAnswer": {"@type": "Answer", "text": "Bem aplicada, não — dura anos. O descolamento quase sempre vem de vidro mal limpo antes da aplicação ou de película de baixa qualidade. Por isso a limpeza profunda e a marca importam."}}, {"@type": "Question", "name": "Posso aplicar sozinho a película que comprei?", "acceptedAnswer": {"@type": "Answer", "text": "Dá, mas o resultado costuma ficar com bolha e borda torta sem as ferramentas e a técnica. Se você já comprou a película, a gente avalia e aplica."}}, {"@type": "Question", "name": "Película serve no lugar de trocar por vidro jateado?", "acceptedAnswer": {"@type": "Answer", "text": "Para privacidade, sim, e sai mais barato. A jateada em vidro é definitiva e mais resistente a risco; a película é reversível e pode ser trocada."}}, {"@type": "Question", "name": "O serviço tem garantia?", "acceptedAnswer": {"@type": "Answer", "text": "Tem. A aplicação tem 90 dias de garantia, conforme o Código de Defesa do Consumidor, além da garantia de fábrica da película. Tudo fica por escrito no orçamento."}}, {"@type": "Question", "name": "Como funciona o pagamento?", "acceptedAnswer": {"@type": "Answer", "text": "Você paga em Pix, débito, crédito em até 12x ou dinheiro. A forma é combinada junto com o orçamento fechado, e não há cobrança antes da sua aprovação."}}]})
+];
+---
+
+<MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/pelicula-para-vidro-bh/">
+  <article class="money-page">
+    <nav class="crumbs"><a href="/">Início</a> › <span>Película para vidro em BH</span></nav>
+    <figure class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Aplicação de película de controle solar em janela de vidro de apartamento em BH" loading="eager" /></figure>
+    <h1>Película para vidro em BH: controle solar, privacidade e segurança</h1>
+    <p>Nem sempre o problema é o vidro — às vezes é só o que passa por ele: sol demais, olhar de fora, ou o risco de estilhaço. A película para vidro em BH resolve os três sem trocar a peça: é uma lâmina fina aplicada sobre o vidro já instalado. A Vidraçaria BH avalia o vidro, indica a película certa e aplica em janela, porta, box, divisória e fachada. Atende a domicílio e em empresas de Belo Horizonte e região.</p>
+    <p>Película bem aplicada dura anos sem bolha nem descolamento. Mal aplicada, empena e junta poeira na borda — a diferença está na limpeza do vidro e na técnica.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Fale no WhatsApp (31) 99163-3453 e peça o orçamento da sua película sem compromisso.</a></p>
+    <aside class="nap-top"><p><strong>Atendimento:</strong> Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p><p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p><p><strong>Contato:</strong> WhatsApp (31) 99163-3453</p></aside>
+    <h2>O que a película para vidro em BH resolve?</h2>
+    <ul><li><strong>Calor e ofuscamento.</strong> A película de controle solar reflete parte da radiação, baixa a temperatura do ambiente e corta o brilho na tela e no sofá.</li><li><strong>Desbotamento.</strong> A camada de proteção UV evita que sol clareie piso, cortina e móvel de madeira.</li><li><strong>Privacidade.</strong> A película jateada (leitosa) impede a visão de fora para dentro em porta de banheiro, divisória de escritório e janela térrea. Há também a espelhada, que só funciona com o lado externo mais claro que o interno.</li><li><strong>Segurança.</strong> A película de segurança (anti-estilhaço) mantém os cacos presos ao vidro em caso de quebra — usada em porta de vidro, vitrine, escola e comércio.</li></ul>
+    <h2>Especificações e processo de execução</h2>
+    <p><strong>Tipos de película:</strong></p>
+    <ul><li><strong>Controle solar / refletiva</strong> — reduz calor e brilho; tons prata, bronze e fumê.</li><li><strong>Fumê (privacidade + estética)</strong> — escurece a visão sem tanto controle de calor.</li><li><strong>Jateada / decorativa</strong> — leitosa ou com desenho; privacidade total com passagem de luz.</li><li><strong>De segurança</strong> — transparente e mais espessa; segura os cacos.</li><li><strong>Anti-vandalismo / anti-pichação</strong> — sacrificial, trocada quando riscada, protege a vitrine.</li></ul>
+    <p><strong>Processo, passo a passo:</strong></p>
+    <ol><li>Visita para medir os vidros, ver o tipo de vidro (comum, temperado, laminado, insulado) e a exposição ao sol.</li><li>Indicação da película conforme o objetivo (calor, privacidade, segurança) e amostra quando possível.</li><li>Orçamento fechado por escrito, por metro quadrado de vidro, com a película escolhida e o prazo.</li><li>Limpeza profunda do vidro, aplicação da película com solução, remoção de bolhas com espátula e acabamento das bordas.</li><li>Orientação de cura: não mexer nem limpar o vidro por alguns dias enquanto a película "assenta".</li></ol>
+    <p><strong>Prazo:</strong> a aplicação costuma ser feita em uma visita, conforme a quantidade de vidros. A data vai por escrito no orçamento.</p>
+    <h2>Aplicações e projetos indicados</h2>
+    <ul><li><strong>Apartamento com sol da tarde</strong> — controle solar nas janelas da sala e dos quartos.</li><li><strong>Casa térrea ou sobrado com janela para a rua</strong> — jateada ou fumê para privacidade.</li><li><strong>Porta de banheiro de vidro</strong> — jateada, alternativa a trocar por vidro jateado.</li><li><strong>Divisória de escritório</strong> — faixa jateada na altura dos olhos (privacidade e segurança contra esbarrão).</li><li><strong>Loja, escola, clínica</strong> — película de segurança em vitrine e portas de vidro.</li><li><strong>Sacada e cobertura de vidro</strong> — controle solar e proteção UV.</li></ul>
+    <p>Importante: a Vidraçaria BH <strong>não aplica película automotiva</strong> (insulfilm de carro). O serviço é para vidro de imóvel — residencial e comercial.</p>
+    <h2>O que dizem os clientes de película para vidro em BH</h2>
+    <blockquote><p>[DEPOIMENTO DE CLIENTE A INCLUIR]</p></blockquote>
+    <p>A Vidraçaria BH aplica película em vidro de imóvel em Belo Horizonte há 7 anos, para controle solar, privacidade e segurança, em residência e comércio. Peça no WhatsApp fotos de aplicações recentes na sua região; o depoimento de um cliente deste serviço entra aqui assim que autorizado, com primeiro nome e bairro.</p>
+    <h2>Por que aplicar sua película com a Vidraçaria BH</h2>
+    <p>A Vidraçaria BH está há 7 anos trabalhando com vidro sob medida em Belo Horizonte, e a aplicação de película entra no mesmo atendimento.</p>
+    <ul><li><strong>Avaliação do tipo de vidro antes</strong> — película errada em vidro insulado ou temperado escuro pode causar choque térmico.</li><li><strong>Indicação pelo objetivo:</strong> calor, privacidade ou segurança — não pela cor só.</li><li><strong>Limpeza profunda do vidro</strong> antes de aplicar (a causa nº 1 de bolha).</li><li><strong>Película, metragem e prazo por escrito</strong> no orçamento.</li><li><strong>90 dias de garantia</strong> de aplicação (Código de Defesa do Consumidor), além da garantia de fábrica da película. <strong>Pagamento</strong> em Pix, débito, crédito em até 12x ou dinheiro.</li></ul>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a></p>
+    <h2>Regiões atendidas</h2>
+    <p>A Vidraçaria BH aplica película para vidro a domicílio e em empresas de toda Belo Horizonte — Buritis, Belvedere, Savassi, Funcionários, Pampulha, Castelo, Cidade Nova, Barreiro e Venda Nova — e nas cidades vizinhas:</p>
+    <ul><li><a href="/vidracaria-em-contagem/">Contagem</a></li><li><a href="/vidracaria-em-betim/">Betim</a></li><li><a href="/vidracaria-em-nova-lima/">Nova Lima</a></li><li><a href="/vidracaria-em-vespasiano/">Vespasiano</a></li><li><a href="/vidracaria-em-lagoa-santa/">Lagoa Santa</a></li></ul>
+    <p>Não achou seu bairro? Chame no WhatsApp que confirmamos o atendimento na hora.</p>
+    <h2>Peça o orçamento da sua película para vidro em BH</h2>
+    <p>Manda no WhatsApp uma foto dos vidros, a medida aproximada e o que você quer resolver (calor, privacidade, segurança). Você recebe uma primeira orientação e uma faixa de valor no mesmo dia útil. Se fizer sentido, marcamos a visita para medir e fechar o orçamento da sua película para vidro em BH.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">WhatsApp: (31) 99163-3453.</a></p>
+    <h2>Perguntas frequentes</h2>
+    <h3>A película descola com o tempo?</h3>
+    <p>Bem aplicada, não — dura anos. O descolamento quase sempre vem de vidro mal limpo antes da aplicação ou de película de baixa qualidade. Por isso a limpeza profunda e a marca importam.</p>
+    <h3>Posso aplicar sozinho a película que comprei?</h3>
+    <p>Dá, mas o resultado costuma ficar com bolha e borda torta sem as ferramentas e a técnica. Se você já comprou a película, a gente avalia e aplica.</p>
+    <h3>Película serve no lugar de trocar por vidro jateado?</h3>
+    <p>Para privacidade, sim, e sai mais barato. A jateada em vidro é definitiva e mais resistente a risco; a película é reversível e pode ser trocada.</p>
+    <h3>O serviço tem garantia?</h3>
+    <p>Tem. A aplicação tem <strong>90 dias de garantia</strong>, conforme o Código de Defesa do Consumidor, além da garantia de fábrica da película. Tudo fica por escrito no orçamento.</p>
+    <h3>Como funciona o pagamento?</h3>
+    <p>Você paga em <strong>Pix, débito, crédito em até 12x ou dinheiro</strong>. A forma é combinada junto com o orçamento fechado, e não há cobrança antes da sua aprovação.</p>
+    <nav class="related" aria-label="Serviços relacionados"><p class="related-title"><strong>Serviços relacionados</strong></p><ul><li><a href="/vidro-temperado-bh/">Vidro temperado sob medida</a></li><li><a href="/divisoria-de-vidro-bh/">Divisória de vidro em BH</a></li><li><a href="/box-para-banheiro-bh/">Box para banheiro em BH</a></li><li><a href="/vidraceiro-bh/">Vidraceiro — troca e conserto</a></li></ul></nav>
+    <footer class="nap-footer">
+      <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
+      <p>WhatsApp: <a href="https://wa.me/5531991633453">(31) 99163-3453</a></p>
+      <p>Atendimento: segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
+      <p>Área de atendimento: Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
+    </footer>
+  </article>
+</MoneyPage>
+
+

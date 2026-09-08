@@ -1,0 +1,74 @@
+---
+import MoneyPage from '../layouts/MoneyPage.astro';
+import hero from '../assets/img/hero-fachada-de-vidro.jpg';
+
+const title = "Fachada de Vidro em BH para Comércio | Vidraçaria BH";
+const description = "Fachada de vidro em BH para loja, escritório e residência: pele de vidro, vitrine e fachada com pinça ou perfil, em temperado ou laminado. Orçamento no WhatsApp. vidracariabh.emp.br";
+const jsonld = [
+  JSON.stringify({"@context": "https://schema.org", "@type": ["HomeAndConstructionBusiness", "GlassMerchant"], "@id": "https://vidracariabh.emp.br/#vidracaria-bh", "name": "Vidraçaria BH", "url": "https://vidracariabh.emp.br/", "telephone": "+55 31 99163-3453", "priceRange": "$$", "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "address": {"@type": "PostalAddress", "addressLocality": "Belo Horizonte", "addressRegion": "MG", "postalCode": "30160-011", "addressCountry": "BR"}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "18:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "12:00"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "Service", "@id": "https://vidracariabh.emp.br/fachada-de-vidro-bh/#service", "serviceType": "Instalação de fachada de vidro e vitrine", "name": "Fachada de vidro em BH para loja, escritório e residência", "description": "Fachada de vidro em BH para loja, escritório e residência: pele de vidro, vitrine e fachada com pinça ou perfil, em temperado ou laminado. Orçamento no WhatsApp. vidracariabh.emp.br", "provider": {"@id": "https://vidracariabh.emp.br/#vidracaria-bh"}, "areaServed": ["Belo Horizonte", "Contagem", "Betim", "Nova Lima", "Vespasiano", "Lagoa Santa"], "url": "https://vidracariabh.emp.br/fachada-de-vidro-bh/"}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://vidracariabh.emp.br/"}, {"@type": "ListItem", "position": 2, "name": "Fachada de vidro em BH", "item": "https://vidracariabh.emp.br/fachada-de-vidro-bh/"}]}),
+  JSON.stringify({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Fachada de vidro esquenta o ambiente?", "acceptedAnswer": {"@type": "Answer", "text": "Vidro comum esquenta. Com vidro de controle solar, refletivo ou película, o calor cai bastante. A escolha depende da orientação da fachada, e vai no orçamento."}}, {"@type": "Question", "name": "Precisa de projeto e ART de engenheiro?", "acceptedAnswer": {"@type": "Answer", "text": "Vitrine e fachada pequena em geral não. Pele de vidro, structural glazing, vão livre grande e fachada em altura podem exigir projeto e ART — nesse caso a gente orienta e trabalha junto com o profissional."}}, {"@type": "Question", "name": "Dá para trocar só um vidro trincado da fachada?", "acceptedAnswer": {"@type": "Answer", "text": "Na maioria dos casos, sim, se a estrutura e a fixação estiverem boas. A gente confere na visita e troca só o pano afetado."}}, {"@type": "Question", "name": "O serviço tem garantia?", "acceptedAnswer": {"@type": "Answer", "text": "Tem. O serviço tem 90 dias de garantia, conforme o Código de Defesa do Consumidor. O vidro e as ferragens têm ainda a garantia de fábrica. Tudo fica por escrito no orçamento."}}, {"@type": "Question", "name": "Como funciona o pagamento?", "acceptedAnswer": {"@type": "Answer", "text": "Você paga em Pix, débito, crédito em até 12x ou dinheiro. A forma é combinada junto com o orçamento fechado, e não há cobrança antes da sua aprovação."}}]})
+];
+---
+
+<MoneyPage title={title} description={description} jsonld={jsonld} canonicalPath="/fachada-de-vidro-bh/">
+  <article class="money-page">
+    <nav class="crumbs"><a href="/">Início</a> › <span>Fachada de vidro em BH</span></nav>
+    <figure class="hero"><img src={hero.src} width={hero.width} height={hero.height} alt="Fachada de vidro em BH de uma loja de rua, pele de vidro com portas blindex" loading="eager" /></figure>
+    <h1>Fachada de vidro em BH para loja, escritório e residência</h1>
+    <p>A fachada de vidro é o que separa a rua do seu espaço deixando ver para dentro — e por isso a escolha do vidro, da fixação e da estrutura segue critério de segurança, não só de estética. A fachada de vidro em BH da Vidraçaria BH cobre vitrine de loja, pele de vidro de escritório e fachada de residência de alto padrão. A gente mede o vão, define o vidro e a fixação e instala. Atende Belo Horizonte e região.</p>
+    <p>Fachada mal dimensionada racha com o vento, infiltra na chuva ou não passa em vistoria. A medição técnica evita os três.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Fale no WhatsApp (31) 99163-3453 e peça o orçamento da sua fachada sem compromisso.</a></p>
+    <aside class="nap-top"><p><strong>Atendimento:</strong> Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p><p><strong>Horário:</strong> segunda a sexta, 8h às 18h · sábado, 8h às 12h</p><p><strong>Contato:</strong> WhatsApp (31) 99163-3453</p></aside>
+    <h2>O que é uma fachada de vidro e onde ela se aplica?</h2>
+    <p>Fachada de vidro é o fechamento externo (ou parte dele) feito com grandes panos de vidro no lugar de alvenaria. Ela deixa a luz entrar, expõe a vitrine e dá um visual limpo. Onde costuma entrar:</p>
+    <ul><li><strong>Loja de rua e de galeria</strong> — vitrine e porta de acesso em vidro, para mostrar o interior.</li><li><strong>Escritório, showroom e clínica</strong> — pele de vidro no térreo ou em um pavimento inteiro.</li><li><strong>Residência de alto padrão</strong> — sala com pé-direito duplo, vão de escada, fachada frontal com grandes aberturas.</li><li><strong>Prédio comercial</strong> — troca ou complemento de panos de fachada existente.</li></ul>
+    <h2>Especificações e processo de execução</h2>
+    <p><strong>Materiais utilizados:</strong></p>
+    <ul><li><strong>Vidro temperado</strong> de 10 mm ou mais na maioria das fachadas; <strong>vidro laminado</strong> (ou temperado laminado) onde há risco a pedestre, altura ou norma. Incolor, fumê, refletivo ou de controle solar.</li><li><strong>Fixação:</strong> perfil de alumínio aparente, pinças de inox (spider) ou structural glazing (vidro colado sobre estrutura, sem perfil aparente).</li><li><strong>Complementos:</strong> portas blindex de acesso, testeira, vidro fixo com bandeira, calços e vedação em silicone estrutural.</li></ul>
+    <p><strong>Processo, passo a passo:</strong></p>
+    <ol><li>Visita para medir o vão, conferir a estrutura de apoio (viga, laje, pilar) e a exposição ao sol e ao vento.</li><li>Definição do vidro (espessura, laminado, controle solar) e do tipo de fixação.</li><li>Orçamento fechado por escrito, com vidro, estrutura, prazo e — quando a obra exige — a indicação de projeto e ART de engenheiro.</li><li>Fabricação da estrutura e do vidro sob medida.</li><li>Montagem da estrutura, colocação do vidro, vedação e teste.</li></ol>
+    <p><strong>Prazo:</strong> fachada é peça grande e sob encomenda; leva mais dias que um serviço padrão. A data exata vai por escrito no orçamento.</p>
+    <h2>Tipos de fachada de vidro</h2>
+    <ul><li><strong>Com perfil aparente.</strong> Montantes e travessas de alumínio seguram o vidro. Mais econômico, montagem mais rápida.</li><li><strong>Pinça / spider.</strong> Peças de inox prendem o vidro em pontos, com o mínimo de estrutura à vista. Visual leve, comum em entrada e pé-direito alto.</li><li><strong>Structural glazing (pele de vidro).</strong> O vidro é colado sobre a estrutura com silicone estrutural; por fora só se vê vidro e juntas. Aspecto mais sofisticado, exige projeto.</li><li><strong>Vitrine de loja.</strong> Vidro fixo grande + porta blindex, com ou sem testeira, para exposição.</li></ul>
+    <h2>Controle de calor e de ruído</h2>
+    <p>Fachada muito ensolarada esquenta o ambiente. As opções: <strong>vidro de controle solar</strong>, <strong>vidro refletivo</strong>, <strong>película</strong> aplicada ou <strong>vidro laminado</strong> com camada de proteção UV (que também reduz ruído). A gente indica a combinação conforme a orientação da fachada (sol da manhã ou da tarde) e o uso.</p>
+    <h2>Aplicações e projetos indicados</h2>
+    <ul><li><strong>Loja de rua</strong> — vitrine em temperado 10 mm + porta blindex com mola de piso.</li><li><strong>Galeria e shopping</strong> — testeira, vitrine e fechamento noturno.</li><li><strong>Escritório e clínica</strong> — pele de vidro no térreo, com película de privacidade na altura dos olhos.</li><li><strong>Residência de alto padrão</strong> — sala de pé-direito duplo, com vidro laminado e controle solar.</li><li><strong>Reforma de fachada</strong> — troca de panos trincados ou desatualizados, mantendo a estrutura quando serve.</li></ul>
+    <h2>O que dizem os clientes de fachada de vidro em BH</h2>
+    <blockquote><p>[DEPOIMENTO DE CLIENTE A INCLUIR]</p></blockquote>
+    <p>A Vidraçaria BH instala fachada de vidro e vitrine em Belo Horizonte há 7 anos, para comércio, escritório e residência, com fixação por perfil, pinça ou colada. Peça no WhatsApp fotos de fachadas recentes na sua região; o depoimento de um cliente deste serviço entra aqui assim que autorizado, com primeiro nome e bairro.</p>
+    <h2>Por que fazer sua fachada de vidro com a Vidraçaria BH</h2>
+    <p>A Vidraçaria BH está há 7 anos instalando vidro sob medida em Belo Horizonte. Quem mede é quem instala.</p>
+    <ul><li><strong>Medição com conferência de estrutura, vento e sol.</strong></li><li><strong>Vidro dimensionado</strong> — temperado ou laminado conforme o risco e a norma.</li><li><strong>Trabalho conjunto com o engenheiro</strong> quando a fachada exige projeto e ART.</li><li><strong>Vidro, fixação e prazo por escrito</strong> no orçamento.</li><li><strong>90 dias de garantia</strong> (Código de Defesa do Consumidor) e <strong>pagamento</strong> em Pix, débito, crédito em até 12x ou dinheiro.</li></ul>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">Solicite seu orçamento pelo WhatsApp (31) 99163-3453.</a></p>
+    <h2>Regiões atendidas</h2>
+    <p>A Vidraçaria BH instala fachada de vidro e vitrine em toda Belo Horizonte — Centro, Savassi, Barro Preto, Barreiro, Contorno, Cidade Nova, Prado, Pampulha e Venda Nova — e nas cidades vizinhas:</p>
+    <ul><li><a href="/vidracaria-em-contagem/">Contagem</a></li><li><a href="/vidracaria-em-betim/">Betim</a></li><li><a href="/vidracaria-em-nova-lima/">Nova Lima</a></li><li><a href="/vidracaria-em-vespasiano/">Vespasiano</a></li><li><a href="/vidracaria-em-lagoa-santa/">Lagoa Santa</a></li></ul>
+    <p>Não achou seu bairro? Chame no WhatsApp que confirmamos o atendimento na hora.</p>
+    <h2>Peça o orçamento da fachada de vidro em BH</h2>
+    <p>Manda no WhatsApp uma foto do vão ou da fachada atual, a medida aproximada (largura x altura) e o uso (loja, escritório, residência). Você recebe uma primeira orientação e uma faixa de valor no mesmo dia útil. Se fizer sentido, marcamos a visita para medir e fechar o orçamento da sua fachada de vidro em BH.</p>
+    <p class="cta"><a class="btn" href="https://wa.me/5531991633453">WhatsApp: (31) 99163-3453.</a></p>
+    <h2>Perguntas frequentes</h2>
+    <h3>Fachada de vidro esquenta o ambiente?</h3>
+    <p>Vidro comum esquenta. Com vidro de controle solar, refletivo ou película, o calor cai bastante. A escolha depende da orientação da fachada, e vai no orçamento.</p>
+    <h3>Precisa de projeto e ART de engenheiro?</h3>
+    <p>Vitrine e fachada pequena em geral não. Pele de vidro, structural glazing, vão livre grande e fachada em altura podem exigir projeto e ART — nesse caso a gente orienta e trabalha junto com o profissional.</p>
+    <h3>Dá para trocar só um vidro trincado da fachada?</h3>
+    <p>Na maioria dos casos, sim, se a estrutura e a fixação estiverem boas. A gente confere na visita e troca só o pano afetado.</p>
+    <h3>O serviço tem garantia?</h3>
+    <p>Tem. O serviço tem <strong>90 dias de garantia</strong>, conforme o Código de Defesa do Consumidor. O vidro e as ferragens têm ainda a garantia de fábrica. Tudo fica por escrito no orçamento.</p>
+    <h3>Como funciona o pagamento?</h3>
+    <p>Você paga em <strong>Pix, débito, crédito em até 12x ou dinheiro</strong>. A forma é combinada junto com o orçamento fechado, e não há cobrança antes da sua aprovação.</p>
+    <nav class="related" aria-label="Serviços relacionados"><p class="related-title"><strong>Serviços relacionados</strong></p><ul><li><a href="/porta-de-vidro-bh/">Porta de vidro em BH</a></li><li><a href="/divisoria-de-vidro-bh/">Divisória de vidro em BH</a></li><li><a href="/guarda-corpo-de-vidro-bh/">Guarda-corpo de vidro em BH</a></li><li><a href="/vidro-temperado-bh/">Vidro temperado sob medida</a></li></ul></nav>
+    <footer class="nap-footer">
+      <p><strong>Vidraçaria BH</strong> · Belo Horizonte / MG · CEP 30160-011</p>
+      <p>WhatsApp: <a href="https://wa.me/5531991633453">(31) 99163-3453</a></p>
+      <p>Atendimento: segunda a sexta, 8h às 18h · sábado, 8h às 12h</p>
+      <p>Área de atendimento: Belo Horizonte e região metropolitana (Contagem, Betim, Nova Lima, Vespasiano, Lagoa Santa)</p>
+    </footer>
+  </article>
+</MoneyPage>
+
+
