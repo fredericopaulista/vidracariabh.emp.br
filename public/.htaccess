@@ -35,10 +35,14 @@ ErrorDocument 404 /404.html
     ExpiresDefault "access plus 1 year"
     Header set Cache-Control "public, immutable"
   </FilesMatch>
-  # HTML sempre revalida
+  # HTML: cache curto + revalidação por Last-Modified (permite 304, poupa crawl budget)
   <FilesMatch "\.html$">
-    ExpiresDefault "access plus 0 seconds"
-    Header set Cache-Control "public, max-age=0, must-revalidate"
+    ExpiresDefault "access plus 10 minutes"
+    Header set Cache-Control "public, max-age=600, must-revalidate"
+  </FilesMatch>
+  # sitemap e robots: 1h
+  <FilesMatch "^(sitemap\.xml|robots\.txt)$">
+    Header set Cache-Control "public, max-age=3600"
   </FilesMatch>
 </IfModule>
 

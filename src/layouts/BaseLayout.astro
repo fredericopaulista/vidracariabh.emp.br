@@ -4,11 +4,16 @@ export interface Props {
   description: string;
   jsonld?: string | string[];
   canonicalPath?: string;
+  noindex?: boolean;
 }
 
-const { title, description, jsonld, canonicalPath = Astro.url.pathname } = Astro.props;
+const { title, description, jsonld, canonicalPath = Astro.url.pathname, noindex = false } = Astro.props;
 const canonical = new URL(canonicalPath, Astro.site).href;
 const blocks = jsonld ? (Array.isArray(jsonld) ? jsonld : [jsonld]) : [];
+
+// Verificação de propriedade — cole o token quando disponível (ou use DNS TXT no domínio).
+const GOOGLE_SITE_VERIFICATION = '';
+const BING_SITE_VERIFICATION = '';
 const wa = 'https://wa.me/5531991633453';
 const path = Astro.url.pathname;
 
@@ -94,6 +99,14 @@ const manutencao = [
 
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta
+      name="robots"
+      content={noindex
+        ? 'noindex, follow'
+        : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}
+    />
+    {GOOGLE_SITE_VERIFICATION && <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />}
+    {BING_SITE_VERIFICATION && <meta name="msvalidate.01" content={BING_SITE_VERIFICATION} />}
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#0a4049" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />

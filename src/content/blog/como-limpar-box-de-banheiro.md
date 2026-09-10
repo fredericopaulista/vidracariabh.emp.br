@@ -3,7 +3,7 @@ title: "Como limpar box de banheiro: guia sem produto que risca o vidro"
 description: "Como limpar box de banheiro de vidro e tirar mancha de cal sem riscar: o que usar, o que evitar e a manutenção que impede a mancha de voltar."
 pubDate: 2026-09-06
 updatedDate: 2026-09-06
-draft: true
+draft: false
 cluster: "Como limpar box de banheiro"
 moneyPage: "/box-para-banheiro-bh/"
 heroImage: "/blog/como-limpar-box-de-banheiro.jpg"
